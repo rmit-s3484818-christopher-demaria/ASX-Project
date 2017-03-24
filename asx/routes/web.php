@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
+});
+Route::get('account', function(){
+    return view('pages.account');
+});
+
+Route::get('stock', function(){
+    return view('pages.stock');
 });
