@@ -21,3 +21,7 @@ Route::get('account', function(){
 Route::get('stock', function(){
     return view('pages.stock');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
