@@ -25,3 +25,5 @@ Route::get('stock', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('auth/logout', 'Auth\LoginController@logout');
