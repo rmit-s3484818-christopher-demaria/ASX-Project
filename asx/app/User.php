@@ -7,6 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    public function userName(){
+
+        $user = user::all();
+
+    }
+
     use Notifiable;
 
     /**
