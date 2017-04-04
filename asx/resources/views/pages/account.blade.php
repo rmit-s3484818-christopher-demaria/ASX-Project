@@ -25,15 +25,27 @@
 
             <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
                 <h1 class="portfolio-options">All Shares Held</h1>
+                <div class="col-lg-10 col-lg-offset-1 allshares_info">
+                    <h2>Info will be put in here</h2>
+                </div>
             </div>
             <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
                 <h1 class="portfolio-options">Recently Purchased Shares</h1>
+                <div class="col-lg-10 col-lg-offset-1 allshares_info">
+                    <h2>Info will be put in here</h2>
+                </div>
             </div>
             <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
                 <h1 class="portfolio-options">My Transactions</h1>
+                <div class="col-lg-10 col-lg-offset-1 allshares_info">
+                    <h2>Info will be put in here</h2>
+                </div>
             </div>
             <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
                 <h1 class="portfolio-options">My Trading Accounts</h1>
+                <div class="col-lg-10 col-lg-offset-1 allshares_info">
+                    <h2>Info will be put in here</h2>
+                </div>
             </div>
 
         </div>
