@@ -1,5 +1,15 @@
 <!-- NAV BAR - Generic sticky navbar, improvements will be made later -->
+<<<<<<< HEAD
 <div class="sidebarNav">
+=======
+<ul>
+    <li><a href="{{ url("/")}}">Home</a></li>
+    <li><a href="{{ url("account") }}">Account</a></li>
+    <li><a href="{{ url("stock") }}">Stocks</a></li>
+    <li><a href="{{ url("leader") }}">Leaderboards</a></li>
+    <li><a href="{{ url("market") }}">Market Place</a></li>
+    @if (Route::has('login'))
+>>>>>>> origin/master
 
     <div class="row-fluid">
         <div class="row-fluid playerContainer">
