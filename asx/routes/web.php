@@ -21,6 +21,13 @@ Route::get('account', function(){
 Route::get('stock', function(){
     return view('pages.stock');
 });
+Route::get('leader', function(){
+    return view('pages.leaderboard');
+});
+
+Route::get('market', function(){
+    return view('pages.market');
+});
 
 Auth::routes();
 
