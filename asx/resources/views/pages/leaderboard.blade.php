@@ -4,24 +4,41 @@
     Leader Board
 @stop
 @section('body')
-    <h1 class="headers">Leader Board Page</h1>
-
  <?php $users = DB::table('users')->orderBy('money', 'desc')->get(); ?>
+    <div class="navbarMargin">
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div>
+                    <h2 class="pageHeading">Leaderboard</h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="dash-content-wrapper">
+                    <div class="row">
 
-    <table class="leaderboard">
-        <caption>Overall Leaders</caption>
-        <tr>
-            <th>Ranking</th>
-            <th>Name</th>
-            <th>Score(networth)</th>
-        </tr>
-        @foreach ($users as $user)
-            <tr>
-                <th> {{ $loop->iteration }} </th>
-                <th> {{ $user->name }} </th>
-                <th> ${{ number_format($user->money, 2) }} </th>
-            </tr>
-        @endforeach
-    </table>
+                        <table class="leader-table table-striped table table-responsive">
+                            <tr class="leader-headings info">
+                                <td align="center" class="ranking-col">Ranking</td>
+                                <td>Name</td>
+                                <td align="right">Score(networth)</td>
+                            </tr>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td align="center"> {{ $loop->iteration }} </td>
+                                    <td> {{ $user->name }} </td>
+                                    <td align="right"> ${{ number_format($user->money, 2) }} </td>
+                                </tr>
+                            @endforeach
+                        </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @endsection
