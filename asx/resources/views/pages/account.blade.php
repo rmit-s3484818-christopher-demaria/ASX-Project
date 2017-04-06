@@ -10,11 +10,7 @@
     <p>Text added by andy as a test. Will be deleted</p>
 
 
-    @extends('layouts.master')
-@section('title')
-    Account
-@stop
-@section('body')
+
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -68,5 +64,4 @@
     <p>This will be our account page</p>
     <p>Text added by andy as a test. Will be deleted</p>
     >>>>>>> origin/master
-@endsection
 @endsection
