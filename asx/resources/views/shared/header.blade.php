@@ -1,1 +1,1 @@
-<h1 class="title">ASX GAME</h1>
+{{--<h1 class="title">ASX GAME</h1>--}}
