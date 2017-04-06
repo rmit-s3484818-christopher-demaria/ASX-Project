@@ -26,9 +26,9 @@
 
 </head>
 <body class="main-body">
-    @include('shared.header')
+    {{--@include('shared.header')--}}
     @include('shared.navbar')
-    <div class="container">
+    <div class="container-fluid">
         @yield('body')
 
     </div>
