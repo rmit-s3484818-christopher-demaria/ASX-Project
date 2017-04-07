@@ -143,14 +143,12 @@ hr{
     top: 0px;
     left: 0px;
     position: absolute;
-    background: #d9f58d;
+    background: #6b6b81;
 }
 
 .containter-fluid{
     border-color: 2px solid blue;
 }
-
-
 
 .sidebarTiles{
     padding-top: 5%;

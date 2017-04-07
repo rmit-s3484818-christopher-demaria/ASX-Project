@@ -1,6 +1,4 @@
 <!-- NAV BAR - Generic sticky navbar, improvements will be made later -->
-
-
 <div class="sidebarNav">
     <!-- Sidebar -->
     <div class="sidebarNav">
@@ -25,10 +23,11 @@
                 @if (Route::has('login'))
 
                     @if (Auth::check())
-                        <li><a href="{{ url('auth/logout') }}">Logout</a></li>
+                        <a href="{{ url('auth/logout') }}"><li><h4>Logout</h4></li></a>
                     @else
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <a href="{{ url('/login') }}"><li><h4>Login</h4></li></a>
+                        <a href="{{ url('/register') }}"><li><h4>Register</h4></li></a>
+
                     @endif
 
                 @endif
@@ -45,23 +44,23 @@
 
 
 
-<ul>
-    <li><a href="{{ url("/")}}">Home</a></li>
-    @if (Auth::check())
-    <li><a href="{{ url("account") }}">Account</a></li>
-    @endif
-    <li><a href="{{ url("stock") }}">Stocks</a></li>
-    <li><a href="{{ url("leader") }}">Leaderboard</a></li>
-    <li><a href="{{ url("market") }}">Marketplace</a></li>
-    @if (Route::has('login'))
+{{--<ul>--}}
+    {{--<li><a href="{{ url("/")}}">Home</a></li>--}}
+    {{--@if (Auth::check())--}}
+    {{--<li><a href="{{ url("account") }}">Account</a></li>--}}
+    {{--@endif--}}
+    {{--<li><a href="{{ url("stock") }}">Stocks</a></li>--}}
+    {{--<li><a href="{{ url("leader") }}">Leaderboard</a></li>--}}
+    {{--<li><a href="{{ url("market") }}">Marketplace</a></li>--}}
+    {{--@if (Route::has('login'))--}}
 
-            @if (Auth::check())
-                <li><a href="{{ url('auth/logout') }}">Logout</a></li>
-            @else
-                <li><a href="{{ url('/login') }}">Login</a></li>
-                <li><a href="{{ url('/register') }}">Register</a></li>
-            @endif
+            {{--@if (Auth::check())--}}
+                {{--<li><a href="{{ url('auth/logout') }}">Logout</a></li>--}}
+            {{--@else--}}
+                {{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
+                {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
+            {{--@endif--}}
 
-    @endif
+    {{--@endif--}}
 
-</ul>
+{{--</ul>--}}
