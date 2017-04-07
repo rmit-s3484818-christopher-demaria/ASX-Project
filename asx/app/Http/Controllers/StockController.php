@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Stock;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\File;
 
@@ -38,9 +38,9 @@ class StockController extends BaseController {
             fclose($handle);
         }
 
-        ppd($stocks);
+      /**  ppd($stocks); **/
 
-        echo count($stocks) . 'to create<br/>';
+        echo count($stocks) . ' to create<br/>';
 
         foreach($stocks as $stock)
         {
@@ -55,7 +55,7 @@ class StockController extends BaseController {
                     'last_sale' => $stock[2],
                     'market_cap' => $stock[3],
                     'summary_link' => $stock[8],
-                    'updated_at' => new Datetime,
+                    'updated_at' => $stock[4]
                 ]
             );
 

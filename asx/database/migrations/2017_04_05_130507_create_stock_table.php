@@ -25,7 +25,7 @@ class CreateStockTable extends Migration
             $table->string('last_sale');
             $table->string('market_cap');
             $table->string('summary_link');
-            $table->timestamps();
+            $table->timestamps('updated_at');
         });
     }
 
