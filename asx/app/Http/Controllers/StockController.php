@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 
-
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\File;
 
 
@@ -15,11 +11,11 @@ class StockController extends BaseController {
 
     public function store()
     {
-        include(app_path() . '\helper\helper.php');
+        include(app_path() . '/helper/helper.php');
 
-        $files = File::files(app_path() . '/resources/stocks');
+        $files = File::files(app_path() . '/stocks');
 
-        ppd($files);
+     /**   ppd($files); **/
 
         $stocks = [];
 
