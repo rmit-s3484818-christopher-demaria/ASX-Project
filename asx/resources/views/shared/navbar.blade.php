@@ -19,6 +19,7 @@
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile"><h4>Leaderboard</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile"><h4>Market</h4></li></a>
+                <a href="{{ url("store")}}" class="btn btn-info" role="button">Link Button</a>
                 {{--<li class="leaderboardTile"><h4>Leaderboard</h4></li>--}}
                 {{--<li class="marketTile"><h4>Market</h4></li>--}}
                 @if (Route::has('login'))
