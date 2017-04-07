@@ -19,3 +19,5 @@ if (!function_exists('ppd'))
         die;
     }
 }
+
+?>
