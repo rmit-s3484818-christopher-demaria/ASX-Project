@@ -55,7 +55,7 @@ class StockController extends BaseController {
                     'last_sale' => $stock[2],
                     'market_cap' => $stock[3],
                     'summary_link' => $stock[8],
-                    'updated_at' => $stock[4]
+                    'updated_at' => '5'
                 ]
             );
 
