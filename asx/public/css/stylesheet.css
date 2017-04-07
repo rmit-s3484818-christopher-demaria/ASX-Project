@@ -143,7 +143,7 @@ hr{
     top: 0px;
     left: 0px;
     position: absolute;
-    background: #674172;
+    background: #d9f58d;
 }
 
 .containter-fluid{
@@ -218,7 +218,6 @@ hr{
 
 .sidebarBottom {
     bottom: 0px;
-
     padding-top: 10%;
     padding-bottom:;
     position: absolute;
@@ -254,6 +253,8 @@ hr{
     padding-left: 0px;
     padding-right: 0px;
 }
+
+
 
 .portfolio-cashbalance-tile{
     background-color: #1b6d85;
@@ -296,6 +297,17 @@ hr{
 }
 
 
+a:hover{
+    text-decoration: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+li:hover{
+    text-decoration: none !important;
+}
 
 
 
