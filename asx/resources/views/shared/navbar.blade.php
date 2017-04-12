@@ -17,7 +17,7 @@
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile"><h4>Leaderboard</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile"><h4>Market</h4></li></a>
-                <a href="{{ url("store")}}" class="btn btn-info" role="button">Link Button</a>
+                <a href="{{ url("asxList")}}" class="btn btn-info" role="button">Link Button</a>
                 {{--<li class="leaderboardTile"><h4>Leaderboard</h4></li>--}}
                 {{--<li class="marketTile"><h4>Market</h4></li>--}}
                 @if (Route::has('login'))
@@ -35,7 +35,9 @@
 
             <div class="row-fluid sidebarBottom">
                 <div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer">Settings</div>
+                @if (Auth::check())
                 <div class="col-lg-1 col-lg-offset-5 col-md-offset-5 col-md-1 sidebarBottomContainer"><button class="btn-danger btn-logout">Log Out</button></div>
+                @endif
             </div>
         </div>
     </div>

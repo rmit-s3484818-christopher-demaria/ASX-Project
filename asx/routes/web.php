@@ -36,3 +36,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Route::get('store', 'StockController@store');
+
+Route::get('asxList', 'createAsxList@findAsxList');
