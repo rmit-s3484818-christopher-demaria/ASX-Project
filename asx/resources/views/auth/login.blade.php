@@ -20,14 +20,14 @@
                     <!-- Make sure to come back and include the success/failed glyphs on toggle -->
                     {{ csrf_field() }}
                     <h3>Email</h3>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="you@example.com" required autofocus>
                     @if ($errors->has('email'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                     @endif
                     <h3>Password</h3>
-                    <input id="password" type="password" class="form-control" name="password" required>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
                     @if ($errors->has('password'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
