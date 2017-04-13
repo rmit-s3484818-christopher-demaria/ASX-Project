@@ -307,7 +307,9 @@ li:hover{
     text-decoration: none !important;
 }
 
-
+.navbar-icons{
+    margin-right: 15px;
+}
 
 
 

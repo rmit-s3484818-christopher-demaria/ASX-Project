@@ -5,18 +5,17 @@
 
         <div class="row-fluid">
             <div class="row-fluid playerContainer">
-                <div class="col-lg-1 col-md-1 col-lg-offset-1 col-md-offset-1 playerTile"><h3>Icon</h3></div>
-                <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1 playerTile"><h3>user10112</h3></div> <!-- ensure username is max 15 characters long -->
+                <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1 playerTile"><h3><span class="glyphicon navbar-icons glyphicon-user"></span>user10112</h3></div> <!-- ensure username is max 15 characters long -->
             </div>
 
             <ul class="sidebarOptions">
-                <a href="{{ url("/")}}"><li class="dashboardTile"><h4>Dashboard</h4></li></a>
+                <a href="{{ url("/")}}"><li class="dashboardTile"><h4><span class="glyphicon navbar-icons glyphicon-home"></span>Dashboard</h4></li></a>
                 @if (Auth::check())
-                    <a href="{{ url("account") }}"> <li class="portfolioTile"><h4>Portfolio</h4></li></a>
+                    <a href="{{ url("account") }}"> <li class="portfolioTile"><h4><span class="glyphicon glyphicon-book"></span>Portfolio</h4></li></a>
                 @endif
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
-                <a href="{{ url("leader")}}"><li class="leaderboardTile"><h4>Leaderboard</h4></li></a>
-                <a href="{{ url("market")}}"><li class="marketTile"><h4>Market</h4></li></a>
+                <a href="{{ url("leader")}}"><li class="leaderboardTile"><h4><span class="glyphicon navbar-icons glyphicon-book"></span>Leaderboard</h4></li></a>
+                <a href="{{ url("market")}}"><li class="marketTile"><h4><span class="glyphicon navbar-icons glyphicon-stats"></span>Market</h4></li></a>
                 <a href="{{ url("asxList")}}" class="btn btn-info" role="button">Link Button</a>
                 {{--<li class="leaderboardTile"><h4>Leaderboard</h4></li>--}}
                 {{--<li class="marketTile"><h4>Market</h4></li>--}}
