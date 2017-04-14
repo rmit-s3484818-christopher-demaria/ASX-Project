@@ -10,8 +10,32 @@
 /*font-family: 'Raleway', sans-serif;*/
 /*font-weight: 100;*/
 /*color:#1f648b;*/
+@media (max-width: 768px)
+{
+    .sidebarNav{
+        width: 100px;
+        position: absolute !important;
+        background: #817909;
+    }
 
+    .sidebarOptions{
+        background-color: yellow;
+    }
+}
 
+body,html{
+    height: 100%;
+}
+
+.sidebarNav{
+    width: 250px;
+    height: 100%;
+    display: block;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    background: #6b6b81;
+}
 
 .navbarMargin{
     margin-left: 19%;
@@ -31,9 +55,14 @@
     font-weight: 400;
 }
 
+.settingsIcon{
+    text-decoration: none;
+}
+
 body{
     margin: 0px;
     padding: 0px;
+    height: 100%;
 
 }
 
@@ -148,16 +177,6 @@ hr{
 .landingLoginLink{
     margin-top: 5%;
     text-align: center;
-}
-
-.sidebarNav{
-    width: 300px;
-    height: 100%;
-    display: block;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    background: #6b6b81;
 }
 
 .containter-fluid{

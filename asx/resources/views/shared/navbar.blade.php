@@ -33,7 +33,7 @@
             </ul>
 
             <div class="row-fluid sidebarBottom">
-                <div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer"><button class="btn btn-default" ><a href="{{ url("settings") }}">Settings</a></button></div>
+                {{--<div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer"><button class="btn btn-default" ><a href="{{ url("settings") }}">Settings</button></div>--}}
                 @if (Auth::check())
                 <div class="col-lg-1 col-lg-offset-5 col-md-offset-5 col-md-1 sidebarBottomContainer"><button class="btn-danger btn-logout">Log Out</button></div>
                 @endif
