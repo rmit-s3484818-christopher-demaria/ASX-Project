@@ -9,14 +9,14 @@
             </div>
 
             <ul class="sidebarOptions">
-                <a href="{{ url("/")}}"><li class="dashboardTile"><h4><span class="glyphicon navbar-icons glyphicon-home"></span>Dashboard</h4></li></a>
+                <a href="{{ url("/")}}"><li class="dashboardTile navItem"><h4><span class="glyphicon navbar-icons glyphicon-dashboard"></span>Dashboard</h4></li></a>
                 @if (Auth::check())
-                    <a href="{{ url("account") }}"> <li class="portfolioTile"><h4><span class="glyphicon glyphicon-book"></span>Portfolio</h4></li></a>
+                    <a href="{{ url("account") }}"> <li class="portfolioTile navItem"><h4><span class="glyphicon glyphicon-book"></span>Portfolio</h4></li></a>
                 @endif
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
-                <a href="{{ url("leader")}}"><li class="leaderboardTile"><h4><span class="glyphicon navbar-icons glyphicon-book"></span>Leaderboard</h4></li></a>
-                <a href="{{ url("market")}}"><li class="marketTile"><h4><span class="glyphicon navbar-icons glyphicon-stats"></span>Market</h4></li></a>
-                <a href="{{ url("asxList")}}" class="btn btn-info" role="button">Link Button</a>
+                <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><h4><span class="glyphicon navbar-icons glyphicon-king"></span>Leaderboard</h4></li></a>
+                <a href="{{ url("market")}}"><li class="marketTile navItem"><h4><span class="glyphicon navbar-icons glyphicon-stats"></span>Market</h4></li></a>
+                <a href="{{ url("asxList")}}" class="btn btn-info navItem" role="button">Link Button</a>
                 {{--<li class="leaderboardTile"><h4>Leaderboard</h4></li>--}}
                 {{--<li class="marketTile"><h4>Market</h4></li>--}}
                 @if (Route::has('login'))
@@ -33,7 +33,7 @@
             </ul>
 
             <div class="row-fluid sidebarBottom">
-                <div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer">Settings</div>
+                <div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer"><button class="btn btn-default" ><a href="{{ url("settings") }}">Settings</a></button></div>
                 @if (Auth::check())
                 <div class="col-lg-1 col-lg-offset-5 col-md-offset-5 col-md-1 sidebarBottomContainer"><button class="btn-danger btn-logout">Log Out</button></div>
                 @endif

@@ -25,6 +25,10 @@ Route::get('leader', function(){
     return view('pages.leaderboard');
 });
 
+Route::get('settings', function(){
+    return view('pages.settings');
+});
+
 Route::get('market', function(){
     return view('pages.market');
 });
