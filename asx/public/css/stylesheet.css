@@ -10,15 +10,6 @@
 /*font-family: 'Raleway', sans-serif;*/
 /*font-weight: 100;*/
 /*color:#1f648b;*/
-@media (max-width: 768px)
-{
-    .sidebarNav{
-        width: 100px;
-        position: absolute !important;
-        background: #817909;
-    }
-
-}
 
 body,html{
     height: 100%;
@@ -30,15 +21,18 @@ body,html{
     display: block;
     top: 0px;
     left: 0px;
-    position: fixed;
+    position: absolute;
     background: #34495e;
 }
 
 .navbarMargin{
-    margin-left: 19%;
-    margin-right: 2.5%;
+    margin-left: 115px;
+    /*margin-right: 1%;*/
 }
+.bestShareDiv{
+    margin-left: 0px;
 
+}
 .allshares_info {
     background-color: white;
     margin-left: 0px;
