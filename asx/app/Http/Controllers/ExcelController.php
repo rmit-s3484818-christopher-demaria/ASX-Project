@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\asxList;
+use App\asx;
 use Illuminate\Http\Request;
 use Excel;
 use DB;
@@ -33,7 +33,7 @@ class ExcelController extends Controller
         $file->move('files', $file_name);
         Excel::load('files/'.$file_name)->each(function (Collection $csvLine)
         {
-            asxList::create([
+            asx::create([
                 'name' => $csvLine->get('name'),
                 'symbol' => $csvLine->get('symbol'),
                 'company' => $csvLine->get('company'),
