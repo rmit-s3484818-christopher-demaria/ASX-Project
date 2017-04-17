@@ -4,8 +4,26 @@
     Market
 @stop
 @section('body')
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Add</td>
+                    <td>Email</td>
+                    <td>Last</td>
 
-    <h1 class="headers">Market Page</h1>
-    <p>This is the market page.</p>
+                </tr>
+                <tr>
+                    <td>Me</td>
+                    <td>Fake</td>
+                    <td>@some</td>
+                    <td>LAST</td>
 
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
 @endsection

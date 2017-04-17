@@ -20,6 +20,7 @@
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-king"></span><h4 class="sideBarText">Rankings</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Market</h4></li></a>
+                <a href="{{ url("asxList")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Test</h4></li></a>
                 {{--<a href="{{ url("asxList")}}" class="btn btn-info navItem" role="button">Link Button</a>--}}
 
                 {{--@if (Route::has('login'))--}}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\asxList;
+use Excel;
+use DB;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Collection;
@@ -47,7 +49,7 @@ class createAsxList extends BaseController
 //        }
 
 
-        Excel::load('/../../askStock/asx.csv')->each(function (Collection $csvLine) {
+        Excel::load('asx.csv')->each(function (Collection $csvLine) {
 
             asxList::create([
                 'name' => $csvLine->get('name'),

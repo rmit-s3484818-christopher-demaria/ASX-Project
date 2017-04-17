@@ -33,6 +33,8 @@ Route::get('market', function(){
     return view('pages.market');
 });
 
+//    return view('test');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -42,3 +44,8 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 Route::get('store', 'StockController@store');
 
 Route::get('asxList', 'createAsxList@findAsxList');
+
+Route::get('ExportClients','ExcelController@ExportClients');
+Route::post('ImportClients', 'ExcelController@ImportClients');
+Route::get('upload','ExcelController@upload');
+Route::get('test','marketController@view');
