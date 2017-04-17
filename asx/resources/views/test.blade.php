@@ -4,11 +4,10 @@
     <title>Test</title>
 </head>
 <body>
-<?php $asxes = DB::table('asxes')->get();?>
 
-@foreach ($asxes as $asxe)
+@foreach ($stocks as $stock)
 
-<p> {{ $asxe->symbol }} </p>
+<p> {{ $stock->symbol }} </p>
 
 @endforeach
 
