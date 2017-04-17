@@ -11,6 +11,7 @@ class marketController extends Controller
     {
         set_time_limit(5400);
         $tries = 0;
+        $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=';
 
         $stocks = DB::table('asxes')->pluck('symbol');
 
@@ -18,14 +19,24 @@ class marketController extends Controller
  //       Excel::create($filename,function($stocks){
             foreach($stocks as $stock)
             {
-               $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s='.$stock.'.AX&f=nac1p1';
-               $data = file_get_contents($dataURL);
-               echo $data;
-
-               if(++$tries > 10) break;
+                if($tries == 0)
+                {
+                    $dataURL.=$stock.".AX";
+                    $tries++;
+                }
+                else{
+                    $dataURL.="+".$stock.".AX";
+                    $tries++;
+                }
             }
 
- //       })->export('csv');
+            $dataURL.="AX&f=nac1p1";
+
+        $data = file_get_contents($dataURL);
+        echo $data;
+
+
+        //       })->export('csv');
 
 
 
