@@ -11,6 +11,7 @@
 /*font-weight: 100;*/
 /*color:#1f648b;*/
 
+
 body,html{
     height: 100%;
 }
@@ -412,6 +413,43 @@ h4.sideBarText{
     margin-top: 0px;
 }
 
+.company-buysell{
+    margin-top: 35px;
+}
+
+span.glyphicon.glyphicon-menu-left.pull-left{
+    text-decoration: none !important;
+    color: #22313F;
+}
+span.glyphicon.glyphicon-menu-left.pull-left:hover{
+    text-decoration: none !important;
+
+}
+
+.cancelX{
+    height: 75px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.confirmBtn{
+    height: 75px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.glyphicon.glyphicon-ok-circle{
+    font-size: 30px;
+}
+
+.glyphicon.glyphicon-remove-circle{
+    font-size: 30px;
+}
+
+h3.buySellBtns{
+    margin-top: 0px;
+}
 
 
 

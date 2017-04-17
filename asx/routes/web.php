@@ -42,6 +42,14 @@ Route::get('market', function(){
     return view('pages.market');
 });
 
+Route::get('buy', function(){
+    return view('pages.buy');
+});
+
+Route::get('sell', function(){
+    return view('pages.sell');
+});
+
 //    return view('test');
 
 Auth::routes();
