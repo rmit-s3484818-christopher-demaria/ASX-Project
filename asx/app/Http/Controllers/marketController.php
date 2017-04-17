@@ -8,6 +8,6 @@ class marketController extends Controller
 {
     public function view ()
     {
-        return view('pages.market');
+        return view('test');
     }
 }

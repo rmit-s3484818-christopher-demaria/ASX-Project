@@ -4,7 +4,14 @@
     <title>Test</title>
 </head>
 <body>
-hello
+<?php $asxes = DB::table('asxes')->get();?>
+
+@foreach ($asxes as $asxe)
+
+<p> {{ $asxe->symbol }} </p>
+
+@endforeach
+
 </body>
 
 </html>
