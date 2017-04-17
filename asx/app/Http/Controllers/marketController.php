@@ -24,16 +24,19 @@ class marketController extends Controller
                     $dataURL.=$stock.".AX";
                     $tries++;
                 }
-                else{
+                else
+                {
                     $dataURL.="+".$stock.".AX";
                     $tries++;
                 }
             }
 
-            $dataURL.="AX&f=nac1p1";
+            $dataURL.="&f=na";
+            echo $dataURL;
 
         $data = file_get_contents($dataURL);
-        echo $data;
+        // echo $data;
+
 
 
         //       })->export('csv');
