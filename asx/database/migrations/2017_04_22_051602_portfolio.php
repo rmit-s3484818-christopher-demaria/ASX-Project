@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class createPortfolioTable extends Migration
+class Portfolio extends Migration
 {
     /**
      * Run the migrations.
@@ -17,8 +17,8 @@ class createPortfolioTable extends Migration
             /* Don't think we need to show ID for the portfolio but might need it for referencing purposes
             Comment back in if we need it
             $table->increments('id')->unique(); */
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('ownedStocks');
             /* If we need to put it in/include this feature
             $table->string('favouritedStocks'); */

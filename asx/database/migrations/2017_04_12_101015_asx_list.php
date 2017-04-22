@@ -13,13 +13,13 @@ class AsxList extends Migration
      */
     public function up()
     {
-        Schema::create('asx_list', function($table)
-        {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('symbol',20);
-            $table->timestamps('updated_at');
-        });
+//        Schema::create('asx_list', function($table)
+//        {
+//            $table->increments('id');
+//            $table->string('name');
+//            $table->string('symbol',20);
+//            $table->timestamps('updated_at');
+//        });
     }
 
     /**
@@ -29,6 +29,6 @@ class AsxList extends Migration
      */
     public function down()
     {
-        Schema::drop('asx_list');
+ //       Schema::drop('asx_list');
     }
 }

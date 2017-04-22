@@ -30,6 +30,6 @@ class Asx extends Migration
      */
     public function down()
     {
-        Scheme::drop('asx');
+       Scheme::drop('asx');
     }
 }
