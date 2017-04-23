@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+//Route::get('/', function () {
+//    return view('pages.home');
+//});
+
+Route::get('/','pageController@checkLog');
+
 Route::get('account', function(){
     return view('pages.account');
+});
+
+
+route::get('register',function(){
+   return view('auth.register');
+
 });
 
 Route::get('stock', function(){
