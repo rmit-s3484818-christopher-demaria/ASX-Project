@@ -20,7 +20,7 @@
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-king"></span><h4 class="sideBarText">Rankings</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Market</h4></li></a>
-                <a href="{{ url("asxList")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Test</h4></li></a>
+                <a href="{{ url("test")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Test</h4></li></a>
                 {{--<a href="{{ url("asxList")}}" class="btn btn-info navItem" role="button">Link Button</a>--}}
 
                 {{--@if (Route::has('login'))--}}
@@ -40,7 +40,7 @@
                 <ul class="sidebarOptions">
                     <a href="{{ url("settings")}}"><li class=" bottomNav navItem"><span class="glyphicon navbar-icons glyphicon-cog"></span><h4 class="sideBarText">Settings</h4></li></a>
                     <br>
-                    <a href="{{ url("/")}}"><li class=" logoutNav navItem"><span class="glyphicon navbar-icons glyphicon-off"></span><h4 class="sideBarText">Logout</h4></li></a>
+                    <a href="{{ url("auth/logout")}}"><li class=" logoutNav navItem"><span class="glyphicon navbar-icons glyphicon-off"></span><h4 class="sideBarText">Logout</h4></li></a>
                 </ul>
                 {{--<div class="col-lg-1 col-md-1 col-md-offset-1 col-lg-offset-1 sidebarBottomContainer"><button class="btn btn-default" ><a href="{{ url("settings") }}">Settings</button></div>--}}
                 @if (Auth::check())
