@@ -28,6 +28,7 @@ class ExcelController extends Controller
 
     public function ImportClients()
     {
+        ini_set('max_execution_time', 300);
         $file = Input::file('file');
         $file_name = $file->getClientOriginalName();
         $file->move('files', $file_name);

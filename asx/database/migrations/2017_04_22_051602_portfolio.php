@@ -22,7 +22,9 @@ class Portfolio extends Migration
             $table->string('ownedStocks');
             /* If we need to put it in/include this feature
             $table->string('favouritedStocks'); */
+            $table->decimal('money',10,2);
             $table->decimal('netWorth',10,2);
+
             $table->rememberToken();
             $table->timestamps();
         });
