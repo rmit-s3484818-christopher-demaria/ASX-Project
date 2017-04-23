@@ -27,7 +27,7 @@
                     <h1>Ranking 1st</h1>
                 </div>
                 <div class="col-lg-5 col-lg-offset-4 portfolio-cashbalance-tile">
-                    <h1>Cash Balance: <strong> ${{ Auth::user()->money }}</strong></h1>
+                    <h1>Cash Balance:text{{-- <strong>/${{ Auth::()->money }}</strong>--}}</h1>
                 </div>
 
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
