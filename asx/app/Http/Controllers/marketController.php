@@ -10,43 +10,54 @@ class marketController extends Controller
 {
     public function view ()
     {
+        $tries = 0;
+//        set_time_limit(20);
+        $stocks = DB::table('asxes')->pluck('symbol');
+        $list = [];
+        foreach($stocks as $stock)
+        {
+            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
+            $tries++;
 
-
-        $filename = 'asx-list';
-        Excel::create($filename,function($stocks){
-            set_time_limit(5400);
-
-            $tries = 0;
-            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=';
-
-            $stocks = DB::table('asxes')->pluck('symbol');
-
-            foreach($stocks as $stock)
+            //Get rid of tries on the server
+            if($tries == 5)
             {
-                if($tries == 0)
-                {
-                    $dataURL.=$stock.".AX";
-                    $tries++;
-                }
-                else
-                {
-                    $dataURL.="+".$stock.".AX";
-                    $tries++;
-                }
+                break;
             }
 
-            $dataURL.="&f=na";
-            echo $dataURL;
+//              if($tries == 0)
+//                {
+//                    $dataURL.=$stock.".AX";
+//                    $tries++;
+//                }
+//                else
+//                {
+//                    $dataURL.="+".$stock.".AX";
+//                    $tries++;
+//                }
 
-        $data = file_get_contents($dataURL);
-         echo $data;
+            $list[] = file_get_contents($dataURL);
+
+        }
+//        echo $list;
+
+        $filename = 'asx-list';
+        Excel::create($filename,function($excel) use($list){
+
+            $excel->sheet('ASX-List',function($sheet) use($list){
+
+               $sheet->fromArray($list);
+
+
+            });
 
 
 
-               })->export('csv');
+               })->store('csv');
 
 
 
 //        return view('test',['stocks'=> $stocks]);
+        echo "Done";
     }
 }
