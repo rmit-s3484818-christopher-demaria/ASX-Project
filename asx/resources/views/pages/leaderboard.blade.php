@@ -4,7 +4,7 @@
     Leader Board
 @stop
 @section('body')
- <?php $users = DB::table('users')->orderBy('money', 'desc')->get(); ?>
+ <?php $users = DB::table('users')->get(); ?>
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -29,7 +29,7 @@
                                 <tr>
                                     <td align="center"><strong>{{ $loop->iteration }}</strong></td>
                                     <td> {{ $user->name }} </td>
-                                    <td align="right"> ${{ number_format($user->money, 2) }} </td>
+                                    <td align="right"> {{-- ${{ number_format($user->money, 2) }}--}} </td>
                                 </tr>
                             @endforeach
                         </table>
