@@ -39,7 +39,7 @@ class pageController extends Controller
         }
         else
         {
-            return view('pages.leaderboard');
+            return view('pages.account');
         }
 
     }
