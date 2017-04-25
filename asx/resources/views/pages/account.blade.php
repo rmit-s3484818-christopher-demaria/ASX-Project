@@ -53,6 +53,7 @@
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h2>Info will be put in here</h2>
                     </div>
+                    <div><button onclick="checkTrading()">Open trading account</button></div>
                 </div>
 
             </div>
