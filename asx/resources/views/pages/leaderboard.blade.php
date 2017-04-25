@@ -4,7 +4,10 @@
     Leader Board
 @stop
 @section('body')
- <?php $users = DB::table('users')->get(); ?>
+ <?php
+ $users = DB::table('users')->get();
+ $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
+ ?>
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -25,11 +28,17 @@
                                 <td>Username</td>
                                 <td align="right">Score/Net Worth</td>
                             </tr>
-                            @foreach ($users as $user)
+                            @foreach ($rankings as $ranking)
                                 <tr>
                                     <td align="center"><strong>{{ $loop->iteration }}</strong></td>
-                                    <td> {{ $user->name }} </td>
-                                    <td align="right"> {{-- ${{ number_format($user->money, 2) }}--}} </td>
+                                    <td>
+                                        @foreach($users as $user)
+                                            @if($user->id == $ranking->user_id)
+                                                {{ $user->name }}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td align="right"> {{ number_format($ranking->money, 2) }} </td>
                                 </tr>
                             @endforeach
                         </table>
