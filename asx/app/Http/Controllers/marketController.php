@@ -10,17 +10,20 @@ class marketController extends Controller
 {
     public function view ()
     {
+        date_default_timezone_set('Australia/Melbourne');
+        $date = date('m-d-Y_H-i-s', time());
         $tries = 0;
 //        set_time_limit(20);
         $stocks = DB::table('asxes')->pluck('symbol');
         $list = [];
         foreach($stocks as $stock)
         {
-            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
+ //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
+              $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nd1l1v';
             $tries++;
 
             //Get rid of tries on the server
-            if($tries == 5)
+            if($tries == 10)
             {
                 break;
             }
@@ -35,13 +38,13 @@ class marketController extends Controller
 //                    $dataURL.="+".$stock.".AX";
 //                    $tries++;
 //                }
-
             $list[] = file_get_contents($dataURL);
+
 
         }
 //        echo $list;
 
-        $filename = 'asx-list';
+        $filename = $date . '-asx-list';
         Excel::create($filename,function($excel) use($list){
 
             $excel->sheet('ASX-List',function($sheet) use($list){
