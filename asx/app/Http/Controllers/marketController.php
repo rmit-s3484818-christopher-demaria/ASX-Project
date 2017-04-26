@@ -38,7 +38,9 @@ class marketController extends Controller
 //                    $dataURL.="+".$stock.".AX";
 //                    $tries++;
 //                }
-            $list[] = file_get_contents($dataURL);
+//            $data = file_get_contents($dataURL);
+//            $stockinfo = $stock . $data;
+            $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
 
 
         }
