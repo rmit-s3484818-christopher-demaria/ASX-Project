@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('getASX')
-                  ->hourly()->between('9:00', '21:00');;
+                  ->twiceDaily(9, 21);;
     }
 
     /**

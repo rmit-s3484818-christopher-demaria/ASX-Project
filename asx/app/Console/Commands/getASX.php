@@ -55,12 +55,8 @@ class getASX extends Command
             $tries++;
 
             //Get rid of tries on the server
-            if($tries == 10)
-            {
-                break;
-            }
 
-//              if($tries == 0)l
+//              if($tries == 0)
 //                {
 //                    $dataURL.=$stock.".AX";
 //                    $tries++;
@@ -70,6 +66,8 @@ class getASX extends Command
 //                    $dataURL.="+".$stock.".AX";
 //                    $tries++;
 //                }
+//            $data = file_get_contents($dataURL);
+//            $stockinfo = $stock . $data;
             $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
 
 
@@ -90,18 +88,35 @@ class getASX extends Command
 
         })->store('csv');
 
-        $file = storage_path('../app/exports') . '/' . $filename . '.csv';
-        Excel::load($file)->each(function (Collection $csvLine)
+        Schema::dropIfExists('stocks');
+
+        Schema::create('stocks', function($table)
         {
-            stocks::create([
-                'symbol' => $csvLine->get('symbol'),
-                'name' => $csvLine->get('name'),
-                'price' => $csvLine->get('price'),
-                'perChange' => $csvLine->get('perChange'),
-            ]);
+            $table->string('symbol',20);
+            $table->string('name');
+            $table->float('price');
+            $table->string('perChange');
+            $table->timestamps('updated_at');
         });
+
+        foreach($list as $stock)
+        {
+            $newStock = str_replace('"','',$stock);
+            $value = explode(',',$newStock);
+            stocks::create(
+                [
+                    'symbol' => $value[0],
+                    'name' => $value[1],
+                    'price' => $value[2],
+                    'perChange' => $value[3],
+                    'updated_at' => '5'
+                ]
+            );
+
+        }
+
 //        return view('test',['stocks'=> $stocks]);
-        echo "Done";
+
     }
 
 }

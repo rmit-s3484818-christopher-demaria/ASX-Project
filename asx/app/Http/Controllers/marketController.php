@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\stocks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Excel;
 
 class marketController extends Controller
@@ -20,11 +21,11 @@ class marketController extends Controller
         foreach($stocks as $stock)
         {
  //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
-              $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nd1l1v';
+              $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
             $tries++;
 
             //Get rid of tries on the server
-            if($tries == 5)
+            if($tries == 20)
             {
                 break;
             }
@@ -61,17 +62,27 @@ class marketController extends Controller
 
                })->store('csv');
 
+        Schema::dropIfExists('stocks');
+
+        Schema::create('stocks', function($table)
+        {
+            $table->string('symbol',20);
+            $table->string('name');
+            $table->float('price');
+            $table->string('perChange');
+            $table->timestamps('updated_at');
+        });
+
         foreach($list as $stock)
         {
-            $value = explode(',',$stock);
-            echo $value[0];
-
+            $newStock = str_replace('"','',$stock);
+            $value = explode(',',$newStock);
             stocks::create(
                 [
                     'symbol' => $value[0],
                     'name' => $value[1],
-                    'price' => $value[3],
-                    'perChange' => $value[4],
+                    'price' => $value[2],
+                    'perChange' => $value[3],
                     'updated_at' => '5'
                 ]
             );
