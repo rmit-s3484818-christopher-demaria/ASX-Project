@@ -4,26 +4,46 @@
     Market
 @stop
 @section('body')
-    <div class="container-fluid">
+    <?php
+    $rankings = DB::table('asxes')->orderBy('id', 'asc')->get();
+    ?>
+    <div class="navbarMargin">
         <div class="container-fluid">
-            <table>
-                <tr>
-                    <td>Name</td>
-                    <td>Add</td>
-                    <td>Email</td>
-                    <td>Last</td>
+            <div class="container-fluid">
+                <div>
+                    <h2 class="pageHeading">Market</h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="dash-content-wrapper">
+                    <div class="row">
 
-                </tr>
-                <tr>
-                    <td>Me</td>
-                    <td>Fake</td>
-                    <td>@some</td>
-                    <td>LAST</td>
+                        <table class="leader-table table-striped table table-responsive">
+                            <tr class="leader-headings info">
+                                <td align="center" class="ranking-col">Company Symbol</td>
+                                <td>Company Name</td>
+                                <td align="right">Company Worth</td>
+                            </tr>
+                            @foreach ($rankings as $ranking)
+                                <tr>
+                                    <td align="center"><strong> {{$ranking->symbol}}</strong></td>
+                                    <td>
+                                                {{ $ranking->name }}
+                                    </td>
+                                    <td align="right"> </td>
+                                </tr>
+                            @endforeach
+                        </table>
 
-                </tr>
 
-
-            </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
 @endsection
