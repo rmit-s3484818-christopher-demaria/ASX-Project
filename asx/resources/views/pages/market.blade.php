@@ -5,7 +5,7 @@
 @stop
 @section('body')
     <?php
-    $rankings = DB::table('asxes')->orderBy('id', 'asc')->get();
+    $rankings = DB::table('stocks')->orderBy('name', 'asc')->get();
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -25,7 +25,8 @@
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Company Symbol</td>
                                 <td>Company Name</td>
-                                <td align="right">Company Worth</td>
+                                <td>Company Worth</td>
+                                <td align="right">Percentage Change</td>
                             </tr>
                             @foreach ($rankings as $ranking)
                                 <tr>
@@ -33,7 +34,8 @@
                                     <td>
                                                 {{ $ranking->name }}
                                     </td>
-                                    <td align="right"> </td>
+                                    <td> {{$ranking->price}}</td>
+                                    <td align="right">{{$ranking->perChange}}</td>
                                 </tr>
                             @endforeach
                         </table>
