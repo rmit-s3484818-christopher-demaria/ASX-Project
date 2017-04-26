@@ -49,7 +49,7 @@ class getASX extends Command
         foreach($stocks as $stock)
         {
             //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
-            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nd1l1v';
+            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
             $tries++;
 
             //Get rid of tries on the server
@@ -68,7 +68,7 @@ class getASX extends Command
 //                    $dataURL.="+".$stock.".AX";
 //                    $tries++;
 //                }
-            $list[] = file_get_contents($dataURL);
+            $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
 
 
         }
