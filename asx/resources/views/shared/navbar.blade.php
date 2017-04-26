@@ -15,7 +15,7 @@
 
                 <a href="{{ url("/")}}"><li class="dashboardTile navItem"><span class="glyphicon navbar-icons glyphicon-dashboard"></span><h4 class="sideBarText">Dashboard</h4></li></a>
                 @if (Auth::check())
-                    <a href="{{ url("account") }}"> <li class="portfolioTile navItem"><span class="glyphicon glyphicon-book"></span><h4 class="sideBarText">Portfolio</h4></li></a>
+                    <a href="{{ url("account")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-book"></span><h4 class="sideBarText">Portfolio</h4></li></a>
                 @endif
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-king"></span><h4 class="sideBarText">Rankings</h4></li></a>

@@ -26,7 +26,7 @@
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Ranking</td>
                                 <td>Username</td>
-                                <td align="right">Score/Net Worth</td>
+                                <td align="right">Net Worth</td>
                             </tr>
                             @foreach ($rankings as $ranking)
                                 <tr>

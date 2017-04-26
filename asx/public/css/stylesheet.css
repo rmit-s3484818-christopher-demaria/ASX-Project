@@ -27,12 +27,16 @@ body,html{
 }
 
 .navbarMargin{
-    margin-left: 115px;
+    margin-left: 110px;
     /*margin-right: 1%;*/
 }
 .bestShareDiv{
     margin-left: 0px;
 
+}
+
+.container-fluid{
+    padding-left: 6.5px;
 }
 .allshares_info {
     background-color: white;
