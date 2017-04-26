@@ -26,6 +26,7 @@
                                 <td align="center" class="ranking-col">Company Symbol</td>
                                 <td>Company Name</td>
                                 <td align="center">Company Worth</td>
+                                <td align="center">% (+/-)</td>
                             </tr>
                             @foreach ($rankings as $ranking)
                                 <tr>
