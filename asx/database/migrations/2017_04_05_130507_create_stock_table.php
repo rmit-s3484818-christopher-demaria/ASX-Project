@@ -15,16 +15,11 @@ class CreateStockTable extends Migration
     {
         Schema::create('stock', function($table)
         {
-            $table->increments('id');
+//            $table->increments('id');
             $table->string('symbol',20);
             $table->string('name');
-            $table->string('exchange');
-            $table->string('ipo_year');
-            $table->string('sector');
-            $table->string('industry');
-            $table->string('last_sale');
-            $table->string('market_cap');
-            $table->string('summary_link');
+            $table->float('price');
+            $table->string('perChange');
             $table->timestamps('updated_at');
         });
     }

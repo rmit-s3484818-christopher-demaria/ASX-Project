@@ -37,6 +37,6 @@ class Portfolio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portfolio');
+//        Schema::dropIfExists('portfolio');
     }
 }
