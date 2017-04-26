@@ -25,8 +25,7 @@
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Company Symbol</td>
                                 <td>Company Name</td>
-                                <td>Company Worth</td>
-                                <td align="right">Percentage Change</td>
+                                <td align="center">Company Worth</td>
                             </tr>
                             @foreach ($rankings as $ranking)
                                 <tr>
@@ -34,8 +33,8 @@
                                     <td>
                                                 {{ $ranking->name }}
                                     </td>
-                                    <td> {{$ranking->price}}</td>
-                                    <td align="right">{{$ranking->perChange}}</td>
+                                    <td align="center"> {{$ranking->price}}</td>
+                                    <td align="center">{{$ranking->perChange}}</td>
                                 </tr>
                             @endforeach
                         </table>
