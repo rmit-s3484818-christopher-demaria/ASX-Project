@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\stocks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Excel;
@@ -23,7 +24,7 @@ class marketController extends Controller
             $tries++;
 
             //Get rid of tries on the server
-            if($tries == 10)
+            if($tries == 5)
             {
                 break;
             }
@@ -60,7 +61,22 @@ class marketController extends Controller
 
                })->store('csv');
 
+        foreach($list as $stock)
+        {
+            $value = explode(',',$stock);
+            echo $value[0];
 
+            stocks::create(
+                [
+                    'symbol' => $value[0],
+                    'name' => $value[1],
+                    'price' => $value[3],
+                    'perChange' => $value[4],
+                    'updated_at' => '5'
+                ]
+            );
+
+        }
 
 //        return view('test',['stocks'=> $stocks]);
         echo "Done";

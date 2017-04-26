@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\stocks;
 use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -38,6 +39,7 @@ class getASX extends Command
      *
      * @return mixed
      */
+
     public function handle()
     {
         date_default_timezone_set('Australia/Melbourne');
@@ -58,7 +60,7 @@ class getASX extends Command
                 break;
             }
 
-//              if($tries == 0)
+//              if($tries == 0)l
 //                {
 //                    $dataURL.=$stock.".AX";
 //                    $tries++;
@@ -88,9 +90,18 @@ class getASX extends Command
 
         })->store('csv');
 
-
-
+        $file = storage_path('../app/exports') . '/' . $filename . '.csv';
+        Excel::load($file)->each(function (Collection $csvLine)
+        {
+            stocks::create([
+                'symbol' => $csvLine->get('symbol'),
+                'name' => $csvLine->get('name'),
+                'price' => $csvLine->get('price'),
+                'perChange' => $csvLine->get('perChange'),
+            ]);
+        });
 //        return view('test',['stocks'=> $stocks]);
         echo "Done";
     }
+
 }
