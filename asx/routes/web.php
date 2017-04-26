@@ -50,6 +50,10 @@ Route::get('sell', function(){
     return view('pages.sell');
 });
 
+Route::get('company', function(){
+    return view('pages.company');
+});
+
 //    return view('test');
 
 Auth::routes();
