@@ -12,9 +12,9 @@
 @stop
 @section('body')
 
-    <?php
-    $stock = DB::table('stocks')->where('symbol', $symbol)->first();
-    ?>
+    <script src="jquery-3.2.0.min.js"></script>
+
+    <?php $stock = DB::table('stocks')->where('symbol', $symbol)->first(); ?>
 
 <div class="navbarMargin">
     <div class="container-fluid">
@@ -41,14 +41,25 @@
                 <input class="form-control" type="text" value = "{{ $stock->price }}" readonly>
 
                 <h3>Quantity</h3>
-                <input class="form-control" type="text">
+                <input class="form-control" type="number" id = "quantity">
 
                 <h3>Sub Total</h3>
-                <input class="form-control" type="text">
+                <input class="form-control" type="money" id = "subTotal" readonly>
 
                 {{--<h3>Cash Balance</h3>--}}
                 {{--<input class="form-control" type="text">--}}
             </form>
+
+            <script>
+                var input = document.getElementById('quantity');
+
+                input.onchange = function(){
+                    var price = {{ $stock->price }};
+                    var calc = price*input.value;
+                    document.getElementById('subTotal').value = calc;
+                }
+            </script>
+
         </div>
     </div>
 <br>

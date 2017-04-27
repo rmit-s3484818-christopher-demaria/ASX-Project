@@ -46,6 +46,8 @@ class pageController extends Controller
 
     function passSymbol($symbol)
     {
+        $stock = $symbol;
+        return view('pages.buy')->with('symbol', $stock);
     }
 
 }
