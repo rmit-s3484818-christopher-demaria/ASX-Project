@@ -13,14 +13,14 @@ class Asx extends Migration
      */
     public function up()
     {
-        Schema::create('asx', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('symbol');
-            $table->string('company');
-            $table->timestamps();
-        });
+//        Schema::create('asx', function(Blueprint $table)
+//        {
+//            $table->increments('id');
+//            $table->string('name');
+//            $table->string('symbol');
+//            $table->string('company');
+//            $table->timestamps();
+//        });
     }
 
     /**
