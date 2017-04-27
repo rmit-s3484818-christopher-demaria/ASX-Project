@@ -2,14 +2,17 @@
 
     <!-- Sidebar -->
     <div class="sidebarNav">
-
+        <?php
+        $userID = Auth::id();
+        $userDetails = DB::table('users')->where('id', $userID)->first();
+        ?>
         {{--<div class="row-fluid">--}}
             {{--<div class="row-fluid playerContainer">--}}
                 {{--<div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1 playerTile"><span class="glyphicon navbar-icons glyphicon-user"></span><h5>user10112</h5></div> <!-- ensure username is max 15 characters long -->--}}
             {{--</div>--}}
         {{--</div>--}}
         <ul class="playerContainer">
-            <li class="playerTile navItem"><span class="glyphicon navbar-icons glyphicon-user"></span><h4 class="sideBarText">Username</h4></li>
+            <li class="playerTile navItem"><span class="glyphicon navbar-icons glyphicon-user"></span><h4 class="sideBarText">{{ $userDetails->name }}</h4></li>
         </ul>
             <ul class="sidebarOptions">
 

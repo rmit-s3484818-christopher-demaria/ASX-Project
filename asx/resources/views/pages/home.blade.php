@@ -16,13 +16,14 @@
     $userID = Auth::id();
     $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
+    $userDetails = DB::table('users')->where('id', $userID)->first();
     ?>
 
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
                 <div>
-                    <h2 class="pageHeading">username's Dashboard</h2>
+                    <h2 class="pageHeading"> {{ $userDetails->name }}'s Dashboard</h2>
                     <hr>
                 </div>
             </div>
@@ -32,7 +33,7 @@
                 <div class="dash-content-wrapper">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1">
+                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1 home">
                             <p>
                                 @foreach ($rankings as $ranking)
                                     @if($userID == $ranking->user_id)
