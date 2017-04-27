@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use auth;
+use DB;
 
 class pageController extends Controller
 {
@@ -46,8 +47,47 @@ class pageController extends Controller
 
     function passSymbol($symbol)
     {
-        $stock = $symbol;
-        return view('pages.buy')->with('symbol', $stock);
+        return view('pages.buy')->with('symbol', $symbol);
     }
 
+    function buyStock(Request $request)
+    {
+        $userID = Auth::id();
+        $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
+
+        $quantity = $request->input('quantity');
+        $symbol = $request->input('symbol');
+        $price = $request->input('price');
+        $ownedStocks = $portfolio->ownedStocks;
+        $balance = $portfolio->money;
+        $netWorth = $portfolio->netWorth;
+
+        $flatCharge = 50;
+        $percentCharge = (1 / 100) * $price;
+        $totalCost = $flatCharge + $percentCharge + $price;
+        $newBalance = $balance - $totalCost;
+        $newStocksOwned = $ownedStocks + $quantity;
+
+
+        DB::table('owned_stocks')->insert
+        (
+            [
+                'user_id' => $userID,
+                'stock_symbol' => $symbol,
+                'number' => $quantity
+            ]
+        );
+
+        DB::table('portfolio')
+                   ->where('user_id', $userID)
+                   ->update(
+                       [
+                           'money' => $newBalance,
+                           'owned_stocks' => $newStocksOwned
+                       ]
+                   );
+
+        return view('pages.account');
+
+    }
 }

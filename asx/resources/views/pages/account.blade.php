@@ -9,7 +9,11 @@
     {{--<p>This will be our account page</p>--}}
     {{--<p>Text added by andy as a test. Will be deleted</p>--}}
 
-
+    <?php
+    $userID = Auth::id();
+    $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
+    $users = DB::table('portfolio')->where('user_id', $userID)->first();
+    ?>
 
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -25,10 +29,6 @@
             <div class="row portfolio-body">
                 <div class="col-lg-3 portfolio-rank-tile">
                     <h1>Rank #
-                        <?php
-                        $userID = Auth::id();
-                        $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
-                        ?>
                         @foreach ($rankings as $ranking)
                             @if($userID == $ranking->user_id)
                                 {{ $loop->iteration }}
@@ -37,15 +37,7 @@
                     </h1>
                 </div>
                 <div class="col-lg-5 col-lg-offset-4 portfolio-cashbalance-tile">
-                    <h1>Cash Balance: $
-                        <?php
-                        $userID = Auth::id();
-                        $users = DB::table('portfolio')->where('user_id', $userID)->get();
-                        ?>
-                        @foreach ($users as $user)
-                                 {{ number_format($user->money, 2) }}
-                        @endforeach
-                    </h1>
+                    <h1>Cash Balance: ${{ number_format($users->money, 2) }} </h1>
                 </div>
 
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">

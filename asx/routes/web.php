@@ -59,6 +59,11 @@ Route::get('buy/{symbol}', [
     'uses' => 'pageController@passSymbol'
 ]);
 
+Route::post('buy', [
+    'as' => 'buyStock',
+    'uses' => 'pageController@buyStock'
+]);
+
 //    return view('test');
 
 Auth::routes();
