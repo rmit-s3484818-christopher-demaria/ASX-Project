@@ -11,6 +11,11 @@
     Buy
 @stop
 @section('body')
+
+    <?php
+    $stock = DB::table('stocks')->where('symbol', $symbol)->first();
+    ?>
+
 <div class="navbarMargin">
     <div class="container-fluid">
         <div class="container-fluid">
@@ -24,7 +29,7 @@
         <div class="row company-buysell">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 {{--Will updated accordingly to company chosen--}}
-                <h1>Facebook <span>(FB)</span></h1>
+                <h1>{{ $stock->name }} <span>{{$symbol}}</span></h1>
             </div>
         </div>
     </div>
@@ -33,7 +38,7 @@
         <div class="col-lg-4 col-md-8 col-sm-8 col-lg-offset-4  col-sm-offset-2">
             <form>
                 <h3>Share Price</h3>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" value = "{{ $stock->price }}" readonly>
 
                 <h3>Quantity</h3>
                 <input class="form-control" type="text">

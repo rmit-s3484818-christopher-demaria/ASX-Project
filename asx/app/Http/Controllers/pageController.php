@@ -43,4 +43,9 @@ class pageController extends Controller
         }
 
     }
+
+    function passSymbol($symbol)
+    {
+    }
+
 }

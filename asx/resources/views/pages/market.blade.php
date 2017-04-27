@@ -5,7 +5,7 @@
 @stop
 @section('body')
     <?php
-    $rankings = DB::table('stocks')->orderBy('name', 'asc')->get();
+    $stocks = DB::table('stocks')->orderBy('name', 'asc')->get();
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -28,14 +28,12 @@
                                 <td align="center">Company Worth</td>
                                 <td align="center">% (+/-)</td>
                             </tr>
-                            @foreach ($rankings as $ranking)
+                            @foreach ($stocks as $stock)
                                 <tr>
-                                    <td align="center"><strong> {{$ranking->symbol}}</strong></td>
-                                    <td>
-                                                {{ $ranking->name }}
-                                    </td>
-                                    <td align="center"> {{$ranking->price}}</td>
-                                    <td align="center">{{$ranking->perChange}}</td>
+                                    <td align="center"><strong><a href = "{{ route('passSymbol', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
+                                    <td>{{ $stock->name }}</td>
+                                    <td align="center"> {{$stock->price}}</td>
+                                    <td align="center">{{$stock->perChange}}</td>
                                 </tr>
                             @endforeach
                         </table>

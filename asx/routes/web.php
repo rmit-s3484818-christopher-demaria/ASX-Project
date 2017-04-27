@@ -42,9 +42,9 @@ Route::get('market', function(){
     return view('pages.market');
 });
 
-Route::get('buy', function(){
-    return view('pages.buy');
-});
+//Route::get('buy', function(){
+//   return view('pages.buy');
+//});
 
 Route::get('sell', function(){
     return view('pages.sell');
@@ -53,6 +53,11 @@ Route::get('sell', function(){
 Route::get('company', function(){
     return view('pages.company');
 });
+
+Route::get('buy/{symbol}', [
+    'as' => 'passSymbol',
+    'uses' => 'pageController@passSymbol'
+]);
 
 //    return view('test');
 
