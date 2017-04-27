@@ -13,15 +13,15 @@ class Stocks extends Migration
      */
         public function up()
     {
-        Schema::create('stocks', function($table)
-        {
-//            $table->increments('id');
-            $table->string('symbol',20);
-            $table->string('name');
-            $table->float('price');
-            $table->string('perChange');
-            $table->timestamps('updated_at');
-        });
+//        Schema::create('stocks', function($table)
+//        {
+////            $table->increments('id');
+//            $table->string('symbol',20);
+//            $table->string('name');
+//            $table->float('price');
+//            $table->string('perChange');
+//            $table->timestamps('updated_at');
+//        });
     }
 
 
@@ -32,6 +32,6 @@ class Stocks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stocks');
+ //       Schema::dropIfExists('stocks');
     }
 }
