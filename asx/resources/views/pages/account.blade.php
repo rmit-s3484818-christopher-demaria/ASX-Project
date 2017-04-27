@@ -13,6 +13,7 @@
     $userID = Auth::id();
     $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
+    $ownedStocks = DB::table('owned_stocks')->where('user_id', $userID)->get();
     ?>
 
     <div class="navbarMargin">
@@ -43,7 +44,20 @@
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
                     <h1 class="portfolio-options">All Shares Held</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
-                        <h2>Info will be put in here</h2>
+                        <h2>
+                            <table class="leader-table table-striped table table-responsive">
+                                <tr class="leader-headings info">
+                                    <td align="center" class="ranking-col">Company Symbol</td>
+                                    <td>Number of stocks</td>
+                                </tr>
+                                @foreach ($ownedStocks as $ownedStock)
+                                    <tr>
+                                        <td align="center"><strong><a href = "{{ route('passSymbolSell', [$ownedStock->stock_symbol, $ownedStock->number]) }}"> {{$ownedStock->stock_symbol}} </a> </strong></td>
+                                        <td>{{ $ownedStock->number }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </h2>
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
@@ -81,7 +95,6 @@
                         }
                         ?>
                     </div>
-
                 </div>
 
             </div>

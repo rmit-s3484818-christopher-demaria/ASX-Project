@@ -45,9 +45,14 @@ class pageController extends Controller
 
     }
 
-    function passSymbol($symbol)
+    function passSymbolBuy($symbol)
     {
         return view('pages.buy')->with('symbol', $symbol);
+    }
+
+    function passSymbolSell($symbol)
+    {
+        return view('pages.sell')->with('symbol', $symbol);
     }
 
     function buyStock(Request $request)
@@ -64,8 +69,11 @@ class pageController extends Controller
 
         $flatCharge = 50;
         $percentCharge = (1 / 100) * $price;
-        $totalCost = $flatCharge + $percentCharge + $price;
+        $fees = $flatCharge + $percentCharge;
+        $totalCost = $fees + $price;
+
         $newBalance = $balance - $totalCost;
+        $newNetWorth = $netWorth - $fees;
         $newStocksOwned = $ownedStocks + $quantity;
 
 
@@ -83,11 +91,66 @@ class pageController extends Controller
                    ->update(
                        [
                            'money' => $newBalance,
-                           'owned_stocks' => $newStocksOwned
+                           'ownedStocks' => $newStocksOwned,
+                           'netWorth' => $newNetWorth
                        ]
                    );
 
         return view('pages.account');
 
+    }
+
+    function sellStock(Request $request)
+    {
+        $userID = Auth::id();
+        $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
+
+        $quantity = $request->input('quantity');
+        $symbol = $request->input('symbol');
+        $price = $request->input('price');
+        $ownedStocks = $portfolio->ownedStocks;
+        $balance = $portfolio->money;
+        $netWorth = $portfolio->netWorth;
+
+        $stockToSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();
+        $numberOwned = $stockToSell->number;
+
+        $flatCharge = 50;
+        $percentCharge = (.25 / 100) * $price;
+        $fees = $flatCharge + $percentCharge;
+        $totalMoney = $price - $fees;
+
+        $newBalance = $balance + $totalMoney;
+        $newStocksOwned = $ownedStocks - $quantity;
+        $newQuantity = $numberOwned - $quantity;
+        $newNetWorth = $netWorth - $fees;
+
+        if($newQuantity == 0)
+        {
+            DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->delete();
+        }
+        else
+        {
+            DB::table('owned_stocks')
+            ->where('user_id', $userID)
+            ->where('stock_symbol', $symbol)
+            ->update(
+                [
+                    'number' => $newQuantity
+                ]
+            );
+        }
+
+        DB::table('portfolio')
+            ->where('user_id', $userID)
+            ->update(
+                [
+                    'money' => $newBalance,
+                    'ownedStocks' => $newStocksOwned,
+                    'netWorth' => $newNetWorth
+                ]
+            );
+
+        return view('pages.account');
     }
 }

@@ -38,7 +38,7 @@
                                             @endif
                                         @endforeach
                                     </td>
-                                    <td align="right"> {{ number_format($ranking->money, 2) }} </td>
+                                    <td align="right"> {{ number_format($ranking->netWorth, 2) }} </td>
                                 </tr>
                             @endforeach
                         </table>

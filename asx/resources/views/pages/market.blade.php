@@ -30,7 +30,7 @@
                             </tr>
                             @foreach ($stocks as $stock)
                                 <tr>
-                                    <td align="center"><strong><a href = "{{ route('passSymbol', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
+                                    <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
                                     <td>{{ $stock->name }}</td>
                                     <td align="center"> {{$stock->price}}</td>
                                     <td align="center">{{$stock->perChange}}</td>

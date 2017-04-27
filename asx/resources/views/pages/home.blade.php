@@ -11,6 +11,13 @@
     Home
 @stop
 @section('body')
+
+    <?php
+    $userID = Auth::id();
+    $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
+    $users = DB::table('portfolio')->where('user_id', $userID)->first();
+    ?>
+
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -26,7 +33,13 @@
                     <div class="row">
 
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <p>
+                                @foreach ($rankings as $ranking)
+                                    @if($userID == $ranking->user_id)
+                                       Ranked: {{ $loop->iteration }}
+                                    @endif
+                                @endforeach
+                            </p>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Leaderboard Ranking</h4>
                             </div>

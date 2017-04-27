@@ -55,13 +55,23 @@ Route::get('company', function(){
 });
 
 Route::get('buy/{symbol}', [
-    'as' => 'passSymbol',
-    'uses' => 'pageController@passSymbol'
+    'as' => 'passSymbolBuy',
+    'uses' => 'pageController@passSymbolBuy'
+]);
+
+Route::get('sell/{symbol}', [
+    'as' => 'passSymbolSell',
+    'uses' => 'pageController@passSymbolSell'
 ]);
 
 Route::post('buy', [
     'as' => 'buyStock',
     'uses' => 'pageController@buyStock'
+]);
+
+Route::post('sell', [
+    'as' => 'sellStock',
+    'uses' => 'pageController@sellStock'
 ]);
 
 //    return view('test');
