@@ -15,7 +15,7 @@ class marketController extends Controller
         date_default_timezone_set('Australia/Melbourne');
         $date = date('H-i-s_d-m-Y', time());
         $tries = 0;
-//        set_time_limit(20);
+        set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
         $list = [];
         foreach($stocks as $stock)
@@ -25,7 +25,7 @@ class marketController extends Controller
             $tries++;
 
             //Get rid of tries on the server
-            if($tries == 20)
+            if($tries == 100)
             {
                 break;
             }

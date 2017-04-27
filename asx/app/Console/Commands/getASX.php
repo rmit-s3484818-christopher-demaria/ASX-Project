@@ -45,7 +45,7 @@ class getASX extends Command
         date_default_timezone_set('Australia/Melbourne');
         $date = date('H-i-s_d-m-Y', time());
         $tries = 0;
-//        set_time_limit(20);
+        set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
         $list = [];
         foreach($stocks as $stock)
@@ -53,7 +53,11 @@ class getASX extends Command
             //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
             $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
             $tries++;
+            if($tries == 1800)
+            {
+                break;
 
+            }
             //Get rid of tries on the server
 
 //              if($tries == 0)
