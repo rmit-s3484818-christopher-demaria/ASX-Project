@@ -24,12 +24,16 @@ Route::get('account', function(){
 
 route::get('register',function(){
    return view('auth.register');
-
 });
 
 Route::get('stock', function(){
     return view('pages.stock');
 });
+
+Route::get('goTest', function(){
+    return view('pages.test');
+});
+
 Route::get('leader', function(){
     return view('pages.leaderboard');
 });
