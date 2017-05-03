@@ -59,43 +59,54 @@ class pageController extends Controller
     {
         $userID = Auth::id();
         $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
-
+        $ownedStock = DB::table('owned_stocks')->where('user_id', $userID)->first();
         $quantity = $request->input('quantity');
         $symbol = $request->input('symbol');
         $price = $request->input('price');
+        $checkID = $ownedStock->user_id;
+        $checkSymbol = $ownedStock->stock_symbol;
+        $checkAmount = $ownedStock->number;
         $ownedStocks = $portfolio->ownedStocks;
         $balance = $portfolio->money;
         $netWorth = $portfolio->netWorth;
 
         $flatCharge = 50;
         $percentCharge = (1 / 100) * $price;
-        $fees = $flatCharge + $percentCharge;
-        $totalCost = $fees + $price;
-
+        $totalCost = $flatCharge + $percentCharge + $price;
         $newBalance = $balance - $totalCost;
-        $newNetWorth = $netWorth - $fees;
         $newStocksOwned = $ownedStocks + $quantity;
 
-
-        DB::table('owned_stocks')->insert
-        (
-            [
-                'user_id' => $userID,
-                'stock_symbol' => $symbol,
-                'number' => $quantity
-            ]
-        );
-
-        DB::table('portfolio')
-                   ->where('user_id', $userID)
-                   ->update(
-                       [
-                           'money' => $newBalance,
-                           'ownedStocks' => $newStocksOwned,
-                           'netWorth' => $newNetWorth
-                       ]
-                   );
-
+        if($balance > $totalCost) {
+            if ($checkSymbol == $symbol && $checkID == $userID) {
+                $newOwnedStocks = $checkAmount + $quantity;
+                DB::table('owned_stocks')
+                    ->where('user_id', $checkID)
+                    ->where('stock_symbol', $checkSymbol)
+                    ->update(
+                        [
+                            'number' => $newOwnedStocks
+                        ]
+                    );
+            }
+            else {
+                DB::table('owned_stocks')->insert
+                (
+                    [
+                        'user_id' => $userID,
+                        'stock_symbol' => $symbol,
+                        'number' => $quantity
+                    ]
+                );
+            }
+            DB::table('portfolio')
+                ->where('user_id', $userID)
+                ->update(
+                    [
+                        'money' => $newBalance,
+                        'ownedStocks' => $newStocksOwned
+                    ]
+                );
+        }
         return view('pages.account');
 
     }
