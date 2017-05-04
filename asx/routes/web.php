@@ -94,3 +94,5 @@ Route::get('ExportClients','ExcelController@ExportClients');
 Route::post('ImportClients', 'ExcelController@ImportClients');
 Route::get('upload','ExcelController@upload');
 Route::get('test','marketController@view');
+
+Route::get('test2','marketController@view2');
