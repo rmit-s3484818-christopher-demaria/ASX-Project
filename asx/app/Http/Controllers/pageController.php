@@ -140,28 +140,28 @@ class pageController extends Controller
         {
             DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->delete();
         }
-        else
-        {
+        elseif($newQuantity > 0) {
             DB::table('owned_stocks')
-            ->where('user_id', $userID)
-            ->where('stock_symbol', $symbol)
-            ->update(
-                [
-                    'number' => $newQuantity
-                ]
-            );
+                ->where('user_id', $userID)
+                ->where('stock_symbol', $symbol)
+                ->update(
+                    [
+                        'number' => $newQuantity
+                    ]
+                );
+
+
+            DB::table('portfolio')
+                ->where('user_id', $userID)
+                ->update(
+                    [
+                        'money' => $newBalance,
+                        'ownedStocks' => $newStocksOwned,
+                        'netWorth' => $newNetWorth
+                    ]
+                );
         }
-
-        DB::table('portfolio')
-            ->where('user_id', $userID)
-            ->update(
-                [
-                    'money' => $newBalance,
-                    'ownedStocks' => $newStocksOwned,
-                    'netWorth' => $newNetWorth
-                ]
-            );
-
+        // need to code for a dialogue box to open up to show the error in an else
         return view('pages.account');
     }
 }
