@@ -35,11 +35,6 @@
 
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1 home">
                             <p>
-                                @foreach ($rankings as $ranking)
-                                    @if($userID == $ranking->user_id)
-                                       Ranked: {{ $loop->iteration }}
-                                    @endif
-                                @endforeach
                             </p>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Leaderboard Ranking</h4>

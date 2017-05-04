@@ -3,13 +3,25 @@
     Account
 @stop
 @section('body')
-    {{--<h1 class="headers">Account Page</h1>--}}
-    {{--<p><strong>Welcome {{ Auth::user()->name }}!</strong></p>--}}
-
-    {{--<p>This will be our account page</p>--}}
-    {{--<p>Text added by andy as a test. Will be deleted</p>--}}
 
     <?php
+    $userID = Auth::id();
+    $money = 1000000;
+    $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
+
+    if (!$portfolio)
+    {
+        DB::table('portfolio')->insert
+        (
+            [
+                'user_id' => $userID,
+                'ownedStocks' => 0,
+                'money' => $money,
+                'netWorth' => $money
+            ]
+        );
+    }
+
     $userID = Auth::id();
     $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
@@ -76,34 +88,10 @@
                     <h1 class="portfolio-options">My Trading Accounts</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h2>Info will be put in here</h2>
-                        <?php
-                        $userID = Auth::id();
-                        $money = 1000000;
-                        $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
-
-                        if (!$portfolio)
-                        {
-                            DB::table('portfolio')->insert
-                            (
-                                [
-                                    'user_id' => $userID,
-                                    'ownedStocks' => 0,
-                                    'money' => $money,
-                                    'netWorth' => $money
-                                ]
-                            );
-                        }
-                        ?>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    {{--=======--}}
-    {{--<h1 class="headers">Account Page</h1>--}}
-    {{--<p><strong>Welcome {{ Auth::user()->name }}!</strong></p>--}}
-    {{--<p>This will be our account page</p>--}}
-    {{--<p>Text added by andy as a test. Will be deleted</p>--}}
-    {{-->>>>>>> origin/master--}}
 @endsection
