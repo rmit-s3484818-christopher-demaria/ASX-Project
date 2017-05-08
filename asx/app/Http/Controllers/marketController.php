@@ -100,7 +100,10 @@ class marketController extends Controller
         set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
         $stocks = $stocks->toArray();
-        $test = array_chunk($stocks,300);
+        $test = array_chunk($stocks,400);
+        $list = [];
+
+        $count = 0;
 //        print_r($test);
 
         foreach($test as $tests)
@@ -119,12 +122,15 @@ class marketController extends Controller
                 }
 
             }
-            $dataURL.= '&f=nac1p1%27 ';
+            $dataURL.= '&f=snac1p1%27 ';
             echo $dataURL;
+            $list[] .= file_get_contents($dataURL);
+
+           $count++;
 
         }
 
-
+        echo "FINISHED";
 
 
 
@@ -160,7 +166,7 @@ class marketController extends Controller
 //---------------------------------------------------------------
 
 
-//            $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
+//            $list[] = file_get_contents($dataURL);
 //
 //
 //        }
