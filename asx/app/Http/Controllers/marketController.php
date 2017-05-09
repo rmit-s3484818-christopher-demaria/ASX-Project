@@ -109,7 +109,7 @@ class marketController extends Controller
         foreach($test as $tests)
         {
             $elements = count($tests);
-            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=';
+            $dataURL = 'http://download.finance.yahoo.com/d/quotes.csv?s=';
             for($x = 0; $x < $elements; $x++)
             {
                 if($x == 0)
@@ -118,7 +118,7 @@ class marketController extends Controller
                 }
                 else
                 {
-                    $dataURL.= "+".$tests[$x].'.AX';
+                    $dataURL.= "+".$tests[$x].".AX";
                 }
 
             }
@@ -131,10 +131,35 @@ class marketController extends Controller
         }
 
         echo "FINISHED";
+        $filename = $date . '-asx-list';
+        Excel::create($filename,function($excel) use($list){
+
+            $excel->sheet('ASX-List',function($sheet) use($list){
+
+                $sheet->fromArray($list);
+
+
+            });
 
 
 
+        })->store('csv');
 
+        foreach($list as $stock)
+        {
+            $newStock = str_replace('"','',$stock);
+            $value = explode(',',$newStock);
+            stocks::create(
+                [
+                    'symbol' => $value[0],
+                    'name' => $value[1],
+                    'price' => $value[2],
+                    'perChange' => $value[3],
+                    'updated_at' => '5'
+                ]
+            );
+
+        }
 
 //        $list = [];
 //        foreach($stocks as $stock)
