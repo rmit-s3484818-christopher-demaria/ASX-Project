@@ -1,16 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Christopher
+ * Date: 30/04/2017
+ * Time: 9:07 PM
+ */
+?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Test</title>
-</head>
-<body>
-
-@foreach ($stocks as $stock)
-
-<p> {{ $stock->symbol }} </p>
-
-@endforeach
-
-</body>
+<html>
+<a href="{{ url("test")}}">test</a>
+<a href="{{ url("test2")}}">test2</a>
 
 </html>

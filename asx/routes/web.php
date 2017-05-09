@@ -31,7 +31,7 @@ Route::get('stock', function(){
 });
 
 Route::get('goTest', function(){
-    return view('pages.test');
+    return view('test');
 });
 
 Route::get('leader', function(){
