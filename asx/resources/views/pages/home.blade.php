@@ -34,7 +34,9 @@
                     <div class="row">
 
                         <div class=" col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1 home">
-
+                            <div>
+                                <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-king"></span></h1>
+                            </div>
                             <h1 class="dashboardContainers">14th</h1>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Leaderboard Ranking</h4>
@@ -42,35 +44,50 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1  col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div>
+                                <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-usd"></span></h1>
+                            </div>
+                            <h2 class="dashboardContainers">$1,200,000</h2>
                             <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">Best Share</h4>
+                                <h4 class="dash-content-link-text">Financial Position</h4>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile 1 col-md-offset-1 col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div>
+                                <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-eye-open"></span></h1>
+                            </div>
+                            <table class="leader-table table-striped table table-responsive">
+                                <tr class="leader-headings info">
+                                    <td align="center" class="ranking-col">Company</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="dashWatchItem">ANZ</td>
+                                    <td align="right"><button class="btn btn-success">More</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="dashWatchItem">NAB</td>
+                                    <td align="right"><button class="btn btn-success">More</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="dashWatchItem">CBA</td>
+                                    <td align="right"><button class="btn btn-success">More</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="dashWatchItem">KIA</td>
+                                    <td align="right"><button class="btn btn-success">More</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="dashWatchItem">TOY</td>
+                                    <td align="right"><button class="btn btn-success">More</button></td>
+                                </tr>
+
+                            </table>
                             <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">Worst Share</h4>
+                                <h4 class="dash-content-link-text">Watchlist</h4>
                             </div>
                         </div>
-                        <div class=" col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">Best Company Share in Market</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">Worst Company Share in Market</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">My Watchlist</h4>
-                            </div>
-                        </div>
+
 
                     </div>
 

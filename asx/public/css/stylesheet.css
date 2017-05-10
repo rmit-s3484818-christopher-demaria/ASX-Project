@@ -14,9 +14,16 @@
 h1.dashboardContainers{
     text-align: center;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 167px;
     font-size: 70px;
-    margin: 0px;
+
+}
+h2.dashboardContainers{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 189px;
+    font-size: 50px;
+
 }
 
 body,html{
@@ -31,6 +38,24 @@ body,html{
     left: 0px;
     position: absolute;
     background: #34495e;
+}
+
+h1.dashIcons{
+    font-size: 100px;
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+td.dashWatchItem{
+    font-weight: 600;
+    color: #34495e;
+    font-size: 20px;
+}
+span.dashBorder{
+    border-radius: 110px;
+    border: 2px dashed orange;
+    padding: 40px;
 }
 
 .navbarMargin{
@@ -160,12 +185,12 @@ input.company-info-inputs{
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 15px;
-    padding-top: 5px;
+    padding-top: 10px;
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     color: white;
 }
 
