@@ -42,45 +42,103 @@ class getASX extends Command
 
     public function handle()
     {
+//        date_default_timezone_set('Australia/Melbourne');
+//        $date = date('H-i-s_d-m-Y', time());
+//        $tries = 0;
+//        set_time_limit(0);
+//        $stocks = DB::table('asxes')->pluck('symbol');
+//        $list = [];
+//        foreach($stocks as $stock)
+//        {
+//            //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
+//            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
+//            $tries++;
+//            if($tries == 1800)
+//            {
+//                break;
+//
+//            }
+//            $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
+//
+//
+//        }
+//        $filename = $date . '-asx-list';
+//        Excel::create($filename,function($excel) use($list){
+//
+//            $excel->sheet('ASX-List',function($sheet) use($list){
+//
+//                $sheet->fromArray($list);
+//
+//
+//            });
+//
+//        })->store('csv');
+//
+//        Schema::dropIfExists('stocks');
+//
+//        Schema::create('stocks', function($table)
+//        {
+//            $table->string('symbol',20);
+//            $table->string('name');
+//            $table->float('price');
+//            $table->string('perChange');
+//            $table->timestamps('updated_at');
+//        });
+//
+//        foreach($list as $stock)
+//        {
+//            $newStock = str_replace('"','',$stock);
+//            $value = explode(',',$newStock);
+//            stocks::create(
+//                [
+//                    'symbol' => $value[0],
+//                    'name' => $value[1],
+//                    'price' => $value[2],
+//                    'perChange' => $value[3],
+//                    'updated_at' => '5'
+//                ]
+//            );
+//
+//        }
+//-----------------------------------------------------------------------------------------------
+//
         date_default_timezone_set('Australia/Melbourne');
         $date = date('H-i-s_d-m-Y', time());
-        $tries = 0;
         set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
+        $stocks = $stocks->toArray();
+        $test = array_chunk($stocks,400);
         $list = [];
-        foreach($stocks as $stock)
+
+        $count = 0;
+//        print_r($test);
+
+        foreach($test as $tests)
         {
-            //           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
-            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
-            $tries++;
-            if($tries == 1800)
+            $elements = count($tests);
+            $dataURL = 'http://download.finance.yahoo.com/d/quotes.csv?s=';
+            for($x = 0; $x < $elements; $x++)
             {
-                break;
+                if($x == 0)
+                {
+                    $dataURL.= $tests[$x].'.AX';
+                }
+                else
+                {
+                    $dataURL.= "+".$tests[$x].".AX";
+                }
 
             }
-            //Get rid of tries on the server
+            $dataURL.= '&f=snac1p1%27 ';
+            $list[] .= file_get_contents($dataURL);
 
-//              if($tries == 0)
-//                {
-//                    $dataURL.=$stock.".AX";
-//                    $tries++;
-//                }
-//                else
-//                {
-//                    $dataURL.="+".$stock.".AX";
-//                    $tries++;
-//                }
-//            $data = file_get_contents($dataURL);
-//            $stockinfo = $stock . $data;
-            $list[] = '"'.$stock . '",' . file_get_contents($dataURL);
-
+            $count++;
 
         }
-//        echo $list;
+
 
         $filename = $date . '-asx-list';
         Excel::create($filename,function($excel) use($list){
-
             $excel->sheet('ASX-List',function($sheet) use($list){
 
                 $sheet->fromArray($list);
@@ -92,21 +150,28 @@ class getASX extends Command
 
         })->store('csv');
 
-        Schema::dropIfExists('stocks');
-
-        Schema::create('stocks', function($table)
-        {
-            $table->string('symbol',20);
-            $table->string('name');
-            $table->float('price');
-            $table->string('perChange');
-            $table->timestamps('updated_at');
-        });
-
         foreach($list as $stock)
         {
             $newStock = str_replace('"','',$stock);
             $value = explode(',',$newStock);
+            $corrupt = 'N/A';
+            if(strcmp($value[1],$corrupt))
+            {
+                stocks::create(
+                    [
+                        'symbol' => $value[0],
+                        'name' => $value[0],
+                        'price' => 0,
+                        'perChange' => 0,
+                        'updated_at' => '5'
+                    ]
+                );
+
+            }
+            else
+            {
+
+
             stocks::create(
                 [
                     'symbol' => $value[0],
@@ -116,11 +181,13 @@ class getASX extends Command
                     'updated_at' => '5'
                 ]
             );
+            }
 
         }
 
-//        return view('test',['stocks'=> $stocks]);
 
-    }
+
+
+      }
 
 }
