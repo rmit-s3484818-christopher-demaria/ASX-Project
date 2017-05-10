@@ -33,11 +33,12 @@
                 <div class="dash-content-wrapper">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1 home">
-                            <p>
-                            </p>
+                        <div class=" col-lg-3 col-md-4 col-sm-8 dash-content-tile col-md-offset-1 col-lg-offset-0 col-sm-offset-1 home">
+
+                            <h1 class="dashboardContainers">14th</h1>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Leaderboard Ranking</h4>
+
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1  col-sm-offset-1">

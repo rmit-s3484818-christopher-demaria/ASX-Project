@@ -11,6 +11,13 @@
 /*font-weight: 100;*/
 /*color:#1f648b;*/
 
+h1.dashboardContainers{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 70px;
+    margin: 0px;
+}
 
 body,html{
     height: 100%;
@@ -43,6 +50,7 @@ body,html{
     margin-left: 0px;
     margin-right: 0px;
     width:100%;
+padding-bottom: 10px;
 
 }
 
@@ -168,7 +176,7 @@ input.company-info-inputs{
 }
 
 .dash-content-wrapper{
-    margin-top: 7.5%;
+    margin-top: 1%;
 }
 
 .landingHeading{
@@ -364,13 +372,16 @@ input.company-info-inputs{
 }
 
 .leader-headings{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .ranking-col{
-    width: 17.5%;
+    width: 20%;
 }
 
+h3.tableHeadingPortfolio{
+    padding-top: 10px;
+}
 
 a:hover{
     text-decoration: none;

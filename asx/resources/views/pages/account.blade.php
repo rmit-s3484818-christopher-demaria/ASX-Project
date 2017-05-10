@@ -40,7 +40,7 @@
 
         <div class="container-fluid">
             <div class="row portfolio-body">
-                <div class="col-lg-3 portfolio-rank-tile">
+                <div class="col-lg-3 col-lg-offset-1 portfolio-rank-tile">
                     <h1>Rank #
                         @foreach ($rankings as $ranking)
                             @if($userID == $ranking->user_id)
@@ -49,18 +49,18 @@
                         @endforeach
                     </h1>
                 </div>
-                <div class="col-lg-5 col-lg-offset-4 portfolio-cashbalance-tile">
+                <div class="col-lg-5 col-lg-offset-2 portfolio-cashbalance-tile">
                     <h1>Cash Balance: ${{ number_format($users->money, 2) }} </h1>
                 </div>
 
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
                     <h1 class="portfolio-options">All Shares Held</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
-                        <h2>
+                        <h3 class="tableHeadingPortfolio">
                             <table class="leader-table table-striped table table-responsive">
                                 <tr class="leader-headings info">
                                     <td align="center" class="ranking-col">Company Symbol</td>
-                                    <td>Number of stocks</td>
+                                    <td>Shares Owned</td>
                                 </tr>
                                 @foreach ($ownedStocks as $ownedStock)
                                     <tr>
@@ -69,19 +69,38 @@
                                     </tr>
                                 @endforeach
                             </table>
-                        </h2>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
                     <h1 class="portfolio-options">Recently Purchased Shares</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
-                        <h2>Info will be put in here</h2>
+                        <h3 class="tableHeadingPortfolio">
+                            <table class="leader-table table-striped table table-responsive">
+                                <tr class="leader-headings info">
+                                    <td align="center" class="ranking-col">Company Symbol</td>
+                                    <td>Shares Owned</td>
+                                    <td align="left">Price</td>
+                                </tr>
+
+                            </table>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
                     <h1 class="portfolio-options">My Transactions</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
-                        <h2>Info will be put in here</h2>
+                        <h3 class="tableHeadingPortfolio">
+                            <table class="leader-table table-striped table table-responsive">
+                                <tr class="leader-headings info">
+                                    <td align="center" class="ranking-col">Symbol</td>
+                                    <td>Quantity</td>
+                                    <td align="left">Price</td>
+                                    <td>Date</td>
+                                </tr>
+
+                            </table>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
