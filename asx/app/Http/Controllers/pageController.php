@@ -106,6 +106,16 @@ class pageController extends Controller
                         'ownedStocks' => $newStocksOwned
                     ]
                 );
+
+            echo '<script language="javascript">';
+            echo 'alert("Transaction complete! Your shares will now be visible from your portfolio")';
+            echo '</script>';
+        }
+        else
+        {
+            echo '<script language="javascript">';
+            echo 'alert("Your balance is too low to complete this purchase. No purchase has been made")';
+            echo '</script>';
         }
         return view('pages.account');
 
@@ -139,6 +149,10 @@ class pageController extends Controller
         if($newQuantity == 0)
         {
             DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->delete();
+
+            echo '<script language="javascript">';
+            echo 'alert("Transaction complete! Your shares have been sold and the money has been added to your account")';
+            echo '</script>';
         }
         elseif($newQuantity > 0) {
             DB::table('owned_stocks')
@@ -160,7 +174,18 @@ class pageController extends Controller
                         'netWorth' => $newNetWorth
                     ]
                 );
+            echo '<script language="javascript">';
+            echo 'alert("Transaction complete! Your shares have been sold and the money has been added to your account")';
+            echo '</script>';
         }
+        else
+        {
+            echo '<script language="javascript">';
+            echo 'alert("You do not have enough shares to sell that quantity. No changes have been made.")';
+            echo '</script>';
+        }
+
+
         // need to code for a dialogue box to open up to show the error in an else
         return view('pages.account');
     }
