@@ -115,15 +115,14 @@
                             <table class="leader-table table-striped table table-responsive">
                                 <tr class="leader-headings info">
                                     <td align="center" class="ranking-col">Symbol</td>
-                                    <td>Quantity</td>
                                     <td>Type</td>
-                                    <td align="left">Price</td>
+                                    <td>Quantity</td>
+                                    <td>Total (after fees)</td>
                                     <td>Date</td>
                                 </tr>
                                 @foreach ($transactions as $transaction)
                                     <tr>
-                                        <td> {{ $transaction->stock_symbol }}</td>
-                                        <td> {{ $transaction->number }}</td>
+                                        <td align="center"> {{ $transaction->stock_symbol }} </td>
                                         <td> @php
                                                 if( $transaction->type == 0 )
                                                 {
@@ -135,7 +134,9 @@
                                                 }
                                             @endphp
                                         </td>
+                                        <td> {{ $transaction->number }}</td>
                                         <td> ${{ $transaction->price }}</td>
+                                        <td>Placeholder</td>
                                     </tr>
                                 @endforeach
 
