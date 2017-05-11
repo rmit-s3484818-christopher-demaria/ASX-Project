@@ -145,19 +145,45 @@ class marketController extends Controller
 
         })->store('csv');
 
+        Schema::dropIfExists('stocks');
+
+        Schema::create('stocks', function($table)
+        {
+            $table->string('symbol',20);
+            $table->string('name');
+            $table->float('price');
+            $table->string('perChange');
+            $table->timestamps('updated_at');
+        });
+
         foreach($list as $stock)
         {
+
+
+
             $newStock = str_replace('"','',$stock);
             $value = explode(',',$newStock);
-            stocks::create(
-                [
-                    'symbol' => $value[0],
-                    'name' => $value[1],
-                    'price' => $value[2],
-                    'perChange' => $value[3],
-                    'updated_at' => '5'
-                ]
-            );
+            $corrupt = 'N/A';
+            $string = $value[1] .+ " " .+$corrupt .+ " ";
+
+            echo $string;
+            echo " RUN ";
+                stocks::create(
+                    [
+                        'symbol' => $value[0],
+                        'name' => $value[1],
+                        'price' => $value[2],
+                        'perChange' => $value[3],
+                        'updated_at' => '5'
+                    ]
+                );
+
+
+
+
+
+
+
 
         }
 

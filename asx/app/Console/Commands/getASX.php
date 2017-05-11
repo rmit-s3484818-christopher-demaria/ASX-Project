@@ -155,6 +155,7 @@ class getASX extends Command
             $newStock = str_replace('"','',$stock);
             $value = explode(',',$newStock);
             $corrupt = 'N/A';
+            echo $value + " " + $corrupt;
             if(strcmp($value[1],$corrupt))
             {
                 stocks::create(
