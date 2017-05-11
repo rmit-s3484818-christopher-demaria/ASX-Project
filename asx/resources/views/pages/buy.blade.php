@@ -23,7 +23,7 @@
     <div class="container-fluid">
         <div class="container-fluid">
             <div>
-                <h2 class="pageHeading"><a class="backIcon"><span class="glyphicon glyphicon-menu-left pull-left"></span></a>Buy</h2>
+                <h2 class="pageHeading" onclick="goBack()"><a class="backIcon"><span class="glyphicon glyphicon-menu-left pull-left"></span></a>Buy</h2>
                 <hr>
             </div>
         </div>
@@ -59,7 +59,7 @@
 
             </form>
 
-            <button class="btn btn-danger cancelX"><span class="glyphicon glyphicon-remove-circle"></span><h3 class="buySellBtns">Cancel</h3></button>
+            <button class="btn btn-danger cancelX" onclick="goBack()"><span class="glyphicon glyphicon-remove-circle"></span><h3 class="buySellBtns">Cancel</h3></button>
 
             <script>
                 var input = document.getElementById('quantity');
@@ -68,6 +68,9 @@
                     var price = {{ $stock->price }};
                     var calc = price*input.value;
                     document.getElementById('subTotal').value = calc;
+                }
+                function goBack() {
+                    window.history.back();
                 }
             </script>
 
