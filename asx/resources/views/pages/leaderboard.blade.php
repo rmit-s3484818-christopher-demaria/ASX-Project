@@ -30,7 +30,7 @@
                             </tr>
                             @foreach ($rankings as $ranking)
                                 <tr>
-                                    <td align="center"><strong>{{ $loop->iteration }}</strong></td>
+                                    <td align="center"><strong>#{{ $loop->iteration }}</strong></td>
                                     <td>
                                         @foreach($users as $user)
                                             @if($user->id == $ranking->user_id)

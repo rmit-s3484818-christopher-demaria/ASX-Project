@@ -25,14 +25,14 @@
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Company Symbol</td>
                                 <td>Company Name</td>
-                                <td align="center">Company Worth</td>
+                                <td align="center">Share Worth</td>
                                 <td align="center">% (+/-)</td>
                             </tr>
                             @foreach ($stocks as $stock)
                                 <tr>
                                     <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
                                     <td>{{ $stock->name }}</td>
-                                    <td align="center"> {{$stock->price}}</td>
+                                    <td align="center"> ${{$stock->price}}</td>
                                     <td align="center">{{$stock->perChange}}</td>
                                 </tr>
                             @endforeach
