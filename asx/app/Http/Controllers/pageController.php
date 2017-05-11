@@ -107,6 +107,18 @@ class pageController extends Controller
                     ]
                 );
 
+            DB::table('transactions')->insert
+            (
+                [
+                    'user_id' => $userID,
+                    'stock_symbol' => $symbol,
+                    'number' => $quantity,
+                    'price' => $totalCost,
+                    'type' => 0
+                    //created at needs to be filled aswell
+                ]
+            );
+
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares will now be visible from your portfolio")';
             echo '</script>';
@@ -150,9 +162,22 @@ class pageController extends Controller
         {
             DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->delete();
 
+            DB::table('transactions')->insert //makes a transaction record
+            (
+                [
+                    'user_id' => $userID,
+                    'stock_symbol' => $symbol,
+                    'number' => $quantity,
+                    'price' => $totalMoney,
+                    'type' => 1
+                    //created at needs to be filled aswell
+                ]
+            );
+
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares have been sold and the money has been added to your account")';
             echo '</script>';
+
         }
         elseif($newQuantity > 0) {
             DB::table('owned_stocks')
@@ -174,9 +199,24 @@ class pageController extends Controller
                         'netWorth' => $newNetWorth
                     ]
                 );
+
+            DB::table('transactions')->insert
+            (
+                [
+                    'user_id' => $userID,
+                    'stock_symbol' => $symbol,
+                    'number' => $quantity,
+                    'price' => $totalMoney,
+                    'type' => 1
+                    //created at needs to be filled aswell
+                ]
+            );
+
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares have been sold and the money has been added to your account")';
             echo '</script>';
+
+
         }
         else
         {

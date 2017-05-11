@@ -27,6 +27,7 @@
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     $ownedStocks = DB::table('owned_stocks')->where('user_id', $userID)->get();
     $stockPrices = DB::table('stocks')->get();
+    $transactions = DB::table('transactions')->where('user_id', $userID)->get();
     ?>
 
     <div class="navbarMargin">
@@ -115,9 +116,28 @@
                                 <tr class="leader-headings info">
                                     <td align="center" class="ranking-col">Symbol</td>
                                     <td>Quantity</td>
+                                    <td>Type</td>
                                     <td align="left">Price</td>
                                     <td>Date</td>
                                 </tr>
+                                @foreach ($transactions as $transaction)
+                                    <tr>
+                                        <td> {{ $transaction->stock_symbol }}</td>
+                                        <td> {{ $transaction->number }}</td>
+                                        <td> @php
+                                                if( $transaction->type == 0 )
+                                                {
+                                                   echo 'Buy';
+                                                }
+                                                else
+                                                {
+                                                   echo 'Sell';
+                                                }
+                                            @endphp
+                                        </td>
+                                        <td> ${{ $transaction->price }}</td>
+                                    </tr>
+                                @endforeach
 
                             </table>
                         </h3>
