@@ -59,17 +59,18 @@ class pageController extends Controller
     {
         $userID = Auth::id();
         $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
-        $ownedStock = DB::table('owned_stocks')->where('user_id', $userID)->first();
+        //$ownedStock = DB::table('owned_stocks')->where('user_id', $userID)->get();
         $quantity = $request->input('quantity');
         $symbol = $request->input('symbol');
         $price = $request->input('price');
-        $checkID = $ownedStock->user_id;
-        $checkSymbol = $ownedStock->stock_symbol;
-        $checkAmount = $ownedStock->number;
+        $checkID = DB::table('owned_stocks')->where('user_id', $userID)->value('user_id');
+        $checkSymbol = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol',$symbol)->value('stock_symbol');
+        $checkAmount = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->value('number');
+        $checkNull = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->value('created_at');
         $ownedStocks = $portfolio->ownedStocks;
         $balance = $portfolio->money;
         $netWorth = $portfolio->netWorth;
-
+        $newOwnedStocks = $checkAmount + $quantity;
         $flatCharge = 50;
         $percentCharge = (1 / 100) * $price;
         $totalCost = $flatCharge + $percentCharge + $price;
@@ -77,16 +78,17 @@ class pageController extends Controller
         $newStocksOwned = $ownedStocks + $quantity;
 
         if($balance > $totalCost) {
-            if ($checkSymbol == $symbol && $checkID == $userID) {
-                $newOwnedStocks = $checkAmount + $quantity;
-                DB::table('owned_stocks')
-                    ->where('user_id', $checkID)
-                    ->where('stock_symbol', $checkSymbol)
-                    ->update(
-                        [
-                            'number' => $newOwnedStocks
-                        ]
-                    );
+            if($checkSymbol == $symbol) {
+                if($checkID == $userID) {
+                    DB::table('owned_stocks')
+                        ->where('user_id', $userID)
+                        ->where('stock_symbol', $symbol)
+                        ->update(
+                            [
+                                'number' => $newOwnedStocks
+                            ]
+                        );
+                }
             }
             else {
                 DB::table('owned_stocks')->insert
@@ -106,19 +108,6 @@ class pageController extends Controller
                         'ownedStocks' => $newStocksOwned
                     ]
                 );
-
-            DB::table('transactions')->insert
-            (
-                [
-                    'user_id' => $userID,
-                    'stock_symbol' => $symbol,
-                    'number' => $quantity,
-                    'price' => $totalCost,
-                    'type' => 0
-                    //created at needs to be filled aswell
-                ]
-            );
-
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares will now be visible from your portfolio")';
             echo '</script>';
@@ -132,6 +121,7 @@ class pageController extends Controller
         return view('pages.account');
 
     }
+
 
     function sellStock(Request $request)
     {
