@@ -145,6 +145,24 @@ class marketController extends Controller
 
         })->store('csv');
 
+//        $file = File::files(app_path() . '/exports');
+        $stockList = [];
+        $handle = fopen(__DIR__ . '\..\..\exports\\'.$filename.'.csv', 'r');
+
+        while(! feof($handle))
+        {
+            $stock = fgetcsv($handle);
+
+            $stock[4] = basename($filename, '.csv');
+
+            if(count($stock) == 5)
+            {
+                $stockList[] = $stock;
+            }
+        }
+
+        fclose($handle);
+        echo count($stockList) . ' to create<br/>';
         Schema::dropIfExists('stocks');
 
         Schema::create('stocks', function($table)
@@ -156,24 +174,24 @@ class marketController extends Controller
             $table->timestamps('updated_at');
         });
 
-        foreach($list as $stock)
+        foreach($stockList as $stock)
         {
 
 
 
-            $newStock = str_replace('"','',$stock);
-            $value = explode(',',$newStock);
-            $corrupt = 'N/A';
-            $string = $value[1] .+ " " .+$corrupt .+ " ";
+//            $newStock = str_replace('"','',$stock);
+//            $value = explode(',',$newStock);
+//            $corrupt = 'N/A';
+//            $string = $value[1] .+ " " .+$corrupt .+ " ";
 
-            echo $string;
-            echo " RUN ";
+//            echo $string;
+
                 stocks::create(
                     [
-                        'symbol' => $value[0],
-                        'name' => $value[1],
-                        'price' => $value[2],
-                        'perChange' => $value[3],
+                        'symbol' => $stock[0],
+                        'name' => $stock[1],
+                        'price' => 0,
+                        'perChange' => 0,
                         'updated_at' => '5'
                     ]
                 );
@@ -186,6 +204,8 @@ class marketController extends Controller
 
 
         }
+
+
 
 //        $list = [];
 //        foreach($stocks as $stock)
