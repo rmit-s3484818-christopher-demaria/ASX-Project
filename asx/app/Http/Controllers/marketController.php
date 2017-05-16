@@ -123,14 +123,12 @@ class marketController extends Controller
 
             }
             $dataURL.= '&f=snac1p1%27 ';
-            echo $dataURL;
             $list[] .= file_get_contents($dataURL);
 
            $count++;
 
         }
 
-        echo "FINISHED";
         $filename = $date . '-asx-list';
         Excel::create($filename,function($excel) use($list){
 
@@ -176,15 +174,10 @@ class marketController extends Controller
 
         foreach($stockList as $stock)
         {
-
-
-
 //            $newStock = str_replace('"','',$stock);
 //            $value = explode(',',$newStock);
 //            $corrupt = 'N/A';
 //            $string = $value[1] .+ " " .+$corrupt .+ " ";
-
-//            echo $string;
 
                 stocks::create(
                     [
@@ -197,51 +190,91 @@ class marketController extends Controller
                 );
 
 
+        }
 
+    }
 
+    public function view3()
+    {
+        date_default_timezone_set('Australia/Melbourne');
+        $date = date('H-i-s_d-m-Y', time());
+        set_time_limit(0);
+        $stocks = DB::table('asxes')->pluck('symbol');
+        $stocks = $stocks->toArray();
+        $test = array_chunk($stocks,400);
+        $list = [];
 
+        $count = 0;
+//        print_r($test);
 
+        foreach($test as $tests)
+        {
+            $elements = count($tests);
+            $dataURL = 'http://download.finance.yahoo.com/d/quotes.csv?s=';
+            for($x = 0; $x < $elements; $x++)
+            {
+                if($x == 0)
+                {
+                    $dataURL.= $tests[$x].'.AX';
+                }
+                else
+                {
+                    $dataURL.= "+".$tests[$x].".AX";
+                }
 
+            }
+            $dataURL.= '&f=snac1p1%27 ';
+            $list[] .= file_get_contents($dataURL);
+
+            $count++;
 
         }
 
+        $filename = $date . '-asx-list';
+        Excel::create($filename,function($excel) use($list){
+
+            $excel->sheet('ASX-List',function($sheet) use($list){
+
+                $sheet->fromArray($list);
 
 
-//        $list = [];
-//        foreach($stocks as $stock)
-//        {
-//           $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.".AX" ."&f=nac1p1%27";
-//            $dataURL = 'http://finance.yahoo.com/d/quotes.csv?s=' . $stock.'.AX'.'&f=nl1p2';
-//            $tries++;
-//
-//            //Get rid of tries on the server
-//            if($tries == 100)
-//            {
-//                break;
-//            }
-
-//--------------------------------------------------------------------------
-//              if($tries == 0)
-//                {
-//                    $dataURL.=$stock.".AX";
-//                    $tries++;
-//                }
-//                else
-//                {
-//                    $dataURL.="+".$stock.".AX";
-//                    $tries++;
-//                }
-//            $data = file_get_contents($dataURL);
-//            $stockinfo = $stock . $data;
-
-//---------------------------------------------------------------
+            });
 
 
-//            $list[] = file_get_contents($dataURL);
-//
-//
-//        }
 
+        })->store('csv');
+
+//        $file = File::files(app_path() . '/exports');
+        $stockList = [];
+        $handle = fopen(__DIR__ . '\..\..\exports\\'.$filename.'.csv', 'r');
+
+        while(! feof($handle))
+        {
+            $stock = fgetcsv($handle);
+
+            $stock[4] = basename($filename, '.csv');
+
+            if(count($stock) == 5)
+            {
+                $stockList[] = $stock;
+            }
+        }
+
+        fclose($handle);
+
+        foreach($stockList as $stock)
+        {
+            if(strcmp($stock[2],"N/A") !== 0)
+            {
+                DB::table('stocks')
+                    ->where('symbol',$stock[0])
+                    ->update(['name' => $stock[1],'price' => $stock[2],'perChange'=> $stock[3]]);
+
+            }
+        }
 
     }
 }
+
+
+

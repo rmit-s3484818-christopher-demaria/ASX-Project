@@ -96,3 +96,4 @@ Route::get('upload','ExcelController@upload');
 Route::get('test','marketController@view');
 
 Route::get('test2','marketController@view2');
+Route::get('test3','marketController@view3');
