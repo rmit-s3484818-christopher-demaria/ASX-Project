@@ -47,7 +47,7 @@
                             <div>
                                 <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-usd"></span></h1>
                             </div>
-                            <h2 class="dashboardContainers">$1,200,000</h2>
+                            <h2 class="dashboardContainers"> ${{ number_format($users->money, 2) }} </h2>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Financial Position</h4>
                             </div>

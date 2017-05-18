@@ -23,7 +23,7 @@
         <div class="container-fluid">
             <div class="container-fluid">
                 <div>
-                    <h2 class="pageHeading" onclick="goBack()"><a class="backIcon"><span class="glyphicon glyphicon-menu-left pull-left"></span></a>Sell</h2>
+                    <h2 class="pageHeading"><a class="backIcon"><span class="glyphicon glyphicon-menu-left pull-left" onclick="goBack()"></span></a>Sell</h2>
                     <hr>
                 </div>
             </div>

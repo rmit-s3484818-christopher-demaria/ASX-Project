@@ -108,6 +108,20 @@ class pageController extends Controller
                         'ownedStocks' => $newStocksOwned
                     ]
                 );
+
+            DB::table('transactions')->insert
+            (
+                [
+                    'user_id' => $userID,
+                    'stock_symbol' => $symbol,
+                    'number' => $quantity,
+                    'price' => $totalCost,
+                    'type' => 0
+                    //created at needs to be filled aswell
+                ]
+            );
+
+
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares will now be visible from your portfolio")';
             echo '</script>';
