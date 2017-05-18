@@ -30,11 +30,14 @@
         </div>
         <div class="container">
             <div class="row company-buysell">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h1>{{ $stock->name }} <span>{{$symbol}}</span></h1>
+                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                    <h1> Company Name </h1>  <span class ="buyPageInfo"> {{ $stock->name }} </span>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h1>Balance: ${{ number_format($users->money, 2) }}</h1>
+                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                    <h1> Stock Symbol </h1>  <span class ="buyPageInfo"> {{ $stock->symbol }} </span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                    <h1>Balance </h1>  <span class ="buyPageInfo"> ${{ number_format($users->money, 2) }} </span>
                 </div>
             </div>
         </div>

@@ -535,7 +535,17 @@ h3.buySellBtns{
     margin-top: 15px;
 }
 
+.buyPageBox {
+       width: 33%;
+       height: 150px;
+       text-align: center;
+       font-size: 16px;
+}
 
+.buyPageInfo {
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 

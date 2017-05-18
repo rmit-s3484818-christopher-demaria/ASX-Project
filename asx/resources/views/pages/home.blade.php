@@ -17,6 +17,7 @@
     $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     $userDetails = DB::table('users')->where('id', $userID)->first();
+    $numberOfStocks = DB::table('owned_stocks')->where('user_id', $userID)->sum('number');
     ?>
 
     <div class="navbarMargin">
@@ -37,7 +38,13 @@
                             <div>
                                 <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-king"></span></h1>
                             </div>
-                            <h1 class="dashboardContainers">14th</h1>
+                            <h1 class="dashboardContainers">
+                                @foreach ($rankings as $ranking)
+                                    @if ($ranking->user_id == $userID)
+                                        #{{ $loop->iteration }}
+                                    @endif
+                                @endforeach
+                            </h1>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Leaderboard Ranking</h4>
 
@@ -86,11 +93,14 @@
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Watchlist</h4>
                             </div>
+
                         </div>
 
 
                     </div>
-
+                    <h4 class="dash-content-link-text">Total shares owned: {{ $numberOfStocks }}
+                    </h4>
+                    <h4 class="dash-content-link-text">Average price of owned shares: </h4>
                 </div>
             </div>
         </div>
