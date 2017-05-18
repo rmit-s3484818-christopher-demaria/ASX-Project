@@ -141,6 +141,8 @@ class pageController extends Controller
 
     function sellStock(Request $request)
     {
+        date_default_timezone_set('Australia/Melbourne');
+        $date = date('Y-m-d H-i;s', time());
         $userID = Auth::id();
         $portfolio = DB::table('portfolio')->where('user_id', $userID)->first();
 
@@ -175,8 +177,8 @@ class pageController extends Controller
                     'stock_symbol' => $symbol,
                     'number' => $quantity,
                     'price' => $totalMoney,
-                    'type' => 1
-                    //created at needs to be filled aswell
+                    'type' => 1,
+                    'created_at' => $date
                 ]
             );
 
@@ -213,8 +215,8 @@ class pageController extends Controller
                     'stock_symbol' => $symbol,
                     'number' => $quantity,
                     'price' => $totalMoney,
-                    'type' => 1
-                    //created at needs to be filled aswell
+                    'type' => 1,
+                    'created_at' => $date
                 ]
             );
 
