@@ -136,9 +136,9 @@ class getASX extends Command
 
         }
 
-
         $filename = $date . '-asx-list';
         Excel::create($filename,function($excel) use($list){
+
             $excel->sheet('ASX-List',function($sheet) use($list){
 
                 $sheet->fromArray($list);
@@ -150,43 +150,34 @@ class getASX extends Command
 
         })->store('csv');
 
-        foreach($list as $stock)
+//        $file = File::files(app_path() . '/exports');
+        $stockList = [];
+        $handle = fopen(__DIR__ . '\..\..\exports\\'.$filename.'.csv', 'r');
+
+        while(! feof($handle))
         {
-            $newStock = str_replace('"','',$stock);
-            $value = explode(',',$newStock);
-            $corrupt = 'N/A';
-            echo $value + " " + $corrupt;
-            if(strcmp($value[1],$corrupt))
+            $stock = fgetcsv($handle);
+
+            $stock[4] = basename($filename, '.csv');
+
+            if(count($stock) == 5)
             {
-                stocks::create(
-                    [
-                        'symbol' => $value[0],
-                        'name' => $value[0],
-                        'price' => 0,
-                        'perChange' => 0,
-                        'updated_at' => '5'
-                    ]
-                );
-
+                $stockList[] = $stock;
             }
-            else
-            {
-
-
-            stocks::create(
-                [
-                    'symbol' => $value[0],
-                    'name' => $value[1],
-                    'price' => $value[2],
-                    'perChange' => $value[3],
-                    'updated_at' => '5'
-                ]
-            );
-            }
-
         }
 
+        fclose($handle);
 
+        foreach($stockList as $stock)
+        {
+            if(strcmp($stock[2],"N/A") !== 0)
+            {
+                DB::table('stocks')
+                    ->where('symbol',$stock[0])
+                    ->update(['name' => $stock[1],'price' => $stock[2],'perChange'=> $stock[3]]);
+
+            }
+        }
 
 
       }
