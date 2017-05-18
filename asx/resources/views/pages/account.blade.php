@@ -17,7 +17,7 @@
                 'user_id' => $userID,
                 'ownedStocks' => 0,
                 'money' => $money,
-                'netWorth' => $money
+                'netWorth' => 0
             ]
         );
     }
