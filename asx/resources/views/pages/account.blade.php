@@ -30,6 +30,7 @@
     $transactions = DB::table('transactions')->where('user_id', $userID)->get();
     ?>
 
+
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -135,7 +136,15 @@
                                             @endphp
                                         </td>
                                         <td> {{ $transaction->number }}</td>
-                                        <td> ${{ $transaction->price }}</td>
+                                        <td>
+                                                @if( $transaction->type == 0 )
+                                                   - ${{ $transaction->price }}
+                                                @endif
+
+                                                @if( $transaction->type == 1 )
+                                                  + ${{ $transaction->price }}
+                                                @endif
+                                        </td>
                                         <td>Placeholder</td>
                                     </tr>
                                 @endforeach
@@ -144,12 +153,7 @@
                         </h3>
                     </div>
                 </div>
-                <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
-                    <h1 class="portfolio-options">My Trading Accounts</h1>
-                    <div class="col-lg-10 col-lg-offset-1 allshares_info">
-                        <h2>Info will be put in here</h2>
-                    </div>
-                </div>
+
 
             </div>
         </div>
