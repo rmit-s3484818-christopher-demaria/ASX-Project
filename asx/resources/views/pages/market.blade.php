@@ -5,7 +5,7 @@
 @stop
 @section('body')
     <?php
-    $stocks = DB::table('stocks')->orderBy('name', 'asc')->get();
+    $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->get();
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -29,12 +29,14 @@
                                 <td align="center">% (+/-)</td>
                             </tr>
                             @foreach ($stocks as $stock)
+                                @if ($stock->name != "N/A")
                                 <tr>
                                     <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
                                     <td>{{ $stock->name }}</td>
                                     <td align="center"> ${{$stock->price}}</td>
                                     <td align="center">{{$stock->perChange}}</td>
                                 </tr>
+                                @endif
                             @endforeach
                         </table>
 

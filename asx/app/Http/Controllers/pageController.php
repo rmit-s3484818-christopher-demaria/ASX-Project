@@ -78,6 +78,7 @@ class pageController extends Controller
         $totalCost = $flatCharge + $percentCharge + $price;
         $newBalance = $balance - $totalCost;
         $newStocksOwned = $ownedStocks + $quantity;
+        $newNetWorth = $netWorth - $totalCost;
 
         if($balance > $totalCost) {
             if($checkSymbol == $symbol) {
@@ -107,7 +108,8 @@ class pageController extends Controller
                 ->update(
                     [
                         'money' => $newBalance,
-                        'ownedStocks' => $newStocksOwned
+                        'ownedStocks' => $newStocksOwned,
+                        'netWorth' => $newNetWorth
                     ]
                 );
 
@@ -164,7 +166,7 @@ class pageController extends Controller
         $newBalance = $balance + $totalMoney;
         $newStocksOwned = $ownedStocks - $quantity;
         $newQuantity = $numberOwned - $quantity;
-        $newNetWorth = $netWorth - $fees;
+        $newNetWorth = $netWorth + $totalMoney;
 
         if($newQuantity == 0)
         {
@@ -180,7 +182,19 @@ class pageController extends Controller
                     'type' => 1,
                     'created_at' => $date
                 ]
+
+
             );
+
+            DB::table('portfolio')
+                ->where('user_id', $userID)
+                ->update(
+                    [
+                        'money' => $newBalance,
+                        'ownedStocks' => $newStocksOwned,
+                        'netWorth' => $newNetWorth
+                    ]
+                );
 
             echo '<script language="javascript">';
             echo 'alert("Transaction complete! Your shares have been sold and the money has been added to your account")';
