@@ -28,6 +28,9 @@
     $ownedStocks = DB::table('owned_stocks')->where('user_id', $userID)->get();
     $stockPrices = DB::table('stocks')->get();
     $transactions = DB::table('transactions')->where('user_id', $userID)->get();
+
+    use Carbon\Carbon;
+    $dayAgo = Carbon::today()->subWeek();
     ?>
 
 
@@ -95,16 +98,23 @@
                     </div>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
-                    <h1 class="portfolio-options">Recently Purchased Shares</h1>
+                    <h1 class="portfolio-options">Recently Purchased Shares (Within the last 7 days)</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h3 class="tableHeadingPortfolio">
                             <table class="leader-table table-striped table table-responsive">
                                 <tr class="leader-headings info">
-                                    <td align="center" class="ranking-col">Company Symbol</td>
-                                    <td>Shares Owned</td>
-                                    <td align="left">Price</td>
-                                </tr>
-
+                                    <td  align="center" class="ranking-col">Company Symbol</td>
+                                    <td  align="center">Shares Owned</td>
+                                    <td  align="center">Date</td>
+                                @foreach ($transactions as $transaction)
+                                    @if ($transaction->type == 0 && $transaction->created_at > $dayAgo)
+                                    <tr>
+                                        <td align="center"> {{ $transaction->stock_symbol }} </td>
+                                        <td align="center"> {{ $transaction->number }} </td>
+                                        <td align="center"> {{ $transaction->created_at }} </td>
+                                    </tr>
+                                    @endif
+                                @endforeach
                             </table>
                         </h3>
                     </div>
@@ -145,7 +155,7 @@
                                                   + ${{ $transaction->price }}
                                                 @endif
                                         </td>
-                                        <td>{{ $transaction->created_at }}</td>
+                                        <td> {{ $transaction->created_at }} </td>
                                     </tr>
                                 @endforeach
 

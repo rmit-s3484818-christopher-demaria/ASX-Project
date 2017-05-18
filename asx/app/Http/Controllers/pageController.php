@@ -136,7 +136,7 @@ class pageController extends Controller
             echo 'alert("Your balance is too low to complete this purchase. No purchase has been made")';
             echo '</script>';
         }
-        return view('pages.account');
+        return redirect('account');
 
     }
 
@@ -249,6 +249,6 @@ class pageController extends Controller
 
 
         // need to code for a dialogue box to open up to show the error in an else
-        return view('pages.account');
+        return redirect('account');
     }
 }
