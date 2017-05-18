@@ -145,7 +145,7 @@
                                                   + ${{ $transaction->price }}
                                                 @endif
                                         </td>
-                                        <td>Placeholder</td>
+                                        <td>{{ $transaction->created_at }}</td>
                                     </tr>
                                 @endforeach
 
