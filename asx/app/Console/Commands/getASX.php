@@ -45,6 +45,7 @@ class getASX extends Command
         set_time_limit(600);
         date_default_timezone_set('Australia/Melbourne');
         $date = date('H-i-s_d-m-Y', time());
+        $date = date('Y-m-d H-i:s', time());
         set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
         $stocks = $stocks->toArray();
@@ -115,7 +116,7 @@ class getASX extends Command
             {
                 DB::table('stocks')
                     ->where('symbol',$stock[0])
-                    ->update(['name' => $stock[1],'price' => $stock[2],'perChange'=> $stock[3]]);
+                    ->update(['name' => $stock[1],'price' => $stock[2],'perChange'=> $stock[3],'updated_at'=> $date]);
 
             }
         }
