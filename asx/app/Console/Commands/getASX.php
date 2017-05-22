@@ -44,7 +44,7 @@ class getASX extends Command
     {
         set_time_limit(600);
         date_default_timezone_set('Australia/Melbourne');
-        $date = date('Y-m-d-H-i:s', time());
+        $date = date('Y-m-d-H-i-s', time());
         $date2 = date('Y-m-d H-i:s', time());
         set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');

@@ -314,7 +314,9 @@ class marketController extends Controller
 //            $table->timestamps();
 //        });
 //
-
+        Schema::table('users', function($table) {
+            $table->dropColumn('admin');
+        });
         echo "added";
     }
 }
