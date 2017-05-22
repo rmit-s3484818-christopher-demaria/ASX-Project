@@ -59,9 +59,9 @@
                     <h1>Cash Balance: ${{ number_format($users->money, 2) }} </h1>
                 </div>
 
-                <div class="col-lg-10 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
+                <div class="col-lg-5 col-lg-offset-1 portfolio-tile portfolio-body-top-tile">
                     <h1 class="portfolio-options">All Shares Held</h1>
-                    <div class="col-lg-10 col-lg-offset-1 allshares_info">
+                    <div class="col-lg-10 col-lg-offset-1 allshares_info" id="portfolio-allshares" >
                         <h3 class="tableHeadingPortfolio">
                             <table class="leader-table table-striped table table-responsive">
                                 <tr class="leader-headings info">
@@ -95,9 +95,28 @@
                                 @endforeach
                             </table>
                         </h3>
+                        <div class="text-center">
+                            <ul class="pagination ">
+                                <li>
+                                    <a href="#" aria-label="Previous"> First
+                                        <span aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
+                <div class="col-lg-5  portfolio-tile portfolio-body-top-tile" id="port-recent-panel">
                     <h1 class="portfolio-options">Recently Purchased Shares (Within the last 7 days)</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h3 class="tableHeadingPortfolio">
