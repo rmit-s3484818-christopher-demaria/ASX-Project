@@ -46,7 +46,6 @@ class getASX extends Command
         date_default_timezone_set('Australia/Melbourne');
         $date = date('Y-m-d-H-i-s', time());
         $date2 = date('Y-m-d H-i:s', time());
-        set_time_limit(0);
         $stocks = DB::table('asxes')->pluck('symbol');
         $stocks = $stocks->toArray();
         $test = array_chunk($stocks,400);
@@ -94,7 +93,7 @@ class getASX extends Command
 
 //        $file = File::files(app_path() . '/exports');
         $stockList = [];
-        $handle = fopen(__DIR__ . '\..\..\exports\\'.$filename.'.csv', 'r');
+        $handle = fopen(__DIR__ . '/../../exports/'.$filename.'.csv', 'r');
 
         while(! feof($handle))
         {
@@ -122,6 +121,6 @@ class getASX extends Command
         }
 
 
-      }
+    }
 
 }
