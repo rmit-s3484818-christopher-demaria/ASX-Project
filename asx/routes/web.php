@@ -45,7 +45,9 @@ Route::get('settings', function(){
 Route::get('market', function(){
     return view('pages.market');
 });
-
+Route::get('admin', function(){
+    return view('pages.admin');
+});
 //Route::get('buy', function(){
 //   return view('pages.buy');
 //});
