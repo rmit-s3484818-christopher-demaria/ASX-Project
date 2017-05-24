@@ -5,7 +5,7 @@
 @stop
 @section('body')
     <?php
-    $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->get();
+    $stocks = DB::table('stocks')->paginate(50);
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -39,6 +39,7 @@
                                 @endif
                             @endforeach
                         </table>
+                        {{ $stocks->links() }}
 
 
                     </div>
