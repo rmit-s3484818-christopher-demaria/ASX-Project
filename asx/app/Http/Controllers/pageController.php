@@ -54,7 +54,10 @@ class pageController extends Controller
     {
         return view('pages.sell')->with('symbol', $symbol);
     }
-
+    function passUserProfile($user)
+    {
+        return view('pages.userpage')->with('user', $user);
+    }
     function buyStock(Request $request)
     {
         date_default_timezone_set('Australia/Melbourne');

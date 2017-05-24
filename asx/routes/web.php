@@ -60,6 +60,11 @@ Route::get('company', function(){
     return view('pages.company');
 });
 
+Route::get('admin/{user}', [
+    'as' => 'passUserProfile',
+    'uses' => 'pageController@passUserProfile'
+]);
+
 Route::get('buy/{symbol}', [
     'as' => 'passSymbolBuy',
     'uses' => 'pageController@passSymbolBuy'
