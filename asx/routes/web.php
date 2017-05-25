@@ -45,6 +45,15 @@ Route::get('settings', function(){
 Route::get('market', function(){
     return view('pages.market');
 });
+
+Route::get('friends', function(){
+    return view('pages.friends');
+});
+
+Route::get('messages', function(){
+    return view('pages.messages');
+});
+
 Route::get('admin', function(){
     return view('pages.admin');
 });
@@ -83,6 +92,31 @@ Route::post('buy', [
 Route::post('sell', [
     'as' => 'sellStock',
     'uses' => 'pageController@sellStock'
+]);
+
+Route::post('friends', [
+    'as' => 'friendRequest',
+    'uses' => 'messagesController@friendRequest'
+]);
+
+Route::get('friends/{friendID}', [
+    'as' => 'accept',
+    'uses' => 'messagesController@accept'
+]);
+
+//Route::get('friends/{friendID}', [
+//    'as' => 'decline',
+//'uses' => 'messagesController@decline'
+//]);
+
+Route::get('inbox/{friendID}', [
+    'as' => 'openConversation',
+    'uses' => 'messagesController@openConversation'
+]);
+
+Route::post('messages', [
+    'as' => 'sendMessage',
+    'uses' => 'messagesController@sendMessage'
 ]);
 
 //    return view('test');

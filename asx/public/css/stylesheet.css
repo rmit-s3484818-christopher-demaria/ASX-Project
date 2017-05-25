@@ -595,3 +595,72 @@ h3.buySellBtns{
     margin-right: 150px;
 
 }
+
+.inboxHeading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sendMessageBox {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.messagesBox {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    border: 1px lightgrey solid;
+    padding: 20px;
+}
+
+.singleMessage {
+    width: 90%;
+    margin: auto;
+    border: 1px lightgrey solid;
+    padding: 20px;
+}
+
+.friendsHeader {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sendRequestBox {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.activeRequestsBox {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+    border: 1px lightgrey solid;
+}
+
+.messageName {
+    float: left;
+    width: 20%;
+    height: 100%;
+    padding: 0;
+    margin-right: 20px;
+    font-weight: bold;
+    border-right: 1px lightgrey dotted;
+}
+
+.messageText {
+    float: left;
+    width: 60%;
+    height: 100%;
+    padding: 0;
+    text-align: left;
+}
