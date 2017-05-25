@@ -63,9 +63,9 @@
                     <h1 class="portfolio-options">All Shares Held</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info" id="portfolio-allshares" >
                         <h3 class="tableHeadingPortfolio">
-                            <table class="leader-table table-striped table table-responsive">
+                            <table class="leader-table table-striped table table-responsive tableBorder">
                                 <tr class="leader-headings info">
-                                    <td align="center" class="ranking-col">Company Symbol</td>
+                                    <td align="center" class="ranking-col">Symbol</td>
                                     <td>Shares Owned</td>
                                     <td>Share worth</td>
                                     <td>Total worth</td>
@@ -117,12 +117,12 @@
                     </div>
                 </div>
                 <div class="col-lg-5  portfolio-tile portfolio-body-top-tile" id="port-recent-panel">
-                    <h1 class="portfolio-options">Recently Purchased Shares (Within the last 7 days)</h1>
+                    <h1 class="portfolio-options">Recently Purchased Shares</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h3 class="tableHeadingPortfolio">
-                            <table class="leader-table table-striped table table-responsive">
+                            <table class="leader-table table-striped table table-responsive tableBorder">
                                 <tr class="leader-headings info">
-                                    <td  align="center" class="ranking-col">Company Symbol</td>
+                                    <td  align="center" class="ranking-col">Symbol</td>
                                     <td  align="center">Shares Owned</td>
                                     <td  align="center">Date</td>
                                 @foreach ($transactions as $transaction)
@@ -138,11 +138,11 @@
                         </h3>
                     </div>
                 </div>
-                <div class="col-lg-10 col-lg-offset-1 portfolio-tile">
+                <div class="col-lg-10 col-lg-offset-1 portfolio-tile tileBottom">
                     <h1 class="portfolio-options">My Transactions</h1>
                     <div class="col-lg-10 col-lg-offset-1 allshares_info">
                         <h3 class="tableHeadingPortfolio">
-                            <table class="leader-table table-striped table table-responsive">
+                            <table class="leader-table table-striped table table-responsive tableBorder">
                                 <tr class="leader-headings info">
                                     <td align="center" class="ranking-col">Symbol</td>
                                     <td>Type</td>

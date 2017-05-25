@@ -5,7 +5,7 @@
 @stop
 @section('body')
     <?php
-    $stocks = DB::table('stocks')->paginate(50);
+    $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->paginate(50);
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -34,7 +34,7 @@
                 <div class="dash-content-wrapper">
                     <div class="row">
 
-                        <table class="leader-table table-striped table table-responsive">
+                        <table class="leader-table table-striped table table-responsive tableSmall">
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Company Symbol</td>
                                 <td>Company Name</td>
@@ -52,9 +52,7 @@
                                 @endif
                             @endforeach
                         </table>
-                        {{ $stocks->links() }}
-
-
+                        <div class ="pageNation"> {{ $stocks->links() }} </div>
                     </div>
                 </div>
             </div>

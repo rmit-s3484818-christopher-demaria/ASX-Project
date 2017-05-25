@@ -75,6 +75,7 @@ span.dashBorder{
     margin-left: 0px;
     margin-right: 0px;
     width:100%;
+    min-height: 460px;
     padding-bottom: 10px;
 
 }
@@ -536,6 +537,13 @@ h3.buySellBtns{
     margin-top: 15px;
 }
 
+.buyPageBox {
+    width: 33%;
+    height: 150px;
+    text-align: center;
+    font-size: 16px;
+}
+
 .buyPageInfo {
     font-size: 20px;
     font-weight: bold;
@@ -543,8 +551,6 @@ h3.buySellBtns{
 
 #port-recent-panel{
     margin-left: 10px;
-    min-height: 555px;
-
 }
 
 #portfolio-allshares{
@@ -555,4 +561,22 @@ h3.buySellBtns{
     margin-top: 20px;
 }
 
+.tableSmall {
+    width: 90%;
+    margin: auto;
+    border: 1px solid #ddd;
+}
 
+.tableBorder {
+    border: 1px solid #ddd;
+}
+
+
+.tileBottom {
+    margin-bottom: 50px;
+}
+
+.pageNation {
+    margin-bottom: 50px;
+    padding-left: 35%;
+}

@@ -17,7 +17,9 @@
     <?php $stock = DB::table('stocks')->where('symbol', $symbol)->first();
     $userID = Auth::id();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
+    $maxSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();
     ?>
+
 
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -49,10 +51,9 @@
                     <h3>Share Price</h3>
                     <input class="form-control" type="text" value = "${{ $stock->price }}" readonly>
 
-                    <h3>Quantity</h3>
-                    <input name ="quantity" class="form-control" type="number" id = "quantity" min="1">
-
-                    <h3>Sub Total</h3>
+                    <h3>Quantity  /{{$maxSell->number}}</h3>
+                    <input name ="quantity" class="form-control" type="number" id = "quantity" min="1" max="{{$maxSell->number}}">
+                    <h3>Sub Total (Includes $<span id = "fees">0</span> in fees )</h3>
                     <input name ="price" class="form-control" type="number" id = "subTotal" readonly>
 
                     <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}">
@@ -68,11 +69,19 @@
                     var input = document.getElementById('quantity');
                     input.onchange = function()
                     {
+
                         var price = {{ $stock->price }};
                         var calc = price*input.value;
-                        document.getElementById('subTotal').value = calc;
-                    }
 
+                        var flatFee = 50;
+                        var percentCharge = (1 / 100) * calc;
+                        var fees = flatFee + percentCharge;
+
+                        var totalCost = calc - fees;
+
+                        document.getElementById('subTotal').value = totalCost;
+                        document.getElementById('fees').innerHTML = fees;
+                    }
                     function goBack() {
                         window.history.back();
                     }

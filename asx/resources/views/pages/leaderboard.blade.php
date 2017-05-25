@@ -22,7 +22,7 @@
                 <div class="dash-content-wrapper">
                     <div class="row">
 
-                        <table class="leader-table table-striped table table-responsive">
+                        <table class="leader-table table-striped table table-responsive tableSmall">
                             <tr class="leader-headings info">
                                 <td align="center" class="ranking-col">Ranking</td>
                                 <td>Username</td>
