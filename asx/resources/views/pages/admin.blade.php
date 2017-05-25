@@ -17,12 +17,12 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group" >
-                                <input type="text" class="form-control searchBar"   placeholder="Find players">
+                                <input type="text" class="form-control searchBar" placeholder="Find players">
                                 <span class="input-group-btn">
                                 <button class="btn btn-primary searchBar" type="button"><span class="glyphicon glyphicon-search"></span></button>
                                 </span>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
+                            </div>
+                        </div>
                     </div>
 
                 </div>
