@@ -27,7 +27,8 @@
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     $ownedStocks = DB::table('owned_stocks')->where('user_id', $userID)->get();
     $stockPrices = DB::table('stocks')->get();
-    $transactions = DB::table('transactions')->where('user_id', $userID)->get();
+    $transactions = DB::table('transactions')->where('user_id', $userID)->orderby('created_at', 'desc')->paginate(8);
+    $recentStocks = DB::table('transactions')->where('user_id', $userID)->orderby('created_at', 'desc')->get();
 
     use Carbon\Carbon;
     $dayAgo = Carbon::today()->subWeek();
@@ -96,24 +97,9 @@
                             </table>
                         </h3>
                         <div class="text-center">
-                            <ul class="pagination ">
-                                <li>
-                                    <a href="#" aria-label="Previous"> First
-                                        <span aria-hidden="true"></span>
-                                    </a>
-                                </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
+
                     </div>
                 </div>
                 <div class="col-lg-5  portfolio-tile portfolio-body-top-tile" id="port-recent-panel">
@@ -125,12 +111,12 @@
                                     <td  align="center" class="ranking-col">Symbol</td>
                                     <td  align="center">Shares Owned</td>
                                     <td  align="center">Date</td>
-                                @foreach ($transactions as $transaction)
-                                    @if ($transaction->type == 0 && $transaction->created_at > $dayAgo)
+                                @foreach ($recentStocks->take(7) as $recentStock)
+                                    @if ($recentStock->type == 0 && $recentStock->created_at > $dayAgo)
                                     <tr>
-                                        <td align="center"> {{ $transaction->stock_symbol }} </td>
-                                        <td align="center"> {{ $transaction->number }} </td>
-                                        <td align="center"> {{ $transaction->created_at }} </td>
+                                        <td align="center"> {{ $recentStock->stock_symbol }} </td>
+                                        <td align="center"> {{ $recentStock->number }} </td>
+                                        <td align="center"> {{ $recentStock->created_at }} </td>
                                     </tr>
                                     @endif
                                 @endforeach
@@ -177,8 +163,8 @@
                                         <td> {{ $transaction->created_at }} </td>
                                     </tr>
                                 @endforeach
-
                             </table>
+                           <div class ="paginate"> {{ $transactions->links() }} </div>
                         </h3>
                     </div>
                 </div>

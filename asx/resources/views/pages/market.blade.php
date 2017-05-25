@@ -52,7 +52,7 @@
                                 @endif
                             @endforeach
                         </table>
-                        <div class ="pageNation"> {{ $stocks->links() }} </div>
+                        <div class ="paginateMarket"> {{ $stocks->links() }} </div>
                     </div>
                 </div>
             </div>

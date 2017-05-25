@@ -576,7 +576,22 @@ h3.buySellBtns{
     margin-bottom: 50px;
 }
 
-.pageNation {
+.paginate {
+    width: 250px;
+    margin: auto;
+    padding: 0px;
+}
+
+.paginateMarket {
+    width: 500px;
+    margin: auto;
     margin-bottom: 50px;
-    padding-left: 35%;
+    padding: 0px;
+}
+
+.dashBottomInfo {
+    width: 1077px;
+    margin-left: -15px;
+    margin-right: 150px;
+
 }
