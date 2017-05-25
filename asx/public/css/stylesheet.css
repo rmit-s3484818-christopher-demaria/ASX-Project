@@ -392,8 +392,8 @@ input.company-info-inputs{
     margin-top: 35px;
 }
 
-.searchbar {
-    height: 50px;
+.searchBar {
+    height: 45px;
 }
 
 .leader-headings{
@@ -488,6 +488,7 @@ h4.sideBarText{
 
 .company-buysell{
     margin-top: 35px;
+    margin-bottom: 20px;
 }
 
 input.company-info-inputs:hover{
@@ -535,13 +536,6 @@ h3.buySellBtns{
     margin-top: 15px;
 }
 
-.buyPageBox {
-    width: 33%;
-    height: 150px;
-    text-align: center;
-    font-size: 16px;
-}
-
 .buyPageInfo {
     font-size: 20px;
     font-weight: bold;
@@ -557,5 +551,8 @@ h3.buySellBtns{
     min-height: 460px;
 }
 
+.adminUserTable{
+    margin-top: 20px;
+}
 
 
