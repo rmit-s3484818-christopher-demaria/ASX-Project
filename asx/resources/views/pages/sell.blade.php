@@ -32,13 +32,13 @@
         </div>
         <div class="container">
             <div class="row company-buysell">
-                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                     <h1> Company Name </h1>  <span class ="buyPageInfo"> {{ $stock->name }} </span>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                     <h1> Stock Symbol </h1>  <span class ="buyPageInfo"> {{ $stock->symbol }} </span>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 buyPageBox">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                     <h1>Balance </h1>  <span class ="buyPageInfo"> ${{ number_format($users->money, 2) }} </span>
                 </div>
             </div>
