@@ -110,14 +110,9 @@
                         <h4 class="dash-text-bottom">Average price of owned shares: </h4>
                     </div>
 
-
-
-
-                    {{--<h4 class="dash-content-link-text dashBottomInfo">Total shares owned: {{ $numberOfStocks }} </h4>--}}
-                    {{--<h4 class="dash-content-link-text dashBottomInfo">Total value of owned stocks:  </h4>--}}
-                    {{--<h4 class="dash-content-link-text dashBottomInfo">Average price of owned shares: </h4>--}}
                 </div>
             </div>
         </div>
+                 <div class="dash-bottom-foot"></div>
     </div>
 @endsection
