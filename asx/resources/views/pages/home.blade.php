@@ -50,7 +50,7 @@
 
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1  col-sm-offset-1">
+                        <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
                             <div>
                                 <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-usd"></span></h1>
                             </div>
@@ -98,9 +98,24 @@
 
 
                     </div>
-                    <h4 class="dash-content-link-text dashBottomInfo">Total shares owned: {{ $numberOfStocks }} </h4>
-                    <h4 class="dash-content-link-text dashBottomInfo">Total value of owned stocks:  </h4>
-                    <h4 class="dash-content-link-text dashBottomInfo">Average price of owned shares: </h4>
+
+
+                    <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
+                        <h4 class="dash-text-bottom">Total shares owned: {{ $numberOfStocks }}</h4>
+                    </div>
+                    <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
+                        <h4 class="dash-text-bottom">Total value of owned stocks:</h4>
+                    </div>
+                    <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
+                        <h4 class="dash-text-bottom">Average price of owned shares: </h4>
+                    </div>
+
+
+
+
+                    {{--<h4 class="dash-content-link-text dashBottomInfo">Total shares owned: {{ $numberOfStocks }} </h4>--}}
+                    {{--<h4 class="dash-content-link-text dashBottomInfo">Total value of owned stocks:  </h4>--}}
+                    {{--<h4 class="dash-content-link-text dashBottomInfo">Average price of owned shares: </h4>--}}
                 </div>
             </div>
         </div>

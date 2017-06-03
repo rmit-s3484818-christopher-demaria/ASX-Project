@@ -24,7 +24,7 @@ h1.dashboardContainers{
 h2.dashboardContainers{
     text-align: center;
     padding-top: 50px;
-    padding-bottom: 189px;
+    padding-bottom: 200px;
     font-size: 40px;
 
 }
@@ -194,14 +194,14 @@ input.company-info-inputs{
 }
 
 .dash-content-link{
-    background-color: #3a539b;
+    background-color: #22313F;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
 
 }
 .dash-content-link-text{
-    background-color: #3a539b;
+    background-color: #22313F;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 15px;
@@ -330,6 +330,11 @@ input.company-info-inputs{
     padding-left: 0px;
     color: white;
 
+}
+
+h4.dash-text-bottom{
+    font-weight: 400;
+    color: white;
 }
 
 .dashboardTile{
@@ -689,6 +694,16 @@ h3.faq-manual{
     padding-bottom: 20px;
 }
 
+
 h3.faq-account{
     padding-top: 10px;
+}
+
+.dashbottom-tile{
+    background-color: #22313F;
+    border: 1px solid #22313F;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
