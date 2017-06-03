@@ -18,6 +18,9 @@ h1.dashboardContainers{
     font-size: 70px;
 
 }
+
+
+
 h2.dashboardContainers{
     text-align: center;
     padding-top: 50px;
@@ -80,6 +83,15 @@ span.dashBorder{
 
 }
 
+.FAQ_container {
+    background-color: white;
+    margin-left: 0px;
+    margin-right: 0px;
+    width:100%;
+    padding-bottom: 10px;
+
+}
+
 .glyphicon.glyphicon-triangle-top{
     color: green;
 
@@ -128,6 +140,13 @@ body{
 
 }
 
+li{
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
 
 
 h1,h2,h3,h4,input{
@@ -135,7 +154,7 @@ h1,h2,h3,h4,input{
     font-weight: 300;
 }
 
-td, tr, p{
+td, tr, p,{
     font-family: 'Open Sans', 'sans-serif';
     font-weight: 400;
 }
@@ -663,4 +682,13 @@ h3.buySellBtns{
     height: 100%;
     padding: 0;
     text-align: left;
+}
+
+h3.faq-manual{
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+h3.faq-account{
+    padding-top: 10px;
 }
