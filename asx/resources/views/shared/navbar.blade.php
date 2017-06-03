@@ -42,7 +42,7 @@
 
             <div class="row-fluid sidebarBottom ">
                 <ul class="sidebarOptions">
-                    <a href="{{ url("settings")}}"><li class=" bottomNav navItem"><span class="glyphicon navbar-icons glyphicon-cog"></span><h4 class="sideBarText">Settings</h4></li></a>
+                    <a href="{{ url("settings")}}"><li class=" bottomNav navItem"><span class="glyphicon navbar-icons glyphicon-info-sign"></span><h4 class="sideBarText">FAQ's</h4></li></a>
                     <br>
                     <a href="{{ url("auth/logout")}}"><li class=" logoutNav navItem"><span class="glyphicon navbar-icons glyphicon-off"></span><h4 class="sideBarText">Logout</h4></li></a>
                 </ul>
