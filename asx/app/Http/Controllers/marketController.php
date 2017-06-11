@@ -10,6 +10,10 @@ use Excel;
 
 class marketController extends Controller
 {
+
+//This where I write all my test functions for the app
+//
+//This one currently runs my ASX stock grabber
 //    public function view ()
 //    {
 //        date_default_timezone_set('Australia/Melbourne');
@@ -93,6 +97,7 @@ class marketController extends Controller
 //        echo "Done";
 //    }
 
+//This one does the same as the above but has a slightly different output, for testing purposes
     public function view2()
     {
         date_default_timezone_set('Australia/Melbourne');
@@ -374,6 +379,7 @@ class marketController extends Controller
 //        }
 
     }
+
     public function view(){
 //        Schema::dropIfExists('portfolio');
 //        Schema::dropIfExists('owned_stocks');

@@ -6,6 +6,10 @@
  * Time: 9:07 PM
  */
 ?>
+
+<!--This is my test page/my links to function to particular tasks (EG. drop tables,add tables,
+reset tables, update stock   -->
+
 <!DOCTYPE html>
 <html>
 <a href="{{ url("test")}}">DropTablet</a>

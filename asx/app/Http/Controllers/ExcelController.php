@@ -11,6 +11,8 @@ use Illuminate\Support\Collection;
 
 class ExcelController extends Controller
 {
+// This is what we used to upload the list of ASX companies. If the ASX companies ever change, we can upload it again
+// using these commeands
     public function ExportClients()
     {
         Excel::create('clients', function($excel){
