@@ -637,14 +637,14 @@ h3.buySellBtns{
     width: 80%;
     margin: auto;
     text-align: center;
-    border: 1px lightgrey solid;
+    border: 1px lightgrey dotted;
     padding: 20px;
+    padding-top: 0px;
 }
 
 .singleMessage {
     width: 90%;
     margin: auto;
-    border: 1px lightgrey solid;
     padding: 20px;
 }
 
@@ -656,19 +656,30 @@ h3.buySellBtns{
 }
 
 .sendRequestBox {
-    width: 80%;
-    margin: auto;
+    width: 45%;
+    height: 500px;
+    padding-left: 3%;
+    padding-right: 3%;
+    float: left;
     text-align: center;
     padding-bottom: 60px;
 }
 
 .activeRequestsBox {
-    width: 80%;
-    padding: 20px;
-    margin: auto;
+    width: 45%;
+    height: 500px;
+    padding-left: 3%;
+    padding-right: 3%;
+    float: right;
     text-align: center;
-    margin-bottom: 50px;
-    border: 1px lightgrey solid;
+    padding-bottom: 60px;
+}
+
+.activeRequests {
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    border: 1px solid lightgrey;
 }
 
 .messageName {
@@ -678,15 +689,25 @@ h3.buySellBtns{
     padding: 0;
     margin-right: 20px;
     font-weight: bold;
-    border-right: 1px lightgrey dotted;
+
+
 }
 
+.singleRequest {
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 20%;
+    border-bottom: 1px lightgrey dotted;
+    font-size: 16px;
+}
 .messageText {
     float: left;
     width: 60%;
     height: 100%;
     padding: 0;
     text-align: left;
+    border-bottom: 1px lightgrey solid;
 }
 
 h3.faq-manual{
@@ -710,4 +731,16 @@ h3.faq-account{
 
 .dash-bottom-foot{
     padding-bottom: 50px;
+}
+
+.friendIdHeader {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+
+}
+
+.friendInstruction {
+    padding-bottom: 30px;
+    font-size: 20px;
 }

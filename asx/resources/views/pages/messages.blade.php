@@ -43,25 +43,25 @@
            </p>
 
         <form role ="form" method="POST" action="{{ route('sendMessage') }}">
-            <textarea name="message" class = "form-control" rows="5" cols="30"></textarea>
-            <input type="number" class = "form-control" name="money" value="0"><br>
+            <textarea name="message" class = "form-control" rows="5" cols="30" placeholder="Type your message here"></textarea>
+            <input type="number" class = "form-control" name="money" value="0" min ="1"><br>
             <input name="friendID" class = "form-control" type = "hidden" id = "friendID" value = '{{$friendID}}'>
             <button class="btn btn-success confirmBtn"><span class="glyphicon glyphicon-ok-circle" type = "Submit"></span><h3 class="buySellBtns">Send</h3></button>
         </form>
        </div>
 
-        <p class = "inboxHeading">Conversation</p>
+        <p class = "inboxHeading">Conversation History</p>
         <div class ="messagesBox">
     @foreach($messageTests as $messageTest)
         <div class = "singleMessage">
             @if($messageTest->sender_id == $userID)
-                <div class ="messageName"> You </div>
+                <div class ="messageName"> You: </div>
                 <p class ="messageText"> {{$messageTest->message}} </p>
             @else
                 <p class ="messageName">
                     @foreach($users as $user)
                         @if($user->id == $friendID)
-                            {{ $user->name }}
+                            {{ $user->name }}:
                         @endif
                     @endforeach
                 </p>
