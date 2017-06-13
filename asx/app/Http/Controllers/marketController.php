@@ -420,10 +420,15 @@ class marketController extends Controller
 //            $table->timestamps();
 //        });
 //
-        Schema::table('users', function($table) {
-            $table->dropColumn('admin');
-        });
-        echo "added";
+//        Schema::table('users', function($table) {
+//            $table->dropColumn('admin');
+//        });
+
+//
+//        Schema::table('portfolio', function($table) {
+//            $table->boolean('admin');
+//        });
+//        echo "added";
     }
 }
 

@@ -12,7 +12,7 @@ reset tables, update stock   -->
 
 <!DOCTYPE html>
 <html>
-<a href="{{ url("test")}}">DropTablet</a>
+<a href="{{ url("test")}}">Add-Column</a>
 <a href="{{ url("test2")}}">Reset table</a>
 <a href="{{ url("test3")}}">Update Stocks</a>
 </html>

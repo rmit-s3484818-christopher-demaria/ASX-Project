@@ -5,6 +5,8 @@
         <?php
         $userID = Auth::id();
         $userDetails = DB::table('users')->where('id', $userID)->first();
+        $userPortfolio = DB::table('portfolio')->where('user_id', $userID)->first();
+        $userAdmin = $userPortfolio->admin;
         ?>
         {{--<div class="row-fluid">--}}
             {{--<div class="row-fluid playerContainer">--}}
@@ -24,7 +26,9 @@
                 <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-king"></span><h4 class="sideBarText">Rankings</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Market</h4></li></a>
                 <a href="{{ url("friends")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Friends</h4></li></a>
-
+                @if($userAdmin == true)
+                <a href="{{ url("admin")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Admin</h4></li></a>
+                @endif
                 {{--<a href="{{ url("asxList")}}" class="btn btn-info navItem" role="button">Link Button</a>--}}
 
                 {{--@if (Route::has('login'))--}}
