@@ -41,7 +41,13 @@
                                         {{$user->name}}
                                     </a>
                                 </td>
-                                <td align="right"><button type="button" class="btn btn-danger">Ban</button></td>
+                                <td align="right"><form method="POST" action="admin/ {{ $user->id }}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="_method" value="DELETE" />
+                                        <button type="submit" class="btn btn-danger">
+                                            Delete
+                                        </button>
+                                    </form></td>
                             </tr>
                         @endforeach
 

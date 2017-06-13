@@ -254,4 +254,19 @@ class pageController extends Controller
         // need to code for a dialogue box to open up to show the error in an else
         return redirect('account');
     }
+
+    function banUser ($userID)
+    {
+        $userId = $userID;
+
+        DB::table('transactions')->where('user_id',$userId)->delete();
+        DB::table('owned_stocks')->where('user_id', $userId)->delete();
+        DB::table('portfolio')->where('user_id', $userId)->delete();
+        DB::table('users')->where('id', $userId)->delete();
+        echo '<script language="javascript">';
+        echo 'alert("Working")';
+        echo '</script>';
+        return redirect('admin');
+
+    }
 }

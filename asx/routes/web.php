@@ -84,6 +84,10 @@ Route::get('sell/{symbol}', [
     'uses' => 'pageController@passSymbolSell'
 ]);
 
+Route::delete('admin/{id}', [
+    'uses' => 'pageController@banUser'
+]);
+
 Route::post('buy', [
     'as' => 'buyStock',
     'uses' => 'pageController@buyStock'
