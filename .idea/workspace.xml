@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pageController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="195" column="44" lean-forward="false" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="44" />
+            <state relative-caret-position="688">
+              <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -24,14 +24,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/StockController.php">
+      <file leaf-file-name="sell.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/sell.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="24" />
-              <folding>
-                <element signature="e#40#54#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="365">
+              <caret line="48" column="76" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/admin.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="43" column="68" lean-forward="false" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,74 +47,18 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+            <state relative-caret-position="416">
+              <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/Controller.php">
+      <file leaf-file-name="messagesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/messagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/account.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
-              <folding>
-                <marker date="1495702097194" expanded="true" signature="8635:8665" ph="..." />
-                <marker date="1495702097194" expanded="true" signature="8635:8692" ph="..." />
-                <marker date="1495702097194" expanded="true" signature="8635:8715" ph="..." />
-                <marker date="1495702097194" expanded="true" signature="8635:8736" ph="..." />
-                <marker date="1495702097194" expanded="true" signature="8635:8751" ph="..." />
-                <marker date="1495702097194" expanded="true" signature="8635:8762" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExcelController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/ExcelController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-              <folding>
-                <marker date="1497347407442" expanded="true" signature="396:607" ph="{...}" />
-                <marker date="1497347407442" expanded="true" signature="425:583" ph="..." />
-                <marker date="1497347407442" expanded="true" signature="453:582" ph="..." />
-                <marker date="1497347407442" expanded="true" signature="479:570" ph="..." />
-                <marker date="1497347407442" expanded="true" signature="593:598" ph="..." />
-                <marker date="1497347407442" expanded="true" signature="636:679" ph="{...}" />
-                <marker date="1497347407442" expanded="true" signature="946:1195" ph="..." />
-                <marker date="1497347407442" expanded="true" signature="976:1195" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createAsxList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/createAsxList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,11 +67,10 @@
       <file leaf-file-name="marketController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/marketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
+            <state relative-caret-position="450">
               <caret line="113" column="31" lean-forward="false" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
-                <marker date="1497347407444" expanded="true" signature="9595:11281" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -128,15 +79,39 @@
       <file leaf-file-name="market.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/market.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="83" lean-forward="false" selection-start-line="54" selection-start-column="83" selection-end-line="54" selection-end-column="83" />
-              <folding>
-                <marker date="1495702097216" expanded="true" signature="2506:2532" ph="..." />
-                <marker date="1495702097216" expanded="true" signature="2506:2555" ph="..." />
-                <marker date="1495702097216" expanded="true" signature="2506:2574" ph="..." />
-                <marker date="1495702097216" expanded="true" signature="2506:2589" ph="..." />
-                <marker date="1495702097216" expanded="true" signature="2506:2600" ph="..." />
-              </folding>
+            <state relative-caret-position="365">
+              <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asx/public/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1581">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asx/public/css/stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10030">
+              <caret line="590" column="27" lean-forward="true" selection-start-line="590" selection-start-column="27" selection-end-line="590" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -203,9 +178,11 @@
         <option value="$PROJECT_DIR$/asx/resources/views/pages/sell.blade.php" />
         <option value="$PROJECT_DIR$/asx/resources/views/pages/account.blade.php" />
         <option value="$PROJECT_DIR$/asx/app/Http/Controllers/StockController.php" />
+        <option value="$PROJECT_DIR$/asx/resources/views/pages/market.blade.php" />
+        <option value="$PROJECT_DIR$/asx/resources/views/pages/admin.blade.php" />
         <option value="$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php" />
         <option value="$PROJECT_DIR$/asx/routes/web.php" />
-        <option value="$PROJECT_DIR$/asx/resources/views/pages/market.blade.php" />
+        <option value="$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php" />
       </list>
     </option>
   </component>
@@ -986,12 +963,12 @@
       <workItem from="1495103056336" duration="3961000" />
       <workItem from="1495628097393" duration="5328000" />
       <workItem from="1495692016174" duration="696000" />
-      <workItem from="1497347171724" duration="259000" />
+      <workItem from="1497347171724" duration="4799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75546000" />
+    <option name="totallyTimeSpent" value="80086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1030,28 +1007,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asx/artisan">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asx/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asx/app/Portfolio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asx/app/asxList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1115,20 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asx/public/css/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="120" lean-forward="false" selection-start-line="20" selection-start-column="120" selection-end-line="20" selection-end-column="120" />
         </state>
       </provider>
     </entry>
@@ -1232,6 +1173,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1292,13 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/sell.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asx/database/migrations/2017_05_10_082644_transactions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1318,12 +1253,12 @@
         <state relative-caret-position="1700">
           <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
           <folding>
-            <marker date="1495702097194" expanded="true" signature="8635:8665" ph="..." />
-            <marker date="1495702097194" expanded="true" signature="8635:8692" ph="..." />
-            <marker date="1495702097194" expanded="true" signature="8635:8715" ph="..." />
-            <marker date="1495702097194" expanded="true" signature="8635:8736" ph="..." />
-            <marker date="1495702097194" expanded="true" signature="8635:8751" ph="..." />
-            <marker date="1495702097194" expanded="true" signature="8635:8762" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8698" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8725" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8748" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8769" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8784" ph="..." />
+            <marker date="1497352056723" expanded="true" signature="8668:8795" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1333,7 +1268,7 @@
         <state relative-caret-position="748">
           <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="24" />
           <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
+            <element signature="e#40#54#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1381,44 +1316,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/marketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
+        <state relative-caret-position="450">
           <caret line="113" column="31" lean-forward="false" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
-            <marker date="1497347407444" expanded="true" signature="9595:11281" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/market.blade.php">
+    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="83" lean-forward="false" selection-start-line="54" selection-start-column="83" selection-end-line="54" selection-end-column="83" />
-          <folding>
-            <marker date="1495702097216" expanded="true" signature="2506:2532" ph="..." />
-            <marker date="1495702097216" expanded="true" signature="2506:2555" ph="..." />
-            <marker date="1495702097216" expanded="true" signature="2506:2574" ph="..." />
-            <marker date="1495702097216" expanded="true" signature="2506:2589" ph="..." />
-            <marker date="1495702097216" expanded="true" signature="2506:2600" ph="..." />
-          </folding>
+        <state relative-caret-position="569">
+          <caret line="43" column="68" lean-forward="false" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asx/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/messagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="195" column="44" lean-forward="false" selection-start-line="195" selection-start-column="43" selection-end-line="195" selection-end-column="44" />
+        <state relative-caret-position="688">
+          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/sell.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="48" column="76" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/market.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1581">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/public/css/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10030">
+          <caret line="590" column="27" lean-forward="true" selection-start-line="590" selection-start-column="27" selection-end-line="590" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -25,7 +25,7 @@
                 {{--<li class="portfolioTile"><h4>Portfolio</h4></li>--}}
                 <a href="{{ url("leader")}}"><li class="leaderboardTile navItem"><span class="glyphicon navbar-icons glyphicon-king"></span><h4 class="sideBarText">Rankings</h4></li></a>
                 <a href="{{ url("market")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Market</h4></li></a>
-                <a href="{{ url("friends")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Friends</h4></li></a>
+                <a href="{{ url("friends")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-user"></span><h4 class="sideBarText">Friends</h4></li></a>
                 @if($userAdmin == true)
                 <a href="{{ url("admin")}}"><li class="marketTile navItem"><span class="glyphicon navbar-icons glyphicon-stats"></span><h4 class="sideBarText">Admin</h4></li></a>
                 @endif
