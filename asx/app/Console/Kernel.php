@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
 
-        Commands\getASX::class
+        \App\Console\Commands\getASX::class
 
         //
     ];
@@ -27,8 +27,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        //This will grab the ASX data every hour between 9am to 5pm
          $schedule->command('getASX')
-                  ->hourly();;
+                  ->hourly()
+                  ->between('9:00','17:00');
     }
 
     /**
