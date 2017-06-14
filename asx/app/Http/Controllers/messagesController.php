@@ -68,10 +68,32 @@ class messagesController extends Controller
         return redirect('friends');
     }
 
-//    function decline ($friendID)
-//    {
-//        return view('pages.buy');
-//    }
+   function decline ($friendID)
+    {
+        $userID = Auth::id();
+
+        DB::table('friends')->where('userID', $friendID)->where('friendID', $userID)->delete();
+
+        return redirect('friends');
+    }
+
+    function deleteFriend ($friendID)
+    {
+        $userID = Auth::id();
+
+        DB::table('friends')->where('userID', $friendID)->where('friendID', $userID)->delete();
+
+        return redirect('friends');
+    }
+
+    function deleteFriend2 ($friendID)
+    {
+        $userID = Auth::id();
+
+        DB::table('friends')->where('userID', $userID)->where('friendID', $friendID)->delete();
+
+        return redirect('friends');
+    }
 
     //opens up the messages page and passes through the selected users ID
     function openConversation($friendID)
@@ -88,7 +110,6 @@ class messagesController extends Controller
         $userID = Auth::id();
         $message = $request->input('message');
         $friendID = $request->input('friendID');
-        $money = $request->input('money');
 
         DB::table('messages')->insert
         (
@@ -96,13 +117,15 @@ class messagesController extends Controller
                 'sender_id' => $userID,
                 'receiver_id' => $friendID,
                 'message' => $message,
-                'money' => $money,
+                'money' => 0,
                 'read' => 0,
                 'created_at' => $date
             ]
         );
 
+
         return view('pages.messages')->with('friendID', $friendID); //displays the updated messages page
 
     }
+
 }

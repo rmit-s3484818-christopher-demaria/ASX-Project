@@ -20,9 +20,10 @@
             </div>
         </div>
 
+        <div class = "friendsBox">
         <div class = "sendRequestBox">
             <div class = "friendInstruction">
-                Your User ID is: {{$userID}}<br>
+                Your User ID: {{$userID}}<br>
             </div>
             <p class = "friendsHeader">Send friend request</p>
 
@@ -50,7 +51,7 @@
                                 {{ $user->name }}
                             @endif
                         @endforeach
-                        <br><a href = "{{ route('accept', [$friend->userID]) }}">Accept</a>          <!-- Displays link to accept each friend request -->
+                        <br><a href = "{{ route('accept', [$friend->userID]) }}">Accept</a>   <!-- Displays link to accept each friend request -->
                         </div>
                     @endif
                 @endif
@@ -67,6 +68,7 @@
                 <td align="center" class="ranking-col">ID</td>
                 <td align="center">Name</td>
                 <td align="center">Inbox</td>
+<!--                <td align="center">Delete</td>  -->
             </tr>
 
             <!-- Loops through all the friends the user currently has -->
@@ -100,5 +102,6 @@
                   @endif
             @endif
         @endforeach
+        </div>
 
 @endsection

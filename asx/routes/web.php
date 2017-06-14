@@ -118,6 +118,16 @@ Route::get('inbox/{friendID}', [
     'uses' => 'messagesController@openConversation'
 ]);
 
+Route::get('friend/{friendID}', [
+    'as' => 'deleteFriend',
+    'uses' => 'messagesController@deleteFriend'
+]);
+
+Route::get('home/{friendID}', [
+    'as' => 'deleteFriend2',
+    'uses' => 'messagesController@deleteFriend2'
+]);
+
 Route::post('messages', [
     'as' => 'sendMessage',
     'uses' => 'messagesController@sendMessage'

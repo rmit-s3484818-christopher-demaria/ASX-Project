@@ -640,12 +640,15 @@ h3.buySellBtns{
     border: 1px lightgrey dotted;
     padding: 20px;
     padding-top: 0px;
+    display:block;
+    overflow:auto;
 }
 
 .singleMessage {
     width: 90%;
     margin: auto;
-    padding: 20px;
+    padding-top: 10px;
+    display: inline-block;
 }
 
 .friendsHeader {
@@ -684,13 +687,10 @@ h3.buySellBtns{
 
 .messageName {
     float: left;
-    width: 20%;
-    height: 100%;
+    width: 15%;
     padding: 0;
-    margin-right: 20px;
+    margin-right: 10px;
     font-weight: bold;
-
-
 }
 
 .singleRequest {
@@ -703,11 +703,11 @@ h3.buySellBtns{
 }
 .messageText {
     float: left;
-    width: 60%;
-    height: 100%;
+    width: 65%;
     padding: 0;
     text-align: left;
     border-bottom: 1px lightgrey solid;
+    display: inline-block;
 }
 
 h3.faq-manual{
@@ -743,4 +743,10 @@ h3.faq-account{
 .friendInstruction {
     padding-bottom: 30px;
     font-size: 20px;
+}
+
+.friendsBox {
+    width: 90%;
+    height: 90%;
+    margin: auto;
 }
