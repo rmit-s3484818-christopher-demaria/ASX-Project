@@ -22,9 +22,9 @@
 
 
        <div class ="sendMessageBox">
-           <p class ="inboxHeading"> Chatting with
+           <h2 class ="inboxHeading"> Chatting with
                {{$friend->name}}
-           </p>
+           </h2>
 
            <!-- Form for sending messages. Passes through the message, amount of money and the hidden friendsID -->
         <form role ="form" method="POST" action="{{ route('sendMessage') }}">
@@ -34,7 +34,7 @@
         </form>
        </div>
 
-        <p class = "inboxHeading">Conversation History</p>
+        <h2 class = "inboxHeading">Conversation History</h2>
          <div class ="messagesBox">
 
              <!-- Loops through the messages between the user and friend. Puts "You" before the sent messages and the friends name before the received ones. -->

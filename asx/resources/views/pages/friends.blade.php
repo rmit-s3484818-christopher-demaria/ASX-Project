@@ -20,12 +20,14 @@
             </div>
         </div>
 
-        <div class = "friendsBox">
-        <div class = "sendRequestBox">
-            <div class = "friendInstruction">
-                Your User ID: {{$userID}}<br>
-            </div>
-            <p class = "friendsHeader">Send friend request</p>
+        <div class="col-lg-4 col-lg-offset-4 portfolio-cashbalance-tile">
+            <h2>Your User ID: {{$userID}}</h2>
+        </div>
+
+        <div class = "row">
+        <div class = "col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1" >
+
+            <h3 class = "friends-titles text-center">Send a friend request</h3>
 
             <!-- Form for sending friend requests. Enter the friends ID that you want to add. -->
             <form role ="form" method="POST" action="{{ route('friendRequest') }}">
@@ -35,8 +37,8 @@
         </div>
 
 
-        <div class = "activeRequestsBox">
-            <p class="friendsHeader">Active friend requests</p>
+        <div class = "col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1">
+            <h3 class="friends-titles text-center">Active Friend Requests</h3>
             <div class = "activeRequests">
 
                 <!-- Loops through all the active friend requests the user has -->

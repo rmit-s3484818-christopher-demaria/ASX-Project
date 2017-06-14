@@ -149,7 +149,7 @@ li{
 
 
 
-h1,h2,h3,h4,input{
+h1,h2,h3,h4,input,textarea{
     font-family: 'Open Sans', 'sans-serif';
     font-weight: 300;
 }
@@ -649,6 +649,8 @@ h3.buySellBtns{
     margin: auto;
     padding-top: 10px;
     display: inline-block;
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 400;
 }
 
 .friendsHeader {
@@ -681,8 +683,9 @@ h3.buySellBtns{
 .activeRequests {
     margin: auto;
     width: 90%;
-    height: 90%;
+    min-height: 175px;
     border: 1px solid lightgrey;
+    margin-bottom: 50px;
 }
 
 .messageName {
@@ -738,15 +741,9 @@ h3.faq-account{
     margin-bottom: 30px;
     font-size: 28px;
 
+h2.friends-titles{
+    margin-top: 50px;
+
 }
 
-.friendInstruction {
-    padding-bottom: 30px;
-    font-size: 20px;
-}
 
-.friendsBox {
-    width: 90%;
-    height: 90%;
-    margin: auto;
-}
