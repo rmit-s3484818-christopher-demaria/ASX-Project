@@ -8,6 +8,7 @@ use DB;
 
 class messagesController extends Controller
 {
+
         function friendRequest(Request $request)
     {
         $userID = Auth::id();
@@ -17,24 +18,25 @@ class messagesController extends Controller
         $friendExists = DB::table('users')->where('id', $friendID)->first();
 
 
-        if (isset($test1))
+        if (isset($test1)) //check if the user has already send a friend request to this friend
         {
             echo '<script language="javascript">';
             echo 'alert("You are already friends or a friend request is pending")';
             echo '</script>';
         }
-        elseif (isset($test2))
+        elseif (isset($test2)) //check if the user has already received a friend request to this friend
         {
             echo '<script language="javascript">';
             echo 'alert("You are already friends or a friend request is pending")';
             echo '</script>';
         }
-        elseif (!isset($friendExists))
+        elseif (!isset($friendExists)) //checks if the user exists in the database
         {
             echo '<script language="javascript">';
             echo 'alert("User does not exist")';
             echo '</script>';
         }
+        //adds the friends in the database, sets "requestAccepted" to '0' meaning it has not been accepted yet
         else {
 
             DB::table('friends')->insert
@@ -49,6 +51,7 @@ class messagesController extends Controller
         return redirect('friends');
     }
 
+    //if the friend request is accepted, the "requestAccepted" is changed to '1' to show they are now friends
     function accept ($friendID)
     {
         $userID = Auth::id();
@@ -70,11 +73,13 @@ class messagesController extends Controller
 //        return view('pages.buy');
 //    }
 
+    //opens up the messages page and passes through the selected users ID
     function openConversation($friendID)
     {
         return view('pages.messages')->with('friendID', $friendID);
     }
 
+    //adds the message to the database
     function sendMessage(Request $request)
     {
         date_default_timezone_set('Australia/Melbourne');
@@ -97,7 +102,7 @@ class messagesController extends Controller
             ]
         );
 
-        return redirect('friends');
+        return view('pages.messages')->with('friendID', $friendID); //displays the updated messages page
 
     }
 }

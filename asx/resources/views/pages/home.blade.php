@@ -103,12 +103,12 @@
                     <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
                         <h4 class="dash-text-bottom">Total shares owned: {{ $numberOfStocks }}</h4>
                     </div>
-                    <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
+ <!--                 <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
                         <h4 class="dash-text-bottom">Total value of owned stocks:</h4>
                     </div>
                     <div class="col-lg-9 col-lg-offset-1 dashbottom-tile text-center">
-                        <h4 class="dash-text-bottom">Average price of owned shares: </h4>
-                    </div>
+                        <h4 class="dash-text-bottom">Average price of owned stocks: </h4>
+                    </div> -->
 
                 </div>
             </div>
