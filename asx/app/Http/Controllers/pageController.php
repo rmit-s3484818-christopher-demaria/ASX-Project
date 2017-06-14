@@ -281,4 +281,10 @@ class pageController extends Controller
         return redirect('admin');
 
     }
+
+    function searchSymbol(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+        return view('pages.market')->with($searchTerm);
+    }
 }

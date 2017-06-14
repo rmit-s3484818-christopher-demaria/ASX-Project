@@ -6,7 +6,7 @@
 @section('body')
  <?php
  $users = DB::table('users')->get();
- $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get();
+ $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get(); //gets all the portfolios from the database and orders them from highest profit to lowest
  ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -28,6 +28,8 @@
                                 <td>Username</td>
                                 <td align="right">Profit</td>
                             </tr>
+
+                            <!-- Loops through the portfolios and displays each one in the table -->
                             @foreach ($rankings as $ranking)
                                 <tr>
                                     <td align="center"><strong>#{{ $loop->iteration }}</strong></td>

@@ -133,6 +133,12 @@ Route::post('messages', [
     'uses' => 'messagesController@sendMessage'
 ]);
 
+Route::post('market', [
+    'as' => 'search',
+    'uses' => 'pageController@searchSymbol'
+]);
+
+
 //    return view('test');
 
 Auth::routes();

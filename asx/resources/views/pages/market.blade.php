@@ -1,12 +1,17 @@
-
 @extends('layouts.master')
 @section('title')
     Market
 @stop
 @section('body')
     <?php
-    $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->paginate(50);
+    if(isset($searchTerm))
+    {
+        $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->where('symbol', 'LIKE', '%'.$searchTerm.'%')->paginate(50);
+    }else{
+        $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->paginate(50);
+    }
     ?>
+
     <div class="navbarMargin">
         <div class="container-fluid">
             <div class="container-fluid">
@@ -20,10 +25,10 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="input-group" >
-                        <input type="text" class="form-control searchBar"   placeholder="Find a company...">
-                        <span class="input-group-btn">
-                                <button class="btn btn-primary searchBar" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                                </span>
+                        <form role ="form" method="POST" action="{{ route('search') }}">
+                            <input type="text" class="form-control searchBar" id = "searchTerm" placeholder="Find a company...">
+                            <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
             </div>
@@ -32,7 +37,7 @@
         <div class="container-fluid">
             <div class="container-fluid">
                 <div class="dash-content-wrapper">
-                    <div class="row">
+                    <div class="row symbolList">
 
                         <table class="leader-table table-striped table table-responsive tableSmall">
                             <tr class="leader-headings info">
@@ -42,13 +47,15 @@
                                 <td align="center">% (+/-)</td>
                             </tr>
                             @foreach ($stocks as $stock)
+
+
                                 @if ($stock->name != "N/A")
-                                <tr>
-                                    <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
-                                    <td>{{ $stock->name }}</td>
-                                    <td align="center"> ${{$stock->price}}</td>
-                                    <td align="center">{{$stock->perChange}}</td>
-                                </tr>
+                                    <tr>
+                                        <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>
+                                        <td>{{ $stock->name }}</td>
+                                        <td align="center"> ${{$stock->price}}</td>
+                                        <td align="center">{{$stock->perChange}}</td>
+                                    </tr>
                                 @endif
                             @endforeach
                         </table>
