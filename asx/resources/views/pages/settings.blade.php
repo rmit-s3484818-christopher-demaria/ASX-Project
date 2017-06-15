@@ -31,7 +31,7 @@
                                     <li>Can I communicate with players? If so, how?</li>
                                     <li>What does my dashboard display?</li>
                                 </ul>
-                                <h3 class="text-center faq-manual"><strong>All questions can be answered in the User Manual. Download it <a>here.</a></strong></h3>
+                                <h3 class="text-center faq-manual"><strong>All questions can be answered in the User Manual. Download it <a href="{{ URL::to('../resources/assets/pdf/userMan.pdf') }} " target="_blank">here.</a></strong></h3>
                             </div>
 
                         </div>
