@@ -70,7 +70,6 @@
                 <td align="center" class="ranking-col">ID</td>
                 <td align="center">Name</td>
                 <td align="center">Inbox</td>
-<!--                <td align="center">Delete</td>  -->
             </tr>
 
             <!-- Loops through all the friends the user currently has -->

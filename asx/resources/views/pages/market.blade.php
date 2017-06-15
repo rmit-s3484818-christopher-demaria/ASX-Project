@@ -4,6 +4,7 @@
 @stop
 @section('body')
     <?php
+       //     $searchTerm = 'agl';
     if(isset($searchTerm))
     {
         $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->where('symbol', 'LIKE', '%'.$searchTerm.'%')->paginate(50);
@@ -24,9 +25,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
+
                     <div class="input-group" >
                         <form role ="form" method="POST" action="{{ route('search') }}">
-                            <input type="text" class="form-control searchBar" id = "searchTerm" placeholder="Find a company...">
+                            <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol...">
                             <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                         </form>
                     </div><!-- /input-group -->

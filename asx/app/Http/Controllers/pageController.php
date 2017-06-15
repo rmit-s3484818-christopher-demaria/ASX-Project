@@ -285,6 +285,16 @@ class pageController extends Controller
     function searchSymbol(Request $request)
     {
         $searchTerm = $request->input('searchTerm');
-        return view('pages.market')->with($searchTerm);
+
+        if(isset($searchTerm))
+        {
+            return view('pages.market')->with('searchTerm', $searchTerm);
+        }
+        else
+        {
+            return view('pages.market');
+        }
+
+
     }
 }
