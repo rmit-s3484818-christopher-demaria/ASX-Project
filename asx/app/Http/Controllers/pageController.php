@@ -309,4 +309,20 @@ class pageController extends Controller
 
 
     }
+
+    function searchUser(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        if(isset($searchTerm))
+        {
+            return view('pages.admin')->with('searchTerm', $searchTerm);
+        }
+        else
+        {
+            return view('pages.admin');
+        }
+
+
+    }
 }

@@ -42,7 +42,6 @@
         <!-- Login alternate options -->
         <div class="row">
             <div class="loginOptions">
-                <h4><a>Forgot your password?</a></h4>
                 <h4 class="createAccountLink">Don't have an account? <a href="{{ url("register") }}">Create one here.</a></h4>
             </div>
 

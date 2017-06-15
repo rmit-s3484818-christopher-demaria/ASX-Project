@@ -65,6 +65,8 @@
             <button class="btn btn-danger cancelX" onclick="goBack()"><span class="glyphicon glyphicon-remove-circle"></span><h3 class="buySellBtns">Cancel</h3></button>
 
             <script>
+
+                //Calculates and updates the subtotal and fees of the transaction
                 var input = document.getElementById('quantity');
                 input.onchange = function()
                 {
@@ -72,6 +74,8 @@
                     var calc = price*input.value;
                     document.getElementById('subTotal').value = calc;
                 }
+
+                //Function to go back to the previous page
                 function goBack() {
                     window.history.back();
                 }

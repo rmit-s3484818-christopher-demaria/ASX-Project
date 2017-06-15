@@ -140,6 +140,10 @@ Route::post('market', [
     'uses' => 'pageController@searchSymbol'
 ]);
 
+Route::post('admin', [
+    'as' => 'searchUser',
+    'uses' => 'pageController@searchUser'
+]);
 
 //    return view('test');
 

@@ -14,11 +14,12 @@
 
     <script src="jquery-3.2.0.min.js"></script>
 
-    <?php $stock = DB::table('stocks')->where('symbol', $symbol)->first();
+    <?php
+    $stock = DB::table('stocks')->where('symbol', $symbol)->first();   //Gets the stock info from the selected stock
     $userID = Auth::id();
-    $users = DB::table('portfolio')->where('user_id', $userID)->first();
-    $maxSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();
-    $transactions = DB::table('transactions')->where('user_id', $userID)->orderby('created_at', 'desc')->get();
+    $users = DB::table('portfolio')->where('user_id', $userID)->first();    //Gets the users portfolio information
+    $maxSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();  //Gets how many of the selected stock the user owns
+    $transactions = DB::table('transactions')->where('user_id', $userID)->orderby('created_at', 'desc')->get(); //Gets the transactions by the user
     ?>
 
 
@@ -40,24 +41,24 @@
                     <h1> Stock Symbol </h1>  <span class ="buyPageInfo"> {{ $stock->symbol }} </span>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 text-center">
-                    <h1>Balance </h1>  <span class ="buyPageInfo"> ${{ number_format($users->money, 2) }} </span>
+                    <h1>Balance </h1>  <span class ="buyPageInfo"> ${{ number_format($users->money, 2) }} </span> <!-- Displays the users balance in money format -->
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-4 col-md-8 col-sm-8 col-lg-offset-4  col-sm-offset-2">
-                <form role ="form" method="POST" action="{{ route('sellStock') }}">
+                <form role ="form" method="POST" action="{{ route('sellStock') }}"> <!-- Sell form -->
 
                     <h3>Share Price</h3>
-                    <input class="form-control" type="text" value = "${{ $stock->price }}" readonly>
+                    <input class="form-control" type="text" value = "${{ $stock->price }}" readonly> <!-- Shows the stocks current price -->
 
                     <h3>Quantity  /{{$maxSell->number}}</h3>
-                    <input name ="quantity" class="form-control" type="number" id = "quantity" min="1" max="{{$maxSell->number}}">
-                    <h3>Sub Total (Includes $<span id = "fees">0</span> in fees )</h3>
-                    <input name ="price" class="form-control" type="number" id = "subTotal" readonly>
+                    <input name ="quantity" class="form-control" type="number" id = "quantity" min="1" max="{{$maxSell->number}}"> <!-- Shows the max stock the user owns and doesnt let them sell more than they have -->
+                    <h3>Sub Total (Includes $<span id = "fees">0</span> in fees )</h3> <!-- Shows the cost of fess and is updated automatically -->
+                    <input name ="price" class="form-control" type="number" id = "subTotal" readonly> <!-- Displays the total cost of the transaction -->
 
-                    <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}">
+                    <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}"> <!-- 2 hidden values that are passed with the form -->
                     <input name="userID" class = "form-control" type = "hidden" id = "symbol" value = "{{ $userID }}">
 
                     <button class="btn btn-success confirmBtn"><span class="glyphicon glyphicon-ok-circle" type = "Submit"></span><h3 class="buySellBtns">Confirm</h3></button>
@@ -67,6 +68,8 @@
                 <button class="btn btn-danger cancelX" onclick="goBack()"><span class="glyphicon glyphicon-remove-circle"></span><h3 class="buySellBtns">Cancel</h3></button>
 
                 <script>
+
+                    //Calculates and updates the subtotal and fees of the transaction
                     var input = document.getElementById('quantity');
                     input.onchange = function()
                     {
@@ -83,6 +86,8 @@
                         document.getElementById('subTotal').value = totalCost;
                         document.getElementById('fees').innerHTML = fees;
                     }
+
+                    //Function to go back to the previous page
                     function goBack() {
                         window.history.back();
                     }
@@ -99,16 +104,17 @@
                     <td>Total (after fees)</td>
                     <td>Date</td>
                 </tr>
-                @foreach ($transactions as $transaction)
-                    @if ($transaction->stock_symbol == $symbol)
+                @foreach ($transactions as $transaction) <!-- Loops through transactions -->
+                    @if ($transaction->stock_symbol == $symbol) <!-- Checks if the transaction involves the current selected stock -->
                     <tr>
                         <td align="center"> {{ $transaction->stock_symbol }} </td>
-                        <td> @php
-                                if( $transaction->type == 0 && $transaction->stock_symbol == $symbol)
+                        <td> <!-- Checks if the transaction is 'buy' or 'sell' and prints out which one it is -->
+                            @php
+                                if( $transaction->type == 0)
                                 {
                                    echo 'Buy';
                                 }
-                                elseif ( $transaction->type == 1 && $transaction->stock_symbol == $symbol)
+                                elseif ( $transaction->type == 1)
                                 {
                                    echo 'Sell';
                                 }
@@ -117,7 +123,7 @@
                         <td> {{ $transaction->number }}</td>
                         <td> ${{ $transaction->singlePrice }}</td>
                         <td>
-                            @if( $transaction->type == 0 )
+                            @if( $transaction->type == 0 ) <!-- Checks if the transaction is 'buy' or 'sell' and prints out '+' or '-' to show if the user spent or gained this money -->
                                 - ${{ $transaction->price }}
                             @endif
 
