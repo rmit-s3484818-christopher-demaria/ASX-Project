@@ -81,10 +81,11 @@
                         var percentCharge = (1 / 100) * calc;
                         var fees = flatFee + percentCharge;
 
-                        var totalCost = calc - fees;
+                        var totalCost = calc - fees.toFixed(2);
+                        var fees2 = fees.toFixed(2);
 
                         document.getElementById('subTotal').value = totalCost;
-                        document.getElementById('fees').innerHTML = fees;
+                        document.getElementById('fees').innerHTML = fees2;
                     }
 
                     //Function to go back to the previous page

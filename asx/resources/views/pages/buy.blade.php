@@ -72,7 +72,8 @@
                 {
                     var price = {{ $stock->price }};
                     var calc = price*input.value;
-                    document.getElementById('subTotal').value = calc;
+                    var calc2 = calc.toFixed(2)
+                    document.getElementById('subTotal').value = calc2;
                 }
 
                 //Function to go back to the previous page

@@ -83,7 +83,7 @@ class messagesController extends Controller
         $userID = Auth::id();
 
         DB::table('friends')->where('userID', $friendID)->where('friendID', $userID)->delete();
-
+        
         return redirect('friends');
     }
 
