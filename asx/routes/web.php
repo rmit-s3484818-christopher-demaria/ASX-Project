@@ -87,7 +87,9 @@ Route::get('sell/{symbol}', [
 Route::delete('admin/{id}', [
     'uses' => 'pageController@banUser'
 ]);
-
+Route::delete('account/{id}', [
+    'uses' => 'pageController@deleteUser'
+]);
 Route::post('buy', [
     'as' => 'buyStock',
     'uses' => 'pageController@buyStock'

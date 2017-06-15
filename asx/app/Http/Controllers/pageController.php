@@ -275,13 +275,20 @@ class pageController extends Controller
         DB::table('owned_stocks')->where('user_id', $userId)->delete();
         DB::table('portfolio')->where('user_id', $userId)->delete();
         DB::table('users')->where('id', $userId)->delete();
-        echo '<script language="javascript">';
-        echo 'alert("Working")';
-        echo '</script>';
         return redirect('admin');
 
     }
+    function deleteUser ($userID)
+    {
+        $userId = $userID;
 
+        DB::table('transactions')->where('user_id',$userId)->delete();
+        DB::table('owned_stocks')->where('user_id', $userId)->delete();
+        DB::table('portfolio')->where('user_id', $userId)->delete();
+        DB::table('users')->where('id', $userId)->delete();
+        return redirect('register');
+
+    }
     function searchSymbol(Request $request)
     {
         $searchTerm = $request->input('searchTerm');

@@ -169,7 +169,15 @@
                         </h3>
                     </div>
                 </div>
-
+                <div>
+                    <form method="POST" action="account/ {{ $userID}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                </div>
 
             </div>
         </div>
