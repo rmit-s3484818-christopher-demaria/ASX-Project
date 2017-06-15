@@ -4,6 +4,7 @@
 @stop
 @section('body')
     <?php
+    $userID = Auth::id();
     $users = DB::table('users')->get();
     ?>
     <div class="navbarMargin">
@@ -35,6 +36,7 @@
                             <td align="right">Ban</td>
                         </tr>
                         @foreach($users as $user)
+                            @if($user->id != $userID)
                             <tr>
                                 <td>
                                     <a href = "{{ route('passUserProfile', [$user->id]) }}">
@@ -49,6 +51,7 @@
                                         </button>
                                     </form></td>
                             </tr>
+                            @endif
                         @endforeach
 
                     </table>
