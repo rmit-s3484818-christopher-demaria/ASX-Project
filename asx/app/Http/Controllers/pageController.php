@@ -280,6 +280,7 @@ class pageController extends Controller
         DB::table('owned_stocks')->where('user_id', $userId)->delete();
         DB::table('portfolio')->where('user_id', $userId)->delete();
         DB::table('users')->where('id', $userId)->delete();
+
         return redirect('admin');
 
     }

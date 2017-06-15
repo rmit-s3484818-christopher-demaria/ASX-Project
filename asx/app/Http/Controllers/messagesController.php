@@ -68,11 +68,12 @@ class messagesController extends Controller
         return redirect('friends');
     }
 
-   function decline ($friendID)
+    //if the friend request is declined, then the friendship is deleted
+   function decline ($ID)
     {
         $userID = Auth::id();
 
-        DB::table('friends')->where('userID', $friendID)->where('friendID', $userID)->delete();
+        DB::table('friends')->where('userID', $ID)->where('friendID', $userID)->delete();
 
         return redirect('friends');
     }

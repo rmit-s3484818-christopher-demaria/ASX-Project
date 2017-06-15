@@ -6,7 +6,7 @@
 @section('body')
  <?php
  $users = DB::table('users')->get();
- $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->get(); //gets all the portfolios from the database and orders them from highest profit to lowest
+ $rankings = DB::table('portfolio')->orderBy('netWorth', 'desc')->paginate(25); //gets all the portfolios from the database and orders them from highest profit to lowest
  ?>
     <div class="navbarMargin">
         <div class="container-fluid">
@@ -44,8 +44,7 @@
                                 </tr>
                             @endforeach
                         </table>
-
-
+                        <div class ="paginateMarket"> {{ $rankings->links() }} </div> <!-- Paginate ad on that automates page system -->
                 </div>
             </div>
         </div>

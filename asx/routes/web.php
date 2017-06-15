@@ -110,10 +110,10 @@ Route::get('friends/{friendID}', [
     'uses' => 'messagesController@accept'
 ]);
 
-//Route::get('friends/{friendID}', [
-//    'as' => 'decline',
-//'uses' => 'messagesController@decline'
-//]);
+Route::get('home/{ID}', [
+    'as' => 'decline',
+'uses' => 'messagesController@decline'
+]);
 
 Route::get('inbox/{friendID}', [
     'as' => 'openConversation',

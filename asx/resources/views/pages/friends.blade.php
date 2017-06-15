@@ -53,7 +53,7 @@
                                 {{ $user->name }}
                             @endif
                         @endforeach
-                        <br><a href = "{{ route('accept', [$friend->userID]) }}">Accept</a>   <!-- Displays link to accept each friend request -->
+                        <br><a href = "{{ route('accept', [$friend->userID]) }}">Accept</a> <a href = "{{ route('decline', [$friend->userID]) }}">Decline</a>   <!-- Displays link to accept each friend request -->
                         </div>
                     @endif
                 @endif
@@ -70,6 +70,7 @@
                 <td align="center" class="ranking-col">ID</td>
                 <td align="center">Name</td>
                 <td align="center">Inbox</td>
+                <td align="center">Options</td>
             </tr>
 
             <!-- Loops through all the friends the user currently has -->
@@ -86,6 +87,7 @@
                             @endforeach
                             </td>
                             <td align="center"><strong><a href = "{{ route('openConversation', [$friend->userID]) }}"> Open conversation </a> </strong></td>
+                            <td align="center"><strong><a href = "{{ route('deleteFriend', [$friend->userID]) }}"> Delete </a> </strong></td>
                         </tr>
                 @endif
                  @if($friend->friendID != $userID)                                               <!-- Checks through the friend request receivers, only displays if they are not from the user-->
@@ -99,6 +101,7 @@
                                 @endforeach
                             </td>
                             <td align="center"><strong><a href = "{{ route('openConversation', [$friend->friendID]) }}"> Open conversation </a> </strong></td>
+                            <td align="center"><strong><a href = "{{ route('deleteFriend2', [$friend->userID]) }}"> Delete </a> </strong></td>
                         </tr>
                   @endif
             @endif
