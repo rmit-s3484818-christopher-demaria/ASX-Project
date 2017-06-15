@@ -4,10 +4,9 @@
 @stop
 @section('body')
     <?php
-       //     $searchTerm = 'agl';
     if(isset($searchTerm))
     {
-        $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->where('symbol', 'LIKE', '%'.$searchTerm.'%')->paginate(50);
+        $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->where('symbol', 'LIKE', '%'.$searchTerm.'%')->orwhere('name', 'LIKE', '%'.$searchTerm.'%')->paginate(50);
     }else{
         $stocks = DB::table('stocks')->orderBy('symbol', 'asc')->paginate(50);
     }
@@ -27,9 +26,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
 
                     <div class="input-group" >
+
                         <form role ="form" method="POST" action="{{ route('search') }}">
-                            <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol...">
+                              <span class="input-group-btn">
+                            <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
                             <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                    </span>
                         </form>
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
