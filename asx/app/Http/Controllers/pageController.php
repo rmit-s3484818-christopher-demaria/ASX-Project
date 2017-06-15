@@ -80,6 +80,7 @@ class pageController extends Controller
         $checkSymbol = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol',$symbol)->value('stock_symbol');
         $checkAmount = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->value('number');
         $checkNull = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->value('created_at');
+        $stockPrice = DB::table('stocks')->where('symbol', $symbol)->value('price');
 
         $ownedStocks = $portfolio->ownedStocks;        //Sets data from the users portfolio
         $balance = $portfolio->money;
@@ -134,6 +135,7 @@ class pageController extends Controller
                     'stock_symbol' => $symbol,
                     'number' => $quantity,
                     'price' => $totalCost,
+                    'singlePrice' => $stockPrice,
                     'type' => 0,
                     'created_at' => $date
                 ]
@@ -169,9 +171,10 @@ class pageController extends Controller
         $ownedStocks = $portfolio->ownedStocks;       //Sets data from the users portfolio
         $balance = $portfolio->money;
         $netWorth = $portfolio->netWorth;
+        $stockPrice = DB::table('stocks')->where('symbol', $symbol)->value('price');
 
         $stockToSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();  //Finds the stock the user wants to sell from the database
-        $numberOwned = $stockToSell->number;                                                                           //Calculates how many of the stock the suer will have after the transaction
+        $numberOwned = $stockToSell->number;                                                                           //Calculates how many of the stock the user will have after the transaction
 
         $flatCharge = 50;                             //Sets the flat charge fee
         $percentCharge = (.25 / 100) * $price;        //Calculates the percentage fee of the transaction of .25%
@@ -194,6 +197,7 @@ class pageController extends Controller
                     'stock_symbol' => $symbol,
                     'number' => $quantity,
                     'price' => $totalMoney,
+                    'singlePrice' => $stockPrice,
                     'type' => 1,
                     'created_at' => $date
                 ]
@@ -245,6 +249,7 @@ class pageController extends Controller
                     'stock_symbol' => $symbol,
                     'number' => $quantity,
                     'price' => $totalMoney,
+                    'singlePrice' => $stockPrice,
                     'type' => 1,
                     'created_at' => $date
                 ]

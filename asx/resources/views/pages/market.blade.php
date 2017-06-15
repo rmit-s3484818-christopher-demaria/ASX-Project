@@ -51,8 +51,6 @@
                                 <td align="center">% (+/-)</td>
                             </tr>
                             @foreach ($stocks as $stock)
-
-
                                 @if ($stock->name != "N/A")
                                     <tr>
                                         <td align="center"><strong><a href = "{{ route('passSymbolBuy', [$stock->symbol]) }}"> {{$stock->symbol}} </a> </strong></td>

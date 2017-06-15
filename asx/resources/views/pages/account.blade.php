@@ -134,6 +134,7 @@
                                     <td align="center" class="ranking-col">Symbol</td>
                                     <td>Type</td>
                                     <td>Quantity</td>
+                                    <td>Single price</td>
                                     <td>Total (after fees)</td>
                                     <td>Date</td>
                                 </tr>
@@ -152,6 +153,7 @@
                                             @endphp
                                         </td>
                                         <td> {{ $transaction->number }}</td>
+                                        <td> ${{ $transaction->singlePrice }}</td>
                                         <td>
                                                 @if( $transaction->type == 0 )
                                                    - ${{ $transaction->price }}

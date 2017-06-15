@@ -18,6 +18,7 @@
     $userID = Auth::id();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     $maxSell = DB::table('owned_stocks')->where('user_id', $userID)->where('stock_symbol', $symbol)->first();
+    $transactions = DB::table('transactions')->where('user_id', $userID)->orderby('created_at', 'desc')->get();
     ?>
 
 
@@ -88,6 +89,47 @@
                 </script>
 
             </div>
+
+            <table class="leader-table table-striped table table-responsive tableBorder">
+                <tr class="leader-headings info">
+                    <td align="center" class="ranking-col">Symbol</td>
+                    <td>Type</td>
+                    <td>Quantity</td>
+                    <td>Single price</td>
+                    <td>Total (after fees)</td>
+                    <td>Date</td>
+                </tr>
+                @foreach ($transactions as $transaction)
+                    @if ($transaction->stock_symbol == $symbol)
+                    <tr>
+                        <td align="center"> {{ $transaction->stock_symbol }} </td>
+                        <td> @php
+                                if( $transaction->type == 0 && $transaction->stock_symbol == $symbol)
+                                {
+                                   echo 'Buy';
+                                }
+                                elseif ( $transaction->type == 1 && $transaction->stock_symbol == $symbol)
+                                {
+                                   echo 'Sell';
+                                }
+                            @endphp
+                        </td>
+                        <td> {{ $transaction->number }}</td>
+                        <td> ${{ $transaction->singlePrice }}</td>
+                        <td>
+                            @if( $transaction->type == 0 )
+                                - ${{ $transaction->price }}
+                            @endif
+
+                            @if( $transaction->type == 1 )
+                                + ${{ $transaction->price }}
+                            @endif
+                        </td>
+                        <td> {{ $transaction->created_at }} </td>
+                    </tr>
+                    @endif
+                @endforeach
+            </table>
         </div>
         <br>
 
