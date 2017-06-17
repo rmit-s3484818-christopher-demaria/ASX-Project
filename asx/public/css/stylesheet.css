@@ -419,7 +419,14 @@ h4.dash-text-bottom{
 
 .searchBar {
     height: 45px;
+
 }
+
+
+input.form-control.searchBar{
+    width: 100%;
+}
+
 
 .leader-headings{
     font-size: 16px;
@@ -530,7 +537,7 @@ span.glyphicon.glyphicon-menu-left.pull-left:hover{
 }
 
 .cancelX{
-    height: 75px;
+    height: 80px;
     width: 100%;
     margin-top: 20px;
 }
@@ -745,5 +752,13 @@ h2.friends-titles{
     margin-top: 50px;
 
 }
+
+
+h2.deleteAccText{
+    padding-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 

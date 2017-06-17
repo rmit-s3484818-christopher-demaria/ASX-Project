@@ -3,6 +3,7 @@
     Admin
 @stop
 @section('body')
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <?php
     $userID = Auth::id();
 
@@ -23,24 +24,38 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="input-group" >
 
-                                <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Takes users search input -->
+                        <div class="col-lg-9 col-lg-offset-1 col-md-8">
+                            <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Takes users search input -->
+                                <div class="input-group">
+                                    <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
                                     <span class="input-group-btn">
-                            <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
-                            <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                              </span>
-                                </form>
-
-                                <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Resets the search term -->
-                                    <input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">
-                                    <button class="btn btn-primary searchBar" type="submit"><span></span>Reset</button>
-                                </form>
-
-                            </div>
+                                <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                </span>
+                                </div>
+                            </form>
                         </div>
+
+                       <div class="col-lg-2 ">
+
+
+
+                            <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Resets the search term -->
+
+                                <input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">
+                                <button class="btn btn-default searchBar" type="submit"><span></span>Reset</button>
+
+                            </form>
+
+                       </div>
+
+
+
+
+
+
                     </div>
+                </div>
 
                 </div>
                 <div class="container">
@@ -67,7 +82,9 @@
                                         <button type="submit" class="btn btn-danger">
                                             Delete
                                         </button>
+                                        <button class="btn btn-primary" onclick="alertMe();">Test Delete</button>
                                     </form></td>
+
                             </tr>
                             @endif
                         @endforeach
@@ -81,5 +98,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var toggle = 0;
+        function alertMe() {
+
+            if(toggle == 0){
+                alert("Deleting your account is permenant! \n\n" +
+                    "If you wish to delete your account click the delete button again.");
+                toggle = 1;
+            }
+            else{
+                //enter database functionality to delete users account
+            }
+
+        };
+    </script>
 
 @endsection

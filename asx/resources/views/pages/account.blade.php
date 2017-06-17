@@ -3,7 +3,7 @@
     Account
 @stop
 @section('body')
-
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <?php
     $userID = Auth::id();
     $money = 1000000;
@@ -169,19 +169,58 @@
                             </table>
                            <div class ="paginate"> {{ $transactions->links() }} </div>
                         </h3>
+
                     </div>
                 </div>
+
                 <div>
-                    <form method="POST" action="account/ {{ $userID}}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="_method" value="DELETE" />
-                        <button type="submit" class="btn btn-danger">
-                            Delete
-                        </button>
-                    </form>
+
                 </div>
 
             </div>
+            <div class="container-fluid">
+
+                </div>
+
+            </div>
+        <div class="container">
+
+                <button class="btn btn-warning" type="button" id="deleteBtn" onclick="alertMe();">
+                    Delete your account</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <form method="POST" action="account/ {{ $userID}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit" class="btn btn-danger cancelX deleteAcc">
+                            <h2 class="deleteAccText">Delete Account</h2>
+                        </button>
+                        <br><br>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        var toggle = 0;
+        function alertMe() {
+
+            if(toggle == 0){
+                alert("Deleting your account is permenant! \n\n" +
+                    "If you wish to delete your account click the delete button again.");
+                toggle = 1;
+            }
+            else{
+                //enter database functionality to delete users account
+            }
+
+        };
+
+    </script>
+
 @endsection
