@@ -182,10 +182,12 @@
             </div>
         <div class="container">
 
+        {{--These will be removed once functionality is done--}}
                 <button class="btn btn-warning" type="button" id="deleteBtn" onclick="alertMe();">
                     Delete your account</button>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        {{--end of code that will be removed once functionality is added--}}
+            
             <div class="row">
                 <div class="col-lg-12">
                     <form method="POST" action="account/ {{ $userID}}">
