@@ -178,9 +178,6 @@
                 </div>
 
             </div>
-            <div class="container-fluid">
-
-                </div>
 
             </div>
         <div class="container">
@@ -190,8 +187,6 @@
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
             <div class="row">
-
-
                 <div class="col-lg-12">
                     <form method="POST" action="account/ {{ $userID}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

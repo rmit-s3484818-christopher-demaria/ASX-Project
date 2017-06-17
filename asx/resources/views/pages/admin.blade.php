@@ -28,7 +28,7 @@
                         <div class="col-lg-9 col-lg-offset-1 col-md-8">
                             <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Takes users search input -->
                                 <div class="input-group">
-                                    <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
+                                    <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a player...">
                                     <span class="input-group-btn">
                                 <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                                 </span>
@@ -37,22 +37,13 @@
                         </div>
 
                        <div class="col-lg-2 ">
-
-
-
-                            <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Resets the search term -->
+                           <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Resets the search term -->
 
                                 <input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">
                                 <button class="btn btn-default searchBar" type="submit"><span></span>Reset</button>
 
-                            </form>
-
+                           </form>
                        </div>
-
-
-
-
-
 
                     </div>
                 </div>

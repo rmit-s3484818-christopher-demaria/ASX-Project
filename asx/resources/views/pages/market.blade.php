@@ -23,25 +23,42 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
 
-                    <div class="input-group" >
-
-                        <form role ="form" method="POST" action="{{ route('search') }}"> <!-- Takes users search input -->
-                              <span class="input-group-btn">
-                            <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
-                            <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                              </span>
+                    <div class="col-lg-9 col-lg-offset-1 col-md-8">
+                        <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Takes users search input -->
+                            <div class="input-group">
+                                <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                                </span>
+                            </div>
                         </form>
-
-                        <form role ="form" method="POST" action="{{ route('search') }}"> <!-- Resets the search term -->
-                            <input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">
-                            <button class="btn btn-primary searchBar" type="submit"><span></span>Reset</button>
-                        </form>
-
                     </div>
-                </div>
-            </div>
+
+                    <div class="col-lg-2 ">
+                        <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Resets the search term -->
+
+                            <input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">
+                            <button class="btn btn-default searchBar" type="submit"><span></span>Reset</button>
+                        </form>
+                    </div>
+                    {{--<div class="input-group" >--}}
+
+                        {{--<form role ="form" method="POST" action="{{ route('search') }}"> <!-- Takes users search input -->--}}
+                              {{--<span class="input-group-btn">--}}
+                            {{--<input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">--}}
+                            {{--<button class="btn btn-primary searchBar" type="submit"><span class="glyphicon glyphicon-search"></span></button>--}}
+                              {{--</span>--}}
+                        {{--</form>--}}
+
+                        {{--<form role ="form" method="POST" action="{{ route('search') }}"> <!-- Resets the search term -->--}}
+                            {{--<input type="hidden" class="form-control searchBar" name ="searchTerm" id = "searchTerm" value="">--}}
+                            {{--<button class="btn btn-primary searchBar" type="submit"><span></span>Reset</button>--}}
+                        {{--</form>--}}
+
+                    {{--</div>--}}
+
+
 
         </div>
         <div class="container-fluid">
