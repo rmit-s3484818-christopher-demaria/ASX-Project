@@ -58,6 +58,8 @@
                 <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}">
                 <input name="userID" class = "form-control" type = "hidden" id = "symbol" value = "{{ $userID }}">
 
+                <button class="btn btn-warning cancelX"><span class="glyphicon glyphicon-eye-open watchlist"></span><h3 class="buySellBtns">Add to Watchlist</h3></button>
+
                 <button class="btn btn-success confirmBtn"><span class="glyphicon glyphicon-ok-circle" type = "Submit"></span><h3 class="buySellBtns">Confirm</h3></button>
 
             </form>
