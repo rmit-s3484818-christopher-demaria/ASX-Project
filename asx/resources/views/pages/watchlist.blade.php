@@ -9,6 +9,9 @@
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
+            <div> Watchlist
+                <hr>
+            </div>
             <div>
                 <table class="leader-table table-striped table table-responsive tableSmall">
                     <tr class="leader-headings info">
@@ -19,9 +22,9 @@
                         <td align="center">Date Added</td>
                         <td align="centre">Date Expired</td>
                     </tr>
-                @foreach ($watchlist as $watchlists)  <!-- Loops through the selected stocks -->
+                @foreach ($watchlist as $watchlists)  <!-- Loops through the watchlist table -->
                     <tr>
-                        <td align="center"><strong> {{$watchlists->stock_symbol}} </strong></td> <!-- Opens up the buy page with the selected symbol -->
+                        <td align="center"><strong> {{$watchlists->stock_symbol}} </strong></td> <!-- Lists the watchlist information -->
                         <td>${{ $watchlists->curr_stock_price }}</td>
                         <td align="center"> %{{$watchlists->wanted_price}}</td>
                         <td align="center">${{$watchlists->expected_price}}</td>
@@ -31,7 +34,6 @@
                     @endforeach
                 </table>
                 <div class ="paginateMarket"> {{ $watchlist->links() }} </div> <!-- Paginate ad on that automates page system -->
-                <hr>
             </div>
 
         </div>

@@ -15,8 +15,8 @@
       <file leaf-file-name="pageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1691">
-              <caret line="341" column="56" lean-forward="false" selection-start-line="341" selection-start-column="56" selection-end-line="341" selection-end-column="56" />
+            <state relative-caret-position="1045">
+              <caret line="346" column="69" lean-forward="true" selection-start-line="346" selection-start-column="69" selection-end-line="346" selection-end-column="69" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -24,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="586">
@@ -64,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="watchlist.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="watchlist.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/watchlist.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+            <state relative-caret-position="459">
+              <caret line="27" column="69" lean-forward="true" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -178,11 +178,11 @@
         <option value="$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php" />
         <option value="$PROJECT_DIR$/asx/resources/views/pages/admin.blade.php" />
         <option value="$PROJECT_DIR$/asx/resources/views/pages/account.blade.php" />
-        <option value="$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php" />
         <option value="$PROJECT_DIR$/asx/resources/views/pages/buy.blade.php" />
         <option value="$PROJECT_DIR$/asx/routes/web.php" />
-        <option value="$PROJECT_DIR$/asx/resources/views/pages/watchlist.blade.php" />
         <option value="$PROJECT_DIR$/asx/resources/views/pages/home.blade.php" />
+        <option value="$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php" />
+        <option value="$PROJECT_DIR$/asx/resources/views/pages/watchlist.blade.php" />
       </list>
     </option>
   </component>
@@ -966,12 +966,12 @@
       <workItem from="1497347171724" duration="9595000" />
       <workItem from="1497510445331" duration="594000" />
       <workItem from="1497887410034" duration="2090000" />
-      <workItem from="1497929810231" duration="7665000" />
+      <workItem from="1497929810231" duration="8301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95231000" />
+    <option name="totallyTimeSpent" value="95867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1302,16 +1302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1691">
-          <caret line="341" column="56" lean-forward="false" selection-start-line="341" selection-start-column="56" selection-end-line="341" selection-end-column="56" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1344,14 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/watchlist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asx/resources/views/shared/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1364,6 +1346,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
           <caret line="75" column="106" lean-forward="true" selection-start-line="75" selection-start-column="106" selection-end-line="75" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/app/Http/Controllers/pageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1045">
+          <caret line="346" column="69" lean-forward="true" selection-start-line="346" selection-start-column="69" selection-end-line="346" selection-end-column="69" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asx/resources/views/pages/watchlist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="69" lean-forward="true" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
           <folding />
         </state>
       </provider>
