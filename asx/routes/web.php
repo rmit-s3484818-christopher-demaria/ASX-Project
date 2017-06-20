@@ -97,7 +97,7 @@ Route::post('buy', [
     'as' => 'buyStock',
     'uses' => 'pageController@buyStock'
 ]);
-Route::post('watchlist', [
+Route::post('makeWatchlist', [
     'as' => 'addToWatchList',
     'uses' => 'pageController@watchList'
 ]);

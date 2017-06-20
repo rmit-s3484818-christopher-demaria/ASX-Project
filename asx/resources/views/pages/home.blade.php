@@ -79,7 +79,7 @@
                                 @endforeach
                             </table>
                             <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text">Watchlist</h4>
+                                <h4 class="dash-content-link-text"><a href={{url("watchlist")}}>Watchlist</a></h4>
                             </div>
 
                         </div>
