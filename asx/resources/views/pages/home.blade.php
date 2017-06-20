@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-8 dash-content-tile col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
                             <div>
-                                <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-usd"></span></h1>
+                                <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-piggy-bank"></span></h1>
                             </div>
                             <h2 class="dashboardContainers"> ${{ number_format($users->money, 2) }} </h2>
                             <div class="col-lg-12 col-md-12 dash-content-link">
