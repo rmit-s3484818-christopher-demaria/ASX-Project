@@ -423,12 +423,22 @@ class marketController extends Controller
 //        Schema::table('users', function($table) {
 //            $table->dropColumn('admin');
 //        });
-
 //
-//        Schema::table('portfolio', function($table) {
-//            $table->boolean('admin');
+//        Schema::create('watchlist', function ($table) {
+//            $table->string('user_id');
+//            $table->string('stock_symbol');
+//            $table->float('curr_stock_price');
+//            $table->float('wanted_price');
+//            $table->float('percentage_change'/*,5,2 if we want to limit to 5 digits 2 of which is behind decimal*/);
+//            $table->date('date_added');
+//            $table->date('date_expire');
+//            $table->boolean('is_positive');
 //        });
-//        echo "added";
+
+//        Schema::table('watchlist', function($table) {
+//            $table->float('expected_price');
+//        });
+       echo "added";
     }
 }
 
