@@ -65,21 +65,11 @@
                             <div>
                                 <h1 class="dashIcons"><span class=" dashBorder glyphicon glyphicon-eye-open"></span></h1>
                             </div>
-                            <table class="leader-table table-striped table table-responsive">
-                                <tr class="leader-headings info">
-                                    <td align="center" class="ranking-col">Company</td>
-                                    <td></td>
-                                </tr>
-                                @foreach ($watchlist as $watchlists)
-                                    <tr>
-                                        <td class="dashWatchItem">{{ $watchlists->stock_symbol }}</td>
-                                        <td class="dashWatchItem">{{ $watchlists->curr_stock_price }}</td>
-                                        <td class="dashWatchItem">{{ $watchlists->expected_price}}</td>
-                                    </tr>
-                                @endforeach
-                            </table>
+                            <div class="text-center">
+                                <a href={{url("watchlist")}}><button class="btn btn-primary watchlistBtn">Go to Watchlist <span class="glyphicon glyphicon-arrow-right"></span></button></a>
+                            </div>
                             <div class="col-lg-12 col-md-12 dash-content-link">
-                                <h4 class="dash-content-link-text"><a href={{url("watchlist")}}>Watchlist</a></h4>
+                                <h4 class="dash-content-link-text">Watchlist</h4>
                             </div>
 
                         </div>

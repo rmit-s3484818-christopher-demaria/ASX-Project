@@ -193,6 +193,16 @@ input.company-info-inputs{
 
 }
 
+.btn.btn-primary.watchlistBtn{
+    margin-bottom: 214px;
+    margin-top: 35px;
+    height: 65px;
+    width: 150px;
+    background-color: #22313F;
+}
+
+
+
 .dash-content-link{
     background-color: #22313F;
     padding-left: 0px;
