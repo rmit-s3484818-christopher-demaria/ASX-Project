@@ -25,7 +25,7 @@
             <div class="row">
 
                     <div class="col-lg-9 col-lg-offset-1 col-md-8 col-sm-6 col-md-offset-1 col-sm-offset-1">
-                        <form role ="form" method="POST" action="{{ route('searchUser') }}"> <!-- Takes users search input -->
+                        <form role ="form" method="POST" action="{{ route('searchTerm') }}"> <!-- Takes users search input -->
                             <div class="input-group">
                                 <input type="text" class="form-control searchBar" name ="searchTerm" id = "searchTerm" placeholder="Find a company by symbol or name...">
                                 <span class="input-group-btn">

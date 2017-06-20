@@ -143,7 +143,7 @@ Route::post('messages', [
 ]);
 
 Route::post('market', [
-    'as' => 'search',
+    'as' => 'searchTerm',
     'uses' => 'pageController@searchSymbol'
 ]);
 
