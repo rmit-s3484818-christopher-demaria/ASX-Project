@@ -9,9 +9,12 @@
     ?>
     <div class="navbarMargin">
         <div class="container-fluid">
-            <div> Watchlist
-                <hr>
-            </div>
+                <div class="container-fluid">
+                    <div>
+                        <h2 class="pageHeading"><a class="backIcon"><span class="glyphicon glyphicon-menu-left pull-left" onclick="goBack()"></span></a>Watchlist</h2>
+                        <hr>
+                    </div>
+                </div>
             <div>
                 <table class="leader-table table-striped table table-responsive tableSmall">
                     <tr class="leader-headings info">
@@ -20,13 +23,13 @@
                         <td align="center">Percentage Change</td>
                         <td align="center">Expected Price</td>
                         <td align="center">Date Added</td>
-                        <td align="centre">Date Expired</td>
+                        <td align="center">Date Expired</td>
                     </tr>
                 @foreach ($watchlist as $watchlists)  <!-- Loops through the watchlist table -->
                     <tr>
                         <td align="center"><strong> {{$watchlists->stock_symbol}} </strong></td> <!-- Lists the watchlist information -->
                         <td>${{ $watchlists->curr_stock_price }}</td>
-                        <td align="center"> %{{$watchlists->wanted_price}}</td>
+                        <td align="center"> {{$watchlists->wanted_price}}%</td>
                         <td align="center">${{$watchlists->expected_price}}</td>
                         <td align="center">{{$watchlists->date_added}}</td>
                         <td align="center">{{$watchlists->date_expire}}</td>
@@ -38,6 +41,12 @@
 
         </div>
     </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 
 @endsection
