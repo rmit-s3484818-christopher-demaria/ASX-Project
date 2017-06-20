@@ -96,49 +96,60 @@
 
             </div>
 
-            <table class="leader-table table-striped table table-responsive tableBorder">
-                <tr class="leader-headings info">
-                    <td align="center" class="ranking-col">Symbol</td>
-                    <td>Type</td>
-                    <td>Quantity</td>
-                    <td>Single price</td>
-                    <td>Total (after fees)</td>
-                    <td>Date</td>
-                </tr>
-                @foreach ($transactions as $transaction) <!-- Loops through transactions -->
-                    @if ($transaction->stock_symbol == $symbol) <!-- Checks if the transaction involves the current selected stock -->
-                    <tr>
-                        <td align="center"> {{ $transaction->stock_symbol }} </td>
-                        <td> <!-- Checks if the transaction is 'buy' or 'sell' and prints out which one it is -->
-                            @php
-                                if( $transaction->type == 0)
-                                {
-                                   echo 'Buy';
-                                }
-                                elseif ( $transaction->type == 1)
-                                {
-                                   echo 'Sell';
-                                }
-                            @endphp
-                        </td>
-                        <td> {{ $transaction->number }}</td>
-                        <td> ${{ $transaction->singlePrice }}</td>
-                        <td>
-                            @if( $transaction->type == 0 ) <!-- Checks if the transaction is 'buy' or 'sell' and prints out '+' or '-' to show if the user spent or gained this money -->
-                                - ${{ $transaction->price }}
-                            @endif
-
-                            @if( $transaction->type == 1 )
-                                + ${{ $transaction->price }}
-                            @endif
-                        </td>
-                        <td> {{ $transaction->created_at }} </td>
-                    </tr>
-                    @endif
-                @endforeach
-            </table>
         </div>
         <br>
+
+        <div class="container">
+            <div class="row">
+                <h3>You bought these shares for:</h3>
+
+                <div class="col-lg-12 col-md-12">
+                    <table class="leader-table table-striped table table-responsive tableBorder">
+                        <tr class="leader-headings info">
+                            <td align="center" class="ranking-col">Symbol</td>
+                            <td>Type</td>
+                            <td>Quantity</td>
+                            <td>Single price</td>
+                            <td>Total (after fees)</td>
+                            <td>Date</td>
+                        </tr>
+                    @foreach ($transactions as $transaction) <!-- Loops through transactions -->
+                    @if ($transaction->stock_symbol == $symbol) <!-- Checks if the transaction involves the current selected stock -->
+                        <tr>
+                            <td align="center"> {{ $transaction->stock_symbol }} </td>
+                            <td> <!-- Checks if the transaction is 'buy' or 'sell' and prints out which one it is -->
+                                @php
+                                    if( $transaction->type == 0)
+                                    {
+                                       echo 'Buy';
+                                    }
+                                    elseif ( $transaction->type == 1)
+                                    {
+                                       echo 'Sell';
+                                    }
+                                @endphp
+                            </td>
+                            <td> {{ $transaction->number }}</td>
+                            <td> ${{ $transaction->singlePrice }}</td>
+                            <td>
+                            @if( $transaction->type == 0 ) <!-- Checks if the transaction is 'buy' or 'sell' and prints out '+' or '-' to show if the user spent or gained this money -->
+                                - ${{ $transaction->price }}
+                                @endif
+
+                                @if( $transaction->type == 1 )
+                                    + ${{ $transaction->price }}
+                                @endif
+                            </td>
+                            <td> {{ $transaction->created_at }} </td>
+                        </tr>
+                        @endif
+                        @endforeach
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
 
 
     </div>
