@@ -57,6 +57,9 @@ Route::get('messages', function(){
 Route::get('admin', function(){
     return view('pages.admin');
 });
+Route::get('watchlist', function(){
+    return view('pages.watchlist');
+});
 //Route::get('buy', function(){
 //   return view('pages.buy');
 //});
