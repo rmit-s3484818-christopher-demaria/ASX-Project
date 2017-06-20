@@ -181,13 +181,6 @@
 
             </div>
         <div class="container">
-
-        {{--These will be removed once functionality is done--}}
-                <button class="btn btn-warning" type="button" id="deleteBtn" onclick="alertMe();">
-                    Delete your account</button>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-        {{--end of code that will be removed once functionality is added--}}
-            
             <div class="row">
                 <div class="col-lg-12">
                     <form method="POST" action="account/ {{ $userID}}">
@@ -202,22 +195,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var toggle = 0;
-        function alertMe() {
-
-            if(toggle == 0){
-                alert("Deleting your account is permenant! \n\n" +
-                    "If you wish to delete your account click the delete button again.");
-                toggle = 1;
-            }
-            else{
-                //enter database functionality to delete users account
-            }
-
-        };
-
-    </script>
-
 @endsection

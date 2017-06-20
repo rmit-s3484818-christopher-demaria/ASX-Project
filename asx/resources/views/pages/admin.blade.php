@@ -73,7 +73,6 @@
                                         <button type="submit" class="btn btn-danger">
                                             Delete
                                         </button>
-                                        <button class="btn btn-primary" onclick="alertMe();">Test Delete</button>
                                     </form></td>
 
                             </tr>
@@ -89,21 +88,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var toggle = 0;
-        function alertMe() {
-
-            if(toggle == 0){
-                alert("Deleting your account is permenant! \n\n" +
-                    "If you wish to delete your account click the delete button again.");
-                toggle = 1;
-            }
-            else{
-                //enter database functionality to delete users account
-            }
-
-        };
-    </script>
-
 @endsection
