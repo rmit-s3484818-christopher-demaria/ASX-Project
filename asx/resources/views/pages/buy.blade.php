@@ -18,7 +18,6 @@
     $userID = Auth::id();
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     ?>
-
 <div class="navbarMargin">
     <div class="container-fluid">
         <div class="container-fluid">
@@ -58,10 +57,17 @@
                 <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}">
                 <input name="userID" class = "form-control" type = "hidden" id = "symbol" value = "{{ $userID }}">
 
-                <button class="btn btn-warning cancelX"><span class="glyphicon glyphicon-eye-open watchlist"></span><h3 class="buySellBtns">Add to Watchlist</h3></button>
-
                 <button class="btn btn-success confirmBtn"><span class="glyphicon glyphicon-ok-circle" type = "Submit"></span><h3 class="buySellBtns">Confirm</h3></button>
 
+            </form>
+            <form role ="form" method="POST" action="{{ route('addToWatchList') }}">
+                <h3>Days to Watch</h3>
+                <input name ="days" class="form-control" type="number" id = "days" min="1">
+                <h3>Percentage Change From Current Price</h3>
+                <input name ="change" class="form-control" type="number" id = "change" min="1">
+                <button class="btn btn-warning cancelX"><span class="glyphicon glyphicon-eye-open watchlist" type = "Submit"></span><h3 class="addWatchList">Add to Watchlist</h3></button>
+                <input name="symbol" class = "form-control" type = "hidden" id = "symbol" value = "{{ $symbol }}">
+                <input name="userID" class = "form-control" type = "hidden" id = "symbol" value = "{{ $userID }}">
             </form>
 
             <button class="btn btn-danger cancelX" onclick="goBack()"><span class="glyphicon glyphicon-remove-circle"></span><h3 class="buySellBtns">Cancel</h3></button>

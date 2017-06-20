@@ -18,6 +18,8 @@
     $users = DB::table('portfolio')->where('user_id', $userID)->first();
     $userDetails = DB::table('users')->where('id', $userID)->first();
     $numberOfStocks = DB::table('owned_stocks')->where('user_id', $userID)->sum('number');
+    $watchlist = DB::table('watchlist')->where('user_id', $userID)->paginate(5);
+    $stocks = DB::table('stocks')->orderBy('symbol', 'asc');
     ?>
 
     <div class="navbarMargin">
@@ -68,27 +70,13 @@
                                     <td align="center" class="ranking-col">Company</td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td class="dashWatchItem">ANZ</td>
-                                    <td align="right"><button class="btn btn-success">More</button></td>
-                                </tr>
-                                <tr>
-                                    <td class="dashWatchItem">NAB</td>
-                                    <td align="right"><button class="btn btn-success">More</button></td>
-                                </tr>
-                                <tr>
-                                    <td class="dashWatchItem">CBA</td>
-                                    <td align="right"><button class="btn btn-success">More</button></td>
-                                </tr>
-                                <tr>
-                                    <td class="dashWatchItem">KIA</td>
-                                    <td align="right"><button class="btn btn-success">More</button></td>
-                                </tr>
-                                <tr>
-                                    <td class="dashWatchItem">TOY</td>
-                                    <td align="right"><button class="btn btn-success">More</button></td>
-                                </tr>
-
+                                @foreach ($watchlist as $watchlists)
+                                    <tr>
+                                        <td class="dashWatchItem">{{ $watchlists->stock_symbol }}</td>
+                                        <td class="dashWatchItem">{{ $watchlists->curr_stock_price }}</td>
+                                        <td class="dashWatchItem">{{ $watchlists->expected_price}}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                             <div class="col-lg-12 col-md-12 dash-content-link">
                                 <h4 class="dash-content-link-text">Watchlist</h4>

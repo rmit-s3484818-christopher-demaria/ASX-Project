@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use auth;
 use DB;
+use Carbon\Carbon;
 
 class pageController extends Controller
 {
@@ -325,5 +326,38 @@ class pageController extends Controller
         }
 
 
+    }
+
+    function watchList(Request $request)
+    {
+        date_default_timezone_set('Australia/Melbourne');
+        $date = date('Y-m-d H-i;s', time());
+        $userID = Auth::id();
+        $symbol = $request->input('symbol');
+        $number = $request->input('days');
+        $change = $request->input('change');
+        $stockPrice = DB::table('stocks')->where('symbol', $symbol)->value('price');
+        $stockChange = DB::table('stocks')->where('symbol', $symbol)->value('perChange');
+        $endDate = Carbon::now()->addDays($number);
+        $newPrice = $stockPrice * (($change + 100)/100);
+        DB::table('watchlist')
+            ->insert(
+                [
+                    'user_id' => $userID,
+                    'stock_symbol' => $symbol,
+                    'curr_stock_price' => $stockPrice,
+                    'wanted_price' => $change,
+                    'percentage_change' => $stockChange,
+                    'date_added' => $date,
+                    'date_expire' => $endDate,
+                    'is_positive' => true,
+                    'expected_price' => $newPrice
+                ]
+            );
+        echo '<script language="javascript">';          //This message is displayed if the sale goes through
+        echo 'alert("The company has been added to your watchlist")';
+        echo '</script>';
+
+        return view('pages.home');
     }
 }
